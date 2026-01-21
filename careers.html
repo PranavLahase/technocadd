@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — PSP TechnoCADD</title>
+  <meta name="description" content="PSP TechnoCADD Ancillary Private Limited — engineering design, R&D and advanced 3D printing solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a class="brand" href="index.html" aria-label="PSP TechnoCADD">
+        <div class="brand-mark">PSP</div>
+        <div class="brand-text">
+          <div class="brand-name">TechnoCADD</div>
+          <div class="brand-tagline">Where ideas take shape</div>
+        </div>
+      </a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="">Home</a></li>
+<li><a href="about.html" class="">About</a></li>
+<li><a href="services.html" class="">Services</a></li>
+<li><a href="portfolio.html" class="">Portfolio</a></li>
+<li><a href="equipment.html" class="">Equipment</a></li>
+<li><a href="team.html" class="">Team</a></li>
+<li><a href="blog.html" class="">Blog</a></li>
+<li><a href="careers.html" class="active">Careers</a></li>
+        <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="hero-split">
+        <div>
+          <div class="kicker">Careers</div>
+          <h1 class="page-hero-title">Careers</h1>
+          <p class="page-hero-desc">Build with a precision-first team.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="index.html#contact">Talk to us</a>
+            <a class="btn btn-secondary" href="index.html#download-brochure">Download brochure</a>
+          </div>
+        </div>
+        <div class="iso-card" aria-hidden="true">
+          <svg class="iso-illustration" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2563eb" stop-opacity="0.9"/>
+                <stop offset="1" stop-color="#ef4444" stop-opacity="0.9"/>
+              </linearGradient>
+            </defs>
+            <g fill="none" stroke="#0b1220" stroke-opacity="0.14" stroke-width="2">
+              <path d="M40 250 L210 160 L380 250" />
+              <path d="M40 250 L40 120 L210 30 L210 160" />
+              <path d="M380 250 L380 120 L210 30" />
+            </g>
+            <g>
+              <path d="M210 160 L380 250 L210 310 L40 250 Z" fill="#ffffff" opacity="0.92"/>
+              <path d="M40 250 L210 160 L210 310 L40 250 Z" fill="#dbeafe" opacity="0.92"/>
+              <path d="M210 160 L380 250 L380 120 L210 30 Z" fill="url(#g1)" opacity="0.60"/>
+              <circle cx="210" cy="160" r="8" fill="#2563eb"/>
+              <circle cx="380" cy="250" r="6" fill="#ef4444"/>
+              <circle cx="40" cy="250" r="6" fill="#ef4444"/>
+              <path d="M210 160 L380 250" stroke="#2563eb" stroke-width="3" opacity="0.7"/>
+              <path d="M210 160 L40 250" stroke="#2563eb" stroke-width="3" opacity="0.7"/>
+            </g>
+          </svg>
+          <div class="iso-caption">Design → Validate → Manufacture</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+<section class="section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2>Careers</h2>
+      <p>Join a team building precision engineering outputs and advanced manufacturing solutions.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <span class="badge">Open roles (sample)</span>
+        <h3 style="margin-top:10px">CAD Design Engineer</h3>
+        <p>Skills: SolidWorks/NX/CATIA, GD&amp;T, BOMs, DFM.</p>
+        <hr style="border:0;border-top:1px solid var(--border);margin:14px 0" />
+        <h3>3D Printing Technician</h3>
+        <p>Skills: slicing workflows, QA, post-processing and documentation.</p>
+        <hr style="border:0;border-top:1px solid var(--border);margin:14px 0" />
+        <h3>Internships</h3>
+        <p>Students: prototyping, CAD prep, lab operations, documentation.</p>
+      </div>
+
+      <div class="card">
+        <h3>Apply</h3>
+        <form class="form" id="careerForm">
+          <div class="field"><label>Full name</label><input name="name" required /></div>
+          <div class="field"><label>Email</label><input name="email" type="email" required /></div>
+          <div class="field"><label>Role</label>
+            <select name="role" required>
+              <option value="">Select…</option>
+              <option>CAD Design Engineer</option>
+              <option>3D Printing Technician</option>
+              <option>Internship</option>
+            </select>
+          </div>
+          <div class="field"><label>Message</label><textarea name="message" rows="5" placeholder="Share experience + links to portfolio" required></textarea></div>
+          <button class="btn btn-primary" type="button" onclick="alert('Connect this form to /api/contact or add a dedicated /api/careers endpoint');">Submit</button>
+          <p style="color:var(--muted);font-size:13px;margin-top:8px">This is a placeholder. It can be wired to email via the existing API.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>PSP TechnoCADD</h3>
+          <p>Precision-first engineering and advanced manufacturing support.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Chhatrapati Sambhajinager, Maharashtra 431003</p>
+          <p>+91 75885 37452</p>
+          <p>contact@technocaddapl.com</p>
+        </div>
+        <div class="footer-section">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Brochure</h4>
+          <p><a href="index.html#download-brochure">Download PDF</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 PSP TechnoCADD Ancillary Private Limited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

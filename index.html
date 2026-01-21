@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PSP TechnoCADD — Engineering + Advanced 3D Printing</title>
+  <meta name="description" content="PSP TechnoCADD Ancillary Private Limited — engineering design, R&D, and advanced 3D printing solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Home-only hero video (kept separate for clarity) */
+    .home-hero{position:relative;min-height:100vh;display:grid;align-items:center;overflow:hidden}
+    .home-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .home-hero .overlay{position:absolute;inset:0;background:linear-gradient(120deg, rgba(255,255,255,.55), rgba(37,99,235,.10), rgba(239,68,68,.10))}
+    .home-hero .content{position:relative;z-index:2;padding-top:86px;padding-bottom:30px}
+    .home-hero h1{font-size:56px;line-height:1.05;color:var(--ink);font-weight:900;max-width:18ch}
+    .home-hero p{margin-top:14px;color:var(--muted);font-size:16px;max-width:66ch}
+    .home-hero .hero-row{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}
+    .home-hero .glass{background:rgba(255,255,255,.72);border:1px solid rgba(226,232,240,.8);backdrop-filter:blur(10px);border-radius:18px;box-shadow:var(--shadow);padding:18px}
+    @media(max-width:980px){.home-hero h1{font-size:38px}.home-hero .hero-row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a class="brand" href="index.html" aria-label="PSP TechnoCADD">
+        <div class="brand-mark">PSP</div>
+        <div class="brand-text">
+          <div class="brand-name">TechnoCADD</div>
+          <div class="brand-tagline">Where ideas take shape</div>
+        </div>
+      </a>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="equipment.html">Equipment</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="#contact" class="btn-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="home-hero">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="assets/hero-video.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div class="container">
+        <div class="hero-row">
+          <div>
+            <div class="kicker">ISO-ready workflow • Precision-first engineering</div>
+            <h1>Engineering design + advanced 3D printing, built for production.</h1>
+            <p>From concept design and rapid prototyping to manufacturing-ready documentation and advanced additive manufacturing, PSP TechnoCADD supports industry, startups, and institutions with reliable, production-focused deliverables.</p>
+            <div class="hero-cta" style="margin-top:18px">
+              <a class="btn btn-primary" href="services.html">Explore services</a>
+              <a class="btn btn-secondary" href="#download-brochure">Download brochure</a>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+              <span class="badge">ISO 9001:2015</span>
+              <span class="badge" style="color:var(--blue);background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.16)">Global delivery</span>
+              <span class="badge">DFM / DfAM</span>
+            </div>
+          </div>
+
+          <div class="glass" aria-hidden="true">
+            <svg class="iso-illustration" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#2563eb" stop-opacity="0.9"/>
+                  <stop offset="1" stop-color="#ef4444" stop-opacity="0.9"/>
+                </linearGradient>
+              </defs>
+              <g fill="none" stroke="#0b1220" stroke-opacity="0.14" stroke-width="2">
+                <path d="M40 250 L210 160 L380 250" />
+                <path d="M40 250 L40 120 L210 30 L210 160" />
+                <path d="M380 250 L380 120 L210 30" />
+              </g>
+              <g>
+                <path d="M210 160 L380 250 L210 310 L40 250 Z" fill="#ffffff" opacity="0.92"/>
+                <path d="M40 250 L210 160 L210 310 L40 250 Z" fill="#dbeafe" opacity="0.92"/>
+                <path d="M210 160 L380 250 L380 120 L210 30 Z" fill="url(#g1)" opacity="0.60"/>
+                <circle cx="210" cy="160" r="8" fill="#2563eb"/>
+                <circle cx="380" cy="250" r="6" fill="#ef4444"/>
+                <circle cx="40" cy="250" r="6" fill="#ef4444"/>
+                <path d="M210 160 L380 250" stroke="#2563eb" stroke-width="3" opacity="0.7"/>
+                <path d="M210 160 L40 250" stroke="#2563eb" stroke-width="3" opacity="0.7"/>
+              </g>
+            </svg>
+            <div class="iso-caption">Modern, production-ready engineering pipeline</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <h2>What PSP delivers</h2>
+          <p>High-clarity engineering outputs that reduce iteration cycles and de-risk manufacturing.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><h3>Manufacturing drawings</h3><p>GD&T-ready 2D drawings, BOMs, and export-ready documentation.</p></div>
+          <div class="card"><h3>Design + R&D support</h3><p>3D modeling, assembly design, DFM/DfAM, and optimization for performance and cost.</p></div>
+          <div class="card"><h3>Additive manufacturing</h3><p>Polymer and metal 3D printing for rapid prototypes, tooling, and functional parts.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding bg-soft" id="download-brochure">
+      <div class="container">
+        <div class="card" style="display:grid;gap:10px;align-items:center">
+          <h3 style="margin:0">Download the company brochure</h3>
+          <p style="margin:0">Get a complete overview of our capabilities, workflows, and contact details.</p>
+          <div style="margin-top:10px">
+            <button class="btn btn-primary" id="downloadBrochure" type="button">Download brochure (PDF)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Share your requirement and get a response within 24–48 hours.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>PSP TechnoCADD</h3>
+            <ul class="list">
+              <li>Chhatrapati Sambhajinager, Maharashtra 431003</li>
+              <li>Phone: +91 75885 37452</li>
+              <li>Email: contact@technocaddapl.com</li>
+              <li>Website: technocaddapl.com</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Send a message</h3>
+            <form id="contactForm" class="form">
+              <div class="field"><label>Name</label><input name="name" required /></div>
+              <div class="field"><label>Email</label><input name="email" type="email" required /></div>
+              <div class="field"><label>Phone (optional)</label><input name="phone" /></div>
+              <div class="field"><label>Subject</label><input name="subject" required /></div>
+              <div class="field"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
+              <button class="btn btn-primary" type="submit">Send message</button>
+              <div id="formMessage" class="form-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>PSP TechnoCADD</h3>
+          <p>Precision-first engineering and advanced manufacturing support.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Chhatrapati Sambhajinager, Maharashtra 431003</p>
+          <p>+91 75885 37452</p>
+          <p>contact@technocaddapl.com</p>
+        </div>
+        <div class="footer-section">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Brochure</h4>
+          <p><a href="#download-brochure">Download PDF</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 PSP TechnoCADD Ancillary Private Limited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
