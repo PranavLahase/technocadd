@@ -1,0 +1,35 @@
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/assets/video.mp4"
+  [headers.values]
+    Content-Type = "video/mp4"
+    Cache-Control = "public, max-age=604800"
+    Accept-Ranges = "bytes"
+
+[[headers]]
+  for = "/assets/*.mp4"
+  [headers.values]
+    Content-Type = "video/mp4"
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
