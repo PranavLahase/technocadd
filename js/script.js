@@ -1,210 +1,232 @@
-// PSP TechnoCADD Website JavaScript
+// PSP TechnoCADD - Enhanced Interactive JavaScript
 
-// Mobile Menu Toggle
+// DOM Elements
+const navbar = document.getElementById('navbar');
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navMenu = document.getElementById('navMenu');
-
-if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-}
-
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu if open
-            navMenu.classList.remove('active');
-        }
-    });
-});
-
-// Contact Form Submission
 const contactForm = document.getElementById('contactForm');
+const downloadBrochure = document.getElementById('downloadBrochure');
 const formMessage = document.getElementById('formMessage');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+// Navbar scroll effect
+let lastScroll = 0;
 
-        // Get form data
-        const formData = {
-            name: contactForm.name.value,
-            email: contactForm.email.value,
-            phone: contactForm.phone.value || '',
-            subject: contactForm.subject.value,
-            message: contactForm.message.value
-        };
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
 
-        try {
-            // Show loading state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+  if (currentScroll > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 
-            // Send to backend API
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+  lastScroll = currentScroll;
+});
 
-            const result = await response.json();
+// Mobile menu toggle
+if (mobileMenuToggle && navMenu) {
+  mobileMenuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    mobileMenuToggle.classList.toggle('active');
 
-            if (response.ok) {
-                // Success
-                formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
-                formMessage.className = 'form-message success';
-                contactForm.reset();
-            } else {
-                // Error
-                formMessage.textContent = result.message || 'Sorry, something went wrong. Please try again.';
-                formMessage.className = 'form-message error';
-            }
+    if (navMenu.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
 
-            // Reset button
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-
-        } catch (error) {
-            console.error('Form submission error:', error);
-            formMessage.textContent = 'Network error. Please check your connection and try again.';
-            formMessage.className = 'form-message error';
-
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            submitBtn.textContent = 'Send Message';
-            submitBtn.disabled = false;
-        }
-
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
+  const navLinks = navMenu.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      mobileMenuToggle.classList.remove('active');
+      document.body.style.overflow = '';
     });
+  });
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || href === '') return;
+
+    e.preventDefault();
+    const target = document.querySelector(href);
+
+    if (target) {
+      const offsetTop = target.offsetTop - 100;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.card, .section-header');
+
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+
+  revealElements.forEach(element => {
+    const elementTop = element.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      element.classList.add('active');
+    }
+  });
+};
+
+revealOnScroll();
+window.addEventListener('scroll', revealOnScroll);
+
+// Contact Form
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(contactForm);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone') || '',
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        formMessage.textContent = result.message || 'Message sent successfully!';
+        formMessage.className = 'form-message success';
+        contactForm.reset();
+
+        setTimeout(() => {
+          formMessage.className = 'form-message';
+        }, 5000);
+      } else {
+        throw new Error(result.error || 'Failed to send message');
+      }
+    } catch (error) {
+      formMessage.textContent = error.message || 'Failed to send message. Please try again.';
+      formMessage.className = 'form-message error';
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
 }
 
 // Brochure Download
-const downloadBrochureBtn = document.getElementById('downloadBrochure');
+if (downloadBrochure) {
+  downloadBrochure.addEventListener('click', async (e) => {
+    e.preventDefault();
 
-if (downloadBrochureBtn) {
-    downloadBrochureBtn.addEventListener('click', async () => {
-        try {
-            // Show loading state
-            const originalText = downloadBrochureBtn.textContent;
-            downloadBrochureBtn.textContent = 'Preparing Download...';
-            downloadBrochureBtn.disabled = true;
+    const originalText = downloadBrochure.textContent;
+    downloadBrochure.textContent = 'Preparing...';
+    downloadBrochure.disabled = true;
 
-            // Call download API
-            const response = await fetch('/api/download', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+    try {
+      const response = await fetch('/api/download?file=brochure');
 
-            if (response.ok) {
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'PSP-TechnoCADD-Brochure.pdf';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'PSP-TechnoCADD-Brochure.pdf';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
 
-                // Show success message
-                alert('Brochure downloaded successfully!');
-            } else {
-                alert('Unable to download brochure. Please try again.');
-            }
-
-            // Reset button
-            downloadBrochureBtn.textContent = originalText;
-            downloadBrochureBtn.disabled = false;
-
-        } catch (error) {
-            console.error('Download error:', error);
-            alert('Download failed. Please try again or contact us directly.');
-            downloadBrochureBtn.textContent = 'Download Brochure (PDF)';
-            downloadBrochureBtn.disabled = false;
-        }
-    });
+        downloadBrochure.textContent = 'Downloaded ✓';
+        setTimeout(() => { downloadBrochure.textContent = originalText; }, 2000);
+      } else {
+        throw new Error('Download failed');
+      }
+    } catch (error) {
+      alert('Download failed. Please contact us.');
+      downloadBrochure.textContent = originalText;
+    } finally {
+      downloadBrochure.disabled = false;
+    }
+  });
 }
 
-// Hero Video - ensure it plays on mobile
-const heroVideo = document.getElementById('heroVideo');
-if (heroVideo) {
-    // Force play on load (some browsers need this)
-    heroVideo.play().catch(err => {
-        console.log('Autoplay prevented:', err);
-    });
+// Card 3D tilt
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-    // Ensure video is always playing
-    heroVideo.addEventListener('pause', () => {
-        heroVideo.play();
-    });
-}
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
 
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (centerX - x) / 20;
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+  });
 
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.service-card, .equipment-item, .stat-item');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s ease';
-        observer.observe(el);
-    });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
 });
 
-// Set active nav link based on current page
-document.addEventListener('DOMContentLoaded', () => {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-menu a');
+// Button ripple
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(button => {
+  button.addEventListener('click', function(e) {
+    const ripple = document.createElement('span');
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
 
-    navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
+    ripple.style.cssText = `
+      position: absolute;
+      width: ${size}px;
+      height: ${size}px;
+      left: ${x}px;
+      top: ${y}px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      transform: scale(0);
+      animation: ripple-animation 0.6s ease-out;
+      pointer-events: none;
+    `;
+
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
 });
 
-console.log('PSP TechnoCADD Website Loaded Successfully');
+const style = document.createElement('style');
+style.textContent = `
+  .btn { position: relative; overflow: hidden; }
+  @keyframes ripple-animation {
+    to { transform: scale(4); opacity: 0; }
+  }
+`;
+document.head.appendChild(style);
+
+console.log('✨ PSP TechnoCADD loaded');

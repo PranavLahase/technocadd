@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PSP TechnoCADD — Engineering + Advanced 3D Printing</title>
-  <meta name="description" content="PSP TechnoCADD Ancillary Private Limited — engineering design, R&D, and advanced 3D printing solutions." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    /* Home-only hero video (kept separate for clarity) */
-    .home-hero{position:relative;min-height:100vh;display:grid;align-items:center;overflow:hidden}
-    .home-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .home-hero .overlay{position:absolute;inset:0;background:linear-gradient(120deg, rgba(255,255,255,.55), rgba(37,99,235,.10), rgba(239,68,68,.10))}
-    .home-hero .content{position:relative;z-index:2;padding-top:86px;padding-bottom:30px}
-    .home-hero h1{font-size:56px;line-height:1.05;color:var(--ink);font-weight:900;max-width:18ch}
-    .home-hero p{margin-top:14px;color:var(--muted);font-size:16px;max-width:66ch}
-    .home-hero .hero-row{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}
-    .home-hero .glass{background:rgba(255,255,255,.72);border:1px solid rgba(226,232,240,.8);backdrop-filter:blur(10px);border-radius:18px;box-shadow:var(--shadow);padding:18px}
-    @media(max-width:980px){.home-hero h1{font-size:38px}.home-hero .hero-row{grid-template-columns:1fr}}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSP TechnoCADD — Engineering Design + Advanced 3D Printing Solutions</title>
+  <meta name="description" content="ISO 9001:2015 certified engineering design, R&D, and advanced 3D printing. Precision-driven solutions for manufacturing excellence.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a class="brand" href="index.html" aria-label="PSP TechnoCADD">
+      <a class="brand" href="index.html">
         <div class="brand-mark">PSP</div>
         <div class="brand-text">
           <div class="brand-name">TechnoCADD</div>
           <div class="brand-tagline">Where ideas take shape</div>
         </div>
       </a>
-
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-
+      
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -53,53 +40,27 @@
 
   <header class="home-hero">
     <video autoplay muted loop playsinline id="heroVideo">
-      <source src="assets/hero-video.mp4" type="video/mp4" />
+      <source src="assets/hero-video.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
-
+    
     <div class="content">
       <div class="container">
-        <div class="hero-row">
-          <div>
-            <div class="kicker">ISO-ready workflow • Precision-first engineering</div>
-            <h1>Engineering design + advanced 3D printing, built for production.</h1>
-            <p>From concept design and rapid prototyping to manufacturing-ready documentation and advanced additive manufacturing, PSP TechnoCADD supports industry, startups, and institutions with reliable, production-focused deliverables.</p>
-            <div class="hero-cta" style="margin-top:18px">
-              <a class="btn btn-primary" href="services.html">Explore services</a>
-              <a class="btn btn-secondary" href="#download-brochure">Download brochure</a>
-            </div>
-            <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-              <span class="badge">ISO 9001:2015</span>
-              <span class="badge" style="color:var(--blue);background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.16)">Global delivery</span>
-              <span class="badge">DFM / DfAM</span>
-            </div>
+        <div style="max-width:1100px">
+          <div class="kicker" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff">TECH LABS • ISO 9001:2015 CERTIFIED</div>
+          <h1>Crafting Tomorrow's Innovations Today</h1>
+          <p>From concept to production-ready deliverables — engineering design, R&D support, and advanced 3D printing solutions built for precision, quality, and speed.</p>
+          
+          <div class="hero-cta" style="margin-top:32px">
+            <a href="services.html" class="btn btn-primary">Explore Services</a>
+            <a href="#download-brochure" class="btn btn-secondary" style="background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-color:rgba(255,255,255,0.3);color:#fff">Download Brochure</a>
           </div>
-
-          <div class="glass" aria-hidden="true">
-            <svg class="iso-illustration" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#2563eb" stop-opacity="0.9"/>
-                  <stop offset="1" stop-color="#ef4444" stop-opacity="0.9"/>
-                </linearGradient>
-              </defs>
-              <g fill="none" stroke="#0b1220" stroke-opacity="0.14" stroke-width="2">
-                <path d="M40 250 L210 160 L380 250" />
-                <path d="M40 250 L40 120 L210 30 L210 160" />
-                <path d="M380 250 L380 120 L210 30" />
-              </g>
-              <g>
-                <path d="M210 160 L380 250 L210 310 L40 250 Z" fill="#ffffff" opacity="0.92"/>
-                <path d="M40 250 L210 160 L210 310 L40 250 Z" fill="#dbeafe" opacity="0.92"/>
-                <path d="M210 160 L380 250 L380 120 L210 30 Z" fill="url(#g1)" opacity="0.60"/>
-                <circle cx="210" cy="160" r="8" fill="#2563eb"/>
-                <circle cx="380" cy="250" r="6" fill="#ef4444"/>
-                <circle cx="40" cy="250" r="6" fill="#ef4444"/>
-                <path d="M210 160 L380 250" stroke="#2563eb" stroke-width="3" opacity="0.7"/>
-                <path d="M210 160 L40 250" stroke="#2563eb" stroke-width="3" opacity="0.7"/>
-              </g>
-            </svg>
-            <div class="iso-caption">Modern, production-ready engineering pipeline</div>
+          
+          <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+            <span class="badge" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25);color:#fff">CAD Design</span>
+            <span class="badge" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25);color:#fff">3D Printing</span>
+            <span class="badge" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25);color:#fff">Tooling & Fixtures</span>
+            <span class="badge" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25);color:#fff">Global Delivery</span>
           </div>
         </div>
       </div>
@@ -107,57 +68,188 @@
   </header>
 
   <main>
+    <!-- Core Capabilities -->
     <section class="section-padding">
       <div class="container">
         <div class="section-header">
-          <h2>What PSP delivers</h2>
-          <p>High-clarity engineering outputs that reduce iteration cycles and de-risk manufacturing.</p>
+          <div class="kicker">Core Capabilities</div>
+          <h2>Engineering Excellence + Manufacturing Precision</h2>
+          <p>From 2D manufacturing drawings to advanced additive manufacturing, we deliver production-ready outputs with ISO-grade quality standards.</p>
         </div>
+        
         <div class="grid-3">
-          <div class="card"><h3>Manufacturing drawings</h3><p>GD&T-ready 2D drawings, BOMs, and export-ready documentation.</p></div>
-          <div class="card"><h3>Design + R&D support</h3><p>3D modeling, assembly design, DFM/DfAM, and optimization for performance and cost.</p></div>
-          <div class="card"><h3>Additive manufacturing</h3><p>Polymer and metal 3D printing for rapid prototypes, tooling, and functional parts.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-padding bg-soft" id="download-brochure">
-      <div class="container">
-        <div class="card" style="display:grid;gap:10px;align-items:center">
-          <h3 style="margin:0">Download the company brochure</h3>
-          <p style="margin:0">Get a complete overview of our capabilities, workflows, and contact details.</p>
-          <div style="margin-top:10px">
-            <button class="btn btn-primary" id="downloadBrochure" type="button">Download brochure (PDF)</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-padding" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2>Contact</h2>
-          <p>Share your requirement and get a response within 24–48 hours.</p>
-        </div>
-        <div class="grid-2">
           <div class="card">
-            <h3>PSP TechnoCADD</h3>
-            <ul class="list">
-              <li>Chhatrapati Sambhajinager, Maharashtra 431003</li>
-              <li>Phone: +91 75885 37452</li>
-              <li>Email: contact@technocaddapl.com</li>
-              <li>Website: technocaddapl.com</li>
+            <div class="badge">Design Engineering</div>
+            <h3 style="margin-top:16px">Manufacturing-Ready Documentation</h3>
+            <p>GD&T-compliant 2D drawings, BOMs, assembly documentation, and export-ready CAD models for fabrication and procurement.</p>
+            <ul class="list" style="margin-top:16px">
+              <li>Parametric 3D CAD modeling</li>
+              <li>Sheet metal & enclosure design</li>
+              <li>Assembly design & validation</li>
+              <li>DFM/DfAM optimization</li>
             </ul>
           </div>
+          
           <div class="card">
-            <h3>Send a message</h3>
+            <div class="badge">Additive Manufacturing</div>
+            <h3 style="margin-top:16px">Polymer + Metal 3D Printing</h3>
+            <p>Rapid prototyping, functional parts, and production tooling using FDM, SLA, SLS, and metal additive technologies.</p>
+            <ul class="list" style="margin-top:16px">
+              <li>Prototype iteration & testing</li>
+              <li>Conformal cooling channels</li>
+              <li>Custom jigs & fixtures</li>
+              <li>Post-processing & finishing</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <div class="badge">R&D Support</div>
+            <h3 style="margin-top:16px">Design Optimization & Testing</h3>
+            <p>Engineering analysis, design validation, tolerance studies, and manufacturability reviews to de-risk production.</p>
+            <ul class="list" style="margin-top:16px">
+              <li>FEA & simulation support</li>
+              <li>Tolerance stack-up analysis</li>
+              <li>Material selection guidance</li>
+              <li>Cost reduction studies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose PSP -->
+    <section class="section-padding bg-soft">
+      <div class="container">
+        <div class="grid-2" style="gap:48px;align-items:center">
+          <div>
+            <div class="kicker">Why Choose PSP</div>
+            <h2 style="font-size:clamp(32px,4vw,42px);margin:16px 0">Built for production. Engineered for precision.</h2>
+            <p style="font-size:17px;color:var(--gray);line-height:1.8;margin-bottom:24px">We're not a prototyping shop — we're an engineering partner focused on manufacturability, quality, and speed-to-market.</p>
+            
+            <div style="display:grid;gap:16px">
+              <div style="display:flex;gap:16px;align-items:start">
+                <div style="min-width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1D3557,#457B9D);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px">✓</div>
+                <div>
+                  <h4 style="color:#1D3557;font-size:18px;margin-bottom:6px">ISO 9001:2015 Certified</h4>
+                  <p style="color:#6B7280">Quality management system for consistent, traceable deliverables.</p>
+                </div>
+              </div>
+              
+              <div style="display:flex;gap:16px;align-items:start">
+                <div style="min-width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#E63946,#FF6B6B);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px">✓</div>
+                <div>
+                  <h4 style="color:#1D3557;font-size:18px;margin-bottom:6px">DFM-First Approach</h4>
+                  <p style="color:#6B7280">Every design is reviewed for manufacturability, cost, and assembly efficiency.</p>
+                </div>
+              </div>
+              
+              <div style="display:flex;gap:16px;align-items:start">
+                <div style="min-width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1D3557,#457B9D);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px">✓</div>
+                <div>
+                  <h4 style="color:#1D3557;font-size:18px;margin-bottom:6px">Fast Turnaround</h4>
+                  <p style="color:#6B7280">Dedicated teams, clear workflows, and rapid iteration cycles.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top:32px">
+              <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+            </div>
+          </div>
+          
+          <div class="iso-card">
+            <div style="background:linear-gradient(135deg,rgba(29,53,87,0.05),rgba(230,57,70,0.05));padding:32px;border-radius:16px">
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">
+                <div style="text-align:center">
+                  <div style="font-size:48px;font-weight:800;color:#1D3557;font-family:'Space Grotesk',sans-serif">12+</div>
+                  <div style="color:#6B7280;font-weight:600;margin-top:8px">Years Experience</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:48px;font-weight:800;color:#E63946;font-family:'Space Grotesk',sans-serif">500+</div>
+                  <div style="color:#6B7280;font-weight:600;margin-top:8px">Projects Delivered</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:48px;font-weight:800;color:#1D3557;font-family:'Space Grotesk',sans-serif">ISO</div>
+                  <div style="color:#6B7280;font-weight:600;margin-top:8px">Quality Certified</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:48px;font-weight:800;color:#E63946;font-family:'Space Grotesk',sans-serif">24h</div>
+                  <div style="color:#6B7280;font-weight:600;margin-top:8px">Response Time</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Brochure -->
+    <section class="section-padding" id="download-brochure">
+      <div class="container">
+        <div class="card" style="background:linear-gradient(135deg,#1D3557,#457B9D);border:none;color:#fff;padding:48px;text-align:center">
+          <h2 style="color:#fff;margin-bottom:16px">Download Our Company Brochure</h2>
+          <p style="color:rgba(255,255,255,0.9);font-size:18px;max-width:600px;margin:0 auto 32px">Complete overview of capabilities, equipment, processes, and contact details.</p>
+          <button id="downloadBrochure" class="btn btn-primary" style="background:#fff;color:#1D3557;box-shadow:0 8px 24px rgba(0,0,0,0.15)">Download Brochure (PDF)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section-padding bg-soft" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Get In Touch</div>
+          <h2>Start Your Next Project</h2>
+          <p>Share your requirements and we'll respond within 24–48 hours with a detailed proposal.</p>
+        </div>
+        
+        <div class="grid-2" style="gap:48px">
+          <div class="card">
+            <h3 style="margin-bottom:24px">Contact Information</h3>
+            <div style="display:grid;gap:20px">
+              <div>
+                <h4 style="color:#1D3557;font-size:15px;margin-bottom:8px;font-weight:700">Address</h4>
+                <p style="color:#6B7280">PSP TechnoCADD Ancillary Pvt Ltd<br>Chhatrapati Sambhajinager<br>Maharashtra 431003, India</p>
+              </div>
+              <div>
+                <h4 style="color:#1D3557;font-size:15px;margin-bottom:8px;font-weight:700">Phone</h4>
+                <p style="color:#6B7280">+91 75885 37452</p>
+              </div>
+              <div>
+                <h4 style="color:#1D3557;font-size:15px;margin-bottom:8px;font-weight:700">Email</h4>
+                <p style="color:#6B7280">contact@technocaddapl.com</p>
+              </div>
+              <div>
+                <h4 style="color:#1D3557;font-size:15px;margin-bottom:8px;font-weight:700">Business Hours</h4>
+                <p style="color:#6B7280">Monday – Saturday: 9:00 AM – 6:00 PM IST</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h3 style="margin-bottom:24px">Send a Message</h3>
             <form id="contactForm" class="form">
-              <div class="field"><label>Name</label><input name="name" required /></div>
-              <div class="field"><label>Email</label><input name="email" type="email" required /></div>
-              <div class="field"><label>Phone (optional)</label><input name="phone" /></div>
-              <div class="field"><label>Subject</label><input name="subject" required /></div>
-              <div class="field"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
-              <button class="btn btn-primary" type="submit">Send message</button>
+              <div class="field">
+                <label>Full Name *</label>
+                <input type="text" name="name" required placeholder="Your name">
+              </div>
+              <div class="field">
+                <label>Email Address *</label>
+                <input type="email" name="email" required placeholder="you@company.com">
+              </div>
+              <div class="field">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX">
+              </div>
+              <div class="field">
+                <label>Subject *</label>
+                <input type="text" name="subject" required placeholder="Project inquiry / Quote request">
+              </div>
+              <div class="field">
+                <label>Message *</label>
+                <textarea name="message" required placeholder="Tell us about your project requirements..." rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
               <div id="formMessage" class="form-message"></div>
             </form>
           </div>
@@ -171,26 +263,36 @@
       <div class="footer-content">
         <div class="footer-section">
           <h3>PSP TechnoCADD</h3>
-          <p>Precision-first engineering and advanced manufacturing support.</p>
+          <p style="margin-top:12px;line-height:1.8">Precision-driven engineering design, R&D support, and advanced 3D printing solutions. ISO 9001:2015 certified.</p>
+          <div style="margin-top:16px">
+            <span class="badge" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#fff">ISO 9001:2015</span>
+          </div>
         </div>
         <div class="footer-section">
-          <h4>Contact</h4>
-          <p>Chhatrapati Sambhajinager, Maharashtra 431003</p>
-          <p>+91 75885 37452</p>
-          <p>contact@technocaddapl.com</p>
-        </div>
-        <div class="footer-section">
-          <h4>Links</h4>
+          <h4>Quick Links</h4>
           <ul>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="equipment.html">Equipment</a></li>
             <li><a href="careers.html">Careers</a></li>
           </ul>
         </div>
         <div class="footer-section">
-          <h4>Brochure</h4>
-          <p><a href="#download-brochure">Download PDF</a></p>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">CAD Design</a></li>
+            <li><a href="services.html">3D Printing</a></li>
+            <li><a href="services.html">Tooling & Fixtures</a></li>
+            <li><a href="services.html">Engineering Consulting</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Chhatrapati Sambhajinager<br>Maharashtra 431003, India</p>
+          <p style="margin-top:12px"><strong>Phone:</strong> +91 75885 37452</p>
+          <p><strong>Email:</strong> contact@technocaddapl.com</p>
+          <p style="margin-top:12px"><a href="#download-brochure" style="color:#E63946;font-weight:600">Download Brochure →</a></p>
         </div>
       </div>
       <div class="footer-bottom">
