@@ -153,23 +153,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // SMOOTH SCROLL FOR ANCHOR LINKS (FIXED)
   // ===================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      
-      // Only process valid anchors (not empty or just '#')
-      if (href && href.length > 1 && href !== '#') {
-        try {
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        } catch (error) {
-          console.error('Invalid selector:', href);
-        }
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    
+    // Skip empty anchors or just '#'
+    if (!href || href === '#' || href.length <= 1) {
+      return; // Do nothing
+    }
+    
+    // Try to find target safely
+    try {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    });
+    } catch (error) {
+      // Ignore invalid selectors
+      console.warn('Invalid anchor:', href);
+    }
   });
+});
   
   // ===================================
   // BUTTON RIPPLE EFFECT
