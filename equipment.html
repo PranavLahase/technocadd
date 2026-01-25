@@ -3,22 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipment & Capabilities — PSP TechnoCADD Manufacturing Resources</title>
-  <meta name="description" content="Our advanced equipment: CAD workstations, 3D printers (FDM, SLA, SLS, metal), precision measuring tools, and manufacturing support infrastructure.">
+  <title>Our Equipment — PSP TechnoCADD</title>
+  <meta name="description" content="EV training systems, BMS trainers, Industry 4.0 setups, pneumatic/hydraulic kits, and automation equipment for educational institutions.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .equipment-card {
+      background: white;
+      border: 1px solid rgba(29, 53, 87, 0.08);
+      border-radius: 20px;
+      padding: 32px;
+      transition: var(--transition);
+      height: 100%;
+    }
+    
+    .equipment-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(230, 57, 70, 0.2);
+    }
+    
+    .equipment-card h3 {
+      color: var(--blue);
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+    
+    .equipment-card .model {
+      display: inline-block;
+      background: rgba(230, 57, 70, 0.1);
+      color: var(--red);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .equipment-card p {
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    
+    .equipment-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+    
+    .equipment-card ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--light-gray);
+      color: var(--gray);
+      font-size: 15px;
+    }
+    
+    .equipment-card ul li:last-child {
+      border-bottom: none;
+    }
+    
+    .equipment-card ul li:before {
+      content: "✓ ";
+      color: var(--red);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+  </style>
 </head>
 <body>
+  
+  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
       <a class="brand" href="index.html">
-        <div class="brand-mark">PSP</div>
-        <div class="brand-text">
-          <div class="brand-name">TechnoCADD</div>
-          <div class="brand-tagline">Where ideas take shape</div>
+        <img src="assets/logo.png" alt="PSP TechnoCADD Logo" class="brand-logo">
+        <div class="brand-text-only">
+          <div class="brand-name">PSP TechnoCADD</div>
+          <div class="brand-tagline">TECH LABS • CRAFTING INNOVATIONS</div>
         </div>
       </a>
       
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
@@ -38,387 +103,402 @@
     </div>
   </nav>
 
-  <header class="page-hero bg-mesh">
+  <!-- Page Header -->
+  <header class="page-header" style="background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); padding: 140px 0 80px; text-align: center; color: white;">
     <div class="container">
-      <div class="hero-split">
-        <div>
-          <div class="kicker">Equipment & Capabilities</div>
-          <h1 class="page-hero-title">Advanced Tools for Precision Engineering</h1>
-          <p class="page-hero-desc">Industry-leading CAD software, multi-technology 3D printing systems, precision measurement tools, and quality management infrastructure.</p>
-          <div class="hero-cta">
-            <a href="index.html#contact" class="btn btn-primary">Request Capabilities</a>
-            <a href="services.html" class="btn btn-secondary">View Services</a>
-          </div>
-        </div>
-        <div class="iso-card">
-          <svg class="iso-illustration" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#1D3557;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#457B9D;stop-opacity:1" />
-              </linearGradient>
-              <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#E63946;stop-opacity:0.9" />
-                <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:0.9" />
-              </linearGradient>
-            </defs>
-            <path d="M210 160 L380 250 L210 310 L40 250 Z" fill="#FFFFFF" opacity="0.95"/>
-            <path d="M40 250 L210 160 L210 310 L40 250 Z" fill="url(#grad1)" opacity="0.6"/>
-            <path d="M210 160 L380 250 L380 120 L210 30 Z" fill="url(#grad2)" opacity="0.7"/>
-            <circle cx="210" cy="160" r="10" fill="#E63946" opacity="0.9"/>
-          </svg>
-          <div class="iso-caption">State-of-the-art infrastructure</div>
-        </div>
-      </div>
+      <div class="kicker" style="background: rgba(255,255,255,0.2); color: white;">Our Equipment</div>
+      <h1 style="font-size: clamp(36px, 5vw, 56px); color: white; margin: 20px 0;">EV Training Systems & Lab Equipment</h1>
+      <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto;">Industry-grade training equipment for electric vehicles, robotics, automation, and Industry 4.0 education.</p>
     </div>
   </header>
 
   <main>
-    <!-- CAD Software -->
+    <!-- EV Training Systems -->
     <section class="section-padding">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Design Software</div>
-          <h2>Industry-Standard CAD Platforms</h2>
-          <p>Licensed professional-grade CAD software with latest versions and add-ons for specialized design tasks.</p>
+          <div class="kicker">Electric Vehicle Training</div>
+          <h2>EV Training Systems</h2>
+          <p>Hands-on learning platforms for battery management, power electronics, HVAC, and complete vehicle systems.</p>
         </div>
         
         <div class="grid-3">
-          <div class="card">
-            <h3>SolidWorks Premium</h3>
-            <p>Parametric modeling, sheet metal, weldments, surfacing, PhotoView 360, motion simulation, and design validation tools.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>SolidWorks 2024</li>
-              <li>Premium add-ons</li>
-              <li>PDM integration</li>
-              <li>API customization</li>
+          <!-- Power Electronics Trainer -->
+          <div class="equipment-card">
+            <span class="model">AL-E957B</span>
+            <h3>Power Electronic Training System</h3>
+            <p>A comprehensive hands-on platform for power electronics training with real-time simulation capabilities.</p>
+            <ul>
+              <li>50MHz oscilloscope</li>
+              <li>Digital voltmeters & ammeters</li>
+              <li>Variable power supplies</li>
+              <li>Single & three-phase firing circuits</li>
+              <li>Chopper control circuits</li>
+              <li>Inverter firing circuits</li>
+              <li>MCB protection & snubber circuits</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>CATIA V5 & 3DEXPERIENCE</h3>
-            <p>Surface modeling, generative shape design, assembly design, and multi-disciplinary collaboration for complex products.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>Part Design</li>
-              <li>Assembly Design</li>
-              <li>Generative Shape Design</li>
-              <li>Drafting</li>
+
+          <!-- EV AC System -->
+          <div class="equipment-card">
+            <span class="model">EV-XL30</span>
+            <h3>EV Car Air Conditioning System Trainer</h3>
+            <p>Real BYD E5 air conditioning module with fault simulation and diagnostic capabilities.</p>
+            <ul>
+              <li>Real vehicle HVAC system</li>
+              <li>Electric compressor operation</li>
+              <li>10-inch diagnostic terminal</li>
+              <li>Fault simulation module</li>
+              <li>BMS integration</li>
+              <li>Interactive learning modules</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>Siemens NX</h3>
-            <p>Advanced CAD/CAM/CAE integration for high-complexity assemblies and manufacturing process planning.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>Modeling & Simulation</li>
-              <li>Synchronous Technology</li>
-              <li>CAM Programming</li>
-              <li>PLM Integration</li>
+
+          <!-- EV Control System -->
+          <div class="equipment-card">
+            <span class="model">EV-XL31</span>
+            <h3>EV Car Control System Trainer</h3>
+            <p>Electric power steering system training with original BYD E5 components.</p>
+            <ul>
+              <li>BYD E5 EPS components</li>
+              <li>Torque & corner sensors</li>
+              <li>EPS motor integration</li>
+              <li>Real-time fault simulation</li>
+              <li>CAN communication interface</li>
+              <li>Safety interlocks</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>AutoCAD & Inventor</h3>
-            <p>2D drafting, mechanical design, sheet metal, frame generator, and seamless interoperability.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>AutoCAD 2024</li>
-              <li>Inventor Professional</li>
-              <li>Vault integration</li>
-              <li>DWG standards</li>
+
+          <!-- EV Electrical System -->
+          <div class="equipment-card">
+            <span class="model">EV-XL32</span>
+            <h3>EV Car Electrical System Trainer</h3>
+            <p>Complete body electrical system with lighting, wipers, horn, and power windows.</p>
+            <ul>
+              <li>Real EV body components</li>
+              <li>Lighting system circuits</li>
+              <li>Wiper & horn systems</li>
+              <li>Power window circuits</li>
+              <li>Fault simulation module</li>
+              <li>Interactive circuit analysis</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>Fusion 360</h3>
-            <p>Cloud-based CAD/CAM with generative design, topology optimization, and collaborative workflows.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>Parametric modeling</li>
-              <li>Generative design</li>
-              <li>CAM workflows</li>
-              <li>Cloud collaboration</li>
+
+          <!-- BMS Trainer -->
+          <div class="equipment-card">
+            <span class="model">EV-XL28</span>
+            <h3>EV Car Battery Management System Trainer</h3>
+            <p>Original BYD E5 battery pack with charge/discharge management and diagnostics.</p>
+            <ul>
+              <li>BYD E5 battery pack</li>
+              <li>Charge/discharge management</li>
+              <li>Insulation detection</li>
+              <li>Fault simulation module</li>
+              <li>BMS integration</li>
+              <li>Safety interlocks</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>PTC Creo</h3>
-            <p>Robust parametric design for complex assemblies, surfacing, and simulation-driven development.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>Parametric modeling</li>
-              <li>Surfacing</li>
-              <li>Flexible modeling</li>
-              <li>Model-based definition</li>
+
+          <!-- BMS Simulation -->
+          <div class="equipment-card">
+            <span class="model">EV-XL-D23</span>
+            <h3>EV Car BMS Simulation Trainer</h3>
+            <p>Lithium iron phosphate battery pack with real-time monitoring and safety features.</p>
+            <ul>
+              <li>LiFePO4 battery pack</li>
+              <li>BMS hands-on training</li>
+              <li>Safety switches & emergency stop</li>
+              <li>Real-time monitoring display</li>
+              <li>Battery parameter analysis</li>
+            </ul>
+          </div>
+
+          <!-- HVAC Demo Kit -->
+          <div class="equipment-card">
+            <h3>HVAC Demo Kit</h3>
+            <p>Complete EV HVAC system simulation with heating and cooling functions.</p>
+            <ul>
+              <li>EV HVAC system simulation</li>
+              <li>Electric compressor operation</li>
+              <li>Heating & cooling functions</li>
+              <li>Refrigerant cycle demonstration</li>
+              <li>BMS integration</li>
+            </ul>
+          </div>
+
+          <!-- BMS Training Kit -->
+          <div class="equipment-card">
+            <h3>BMS Training Kit</h3>
+            <p>Comprehensive battery management training with multiple chemistry support.</p>
+            <ul>
+              <li>Li-Ion, LFP, Lead-Acid, NMC support</li>
+              <li>3S–16S configurations</li>
+              <li>10V–60V, 10A–100A range</li>
+              <li>CAN, RS485, UART, I²C communication</li>
+              <li>BatBot software interface</li>
+              <li>SOC/SOH monitoring</li>
+            </ul>
+          </div>
+
+          <!-- Power Steering -->
+          <div class="equipment-card">
+            <h3>EV Car Power Steering System Trainer</h3>
+            <p>Hands-on electric power steering (EPS) training with authentic components.</p>
+            <ul>
+              <li>BYD E5 EPS system</li>
+              <li>Torque & angle sensors</li>
+              <li>EPS motor integration</li>
+              <li>Fault simulation module</li>
+              <li>CAN communication</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3D Printing Equipment -->
+    <!-- Workbenches -->
     <section class="section-padding bg-soft">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Additive Manufacturing</div>
-          <h2>Multi-Technology 3D Printing</h2>
-          <p>Polymer and metal 3D printing systems for rapid prototyping, functional parts, and production tooling.</p>
+          <div class="kicker">Vehicle Workbenches</div>
+          <h2>Electric Vehicle Training Workbenches</h2>
+          <p>Complete diagnostic and maintenance setups for 2-wheeler and 3-wheeler EVs.</p>
         </div>
         
-        <div class="grid-2" style="gap:32px">
-          <!-- FDM Systems -->
-          <div class="card">
-            <div class="badge">Polymer</div>
-            <h3 style="margin-top:16px">FDM (Fused Deposition Modeling)</h3>
-            <p style="margin-bottom:16px">Industrial-grade FDM printers for functional prototypes, jigs, fixtures, and manufacturing aids.</p>
-            
-            <div style="background:rgba(29,53,87,0.05);padding:20px;border-radius:12px;margin-bottom:16px">
-              <h4 style="color:#1D3557;font-size:16px;margin-bottom:12px">Equipment</h4>
-              <ul style="list-style:none;display:grid;gap:8px;margin:0;padding:0">
-                <li style="color:#6B7280">• Stratasys F370 (build: 355×305×305mm)</li>
-                <li style="color:#6B7280">• Ultimaker S5 Pro Bundle (build: 330×240×300mm)</li>
-                <li style="color:#6B7280">• Raise3D Pro2 Plus (build: 305×305×605mm)</li>
-              </ul>
-            </div>
-            
-            <div style="background:rgba(29,53,87,0.05);padding:20px;border-radius:12px">
-              <h4 style="color:#1D3557;font-size:16px;margin-bottom:12px">Materials</h4>
-              <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <span class="badge" style="font-size:11px">ABS</span>
-                <span class="badge" style="font-size:11px">ASA</span>
-                <span class="badge" style="font-size:11px">Nylon</span>
-                <span class="badge" style="font-size:11px">PC</span>
-                <span class="badge" style="font-size:11px">PETG</span>
-                <span class="badge" style="font-size:11px">TPU</span>
-              </div>
-            </div>
+        <div class="grid-2">
+          <div class="equipment-card">
+            <h3>Electric 2-Wheeler Training Workbench</h3>
+            <p>Comprehensive two-wheeler EV training platform with real-time monitoring.</p>
+            <ul>
+              <li>Lithium-ion battery system</li>
+              <li>Brushless DC motor</li>
+              <li>Smart dashboard integration</li>
+              <li>Real-time data monitoring</li>
+              <li>Battery performance testing</li>
+              <li>Hands-on maintenance training</li>
+            </ul>
           </div>
 
-          <!-- SLA Systems -->
-          <div class="card">
-            <div class="badge">Polymer</div>
-            <h3 style="margin-top:16px">SLA (Stereolithography)</h3>
-            <p style="margin-bottom:16px">High-resolution resin printing for detailed prototypes, master patterns, and smooth-surface parts.</p>
-            
-            <div style="background:rgba(29,53,87,0.05);padding:20px;border-radius:12px;margin-bottom:16px">
-              <h4 style="color:#1D3557;font-size:16px;margin-bottom:12px">Equipment</h4>
-              <ul style="list-style:none;display:grid;gap:8px;margin:0;padding:0">
-                <li style="color:#6B7280">• Formlabs Form 3+ (build: 145×145×185mm)</li>
-                <li style="color:#6B7280">• Anycubic Photon M3 Max (build: 298×298×164mm)</li>
-              </ul>
-            </div>
-            
-            <div style="background:rgba(29,53,87,0.05);padding:20px;border-radius:12px">
-              <h4 style="color:#1D3557;font-size:16px;margin-bottom:12px">Materials</h4>
-              <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <span class="badge" style="font-size:11px">Standard Resin</span>
-                <span class="badge" style="font-size:11px">Tough Resin</span>
-                <span class="badge" style="font-size:11px">Flexible Resin</span>
-                <span class="badge" style="font-size:11px">Castable</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- SLS Systems -->
-          <div class="card">
-            <div class="badge">Polymer</div>
-            <h3 style="margin-top:16px">SLS (Selective Laser Sintering)</h3>
-            <p style="margin-bottom:16px">Support-free powder bed fusion for strong, functional parts with excellent mechanical properties.</p>
-            
-            <div style="background:rgba(29,53,87,0.05);padding:20px;border-radius:12px;margin-bottom:16px">
-              <h4 style="color:#1D3557;font-size:16px;margin-bottom:12px">Equipment</h4>
-              <ul style="list-style:none;display:grid;gap:8px;margin:0;padding:0">
-                <li style="color:#6B7280">• Sinterit NILS 480 (build: 200×200×260mm)</li>
-                <li style="color:#6B7280">• Formlabs Fuse 1+ (build: 165×165×300mm)</li>
-              </ul>
-            </div>
-            
-            <div style="background:rgba(29,53,87,0.05);padding:20px;border-radius:12px">
-              <h4 style="color:#1D3557;font-size:16px;margin-bottom:12px">Materials</h4>
-              <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <span class="badge" style="font-size:11px">PA11 (Nylon 11)</span>
-                <span class="badge" style="font-size:11px">PA12 (Nylon 12)</span>
-                <span class="badge" style="font-size:11px">TPU Powder</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Metal AM -->
-          <div class="card">
-            <div class="badge">Metal</div>
-            <h3 style="margin-top:16px">Metal Additive Manufacturing</h3>
-            <p style="margin-bottom:16px">Direct metal laser sintering (DMLS) for production tooling, conformal cooling, and high-performance parts.</p>
-            
-            <div style="background:rgba(230,57,70,0.05);padding:20px;border-radius:12px;margin-bottom:16px">
-              <h4 style="color:#E63946;font-size:16px;margin-bottom:12px">Equipment</h4>
-              <ul style="list-style:none;display:grid;gap:8px;margin:0;padding:0">
-                <li style="color:#6B7280">• EOS M 290 (build: 250×250×325mm)</li>
-                <li style="color:#6B7280">• Desktop Metal Studio System 2</li>
-              </ul>
-            </div>
-            
-            <div style="background:rgba(230,57,70,0.05);padding:20px;border-radius:12px">
-              <h4 style="color:#E63946;font-size:16px;margin-bottom:12px">Materials</h4>
-              <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <span class="badge" style="font-size:11px;background:rgba(230,57,70,0.1);border-color:rgba(230,57,70,0.2)">SS 316L</span>
-                <span class="badge" style="font-size:11px;background:rgba(230,57,70,0.1);border-color:rgba(230,57,70,0.2)">AlSi10Mg</span>
-                <span class="badge" style="font-size:11px;background:rgba(230,57,70,0.1);border-color:rgba(230,57,70,0.2)">Ti-6Al-4V</span>
-                <span class="badge" style="font-size:11px;background:rgba(230,57,70,0.1);border-color:rgba(230,57,70,0.2)">Inconel 625</span>
-              </div>
-            </div>
+          <div class="equipment-card">
+            <h3>Electric 3-Wheeler Training Workbench</h3>
+            <p>Diagnostic and maintenance platform for electric three-wheelers.</p>
+            <ul>
+              <li>Real-time data monitoring</li>
+              <li>Battery performance testing</li>
+              <li>Motor diagnostics</li>
+              <li>Controller analysis</li>
+              <li>Modular part replacement</li>
+              <li>Fault diagnosis training</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Post-Processing -->
+    <!-- EV Chargers -->
     <section class="section-padding">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Post-Processing</div>
-          <h2>Finishing & Quality Control</h2>
-          <p>Complete post-processing capabilities to deliver production-ready parts with professional finishes.</p>
+          <div class="kicker">Charging Infrastructure</div>
+          <h2>Electric Vehicle Chargers</h2>
+          <p>Level 1, 2, and 3 charging systems with complete safety features and mobile app integration.</p>
         </div>
         
         <div class="grid-3">
-          <div class="card">
-            <h3>Surface Finishing</h3>
-            <p>Sanding, polishing, vapor smoothing, and coating for improved aesthetics and surface quality.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>Manual finishing</li>
-              <li>Vapor smoothing</li>
-              <li>Primer & paint</li>
-              <li>Clear coating</li>
+          <div class="equipment-card">
+            <h3>Level 1 AC Charger</h3>
+            <p>3.3 kW – 10 kW three-phase charging solution</p>
+            <ul>
+              <li>Input: Three Phase 415V</li>
+              <li>Output: 240V/socket</li>
+              <li>3 charging outlets</li>
+              <li>Overcurrent/overvoltage protection</li>
+              <li>Emergency stop button</li>
+              <li>Mobile app (Android & iOS)</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>Heat Treatment</h3>
-            <p>Annealing, stress relief, and thermal processing for improved mechanical properties.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>Metal heat treatment</li>
-              <li>Polymer annealing</li>
-              <li>Stress relief</li>
-              <li>Dimensional stability</li>
+
+          <div class="equipment-card">
+            <h3>Level 2 AC Charger</h3>
+            <p>7.4 kW – 22 kW fast AC charging</p>
+            <ul>
+              <li>Output: 7.4kW, 11kW, 22kW</li>
+              <li>1 or 2 charging outlets</li>
+              <li>15A, 32A rated current</li>
+              <li>In-built metering</li>
+              <li>Ground fault protection</li>
+              <li>Mobile app integration</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>Assembly & Testing</h3>
-            <p>Threaded inserts, adhesive bonding, assembly validation, and functional testing.</p>
-            <ul class="list" style="margin-top:16px">
-              <li>Insert installation</li>
-              <li>Bonding & joining</li>
-              <li>Fit verification</li>
-              <li>Functional testing</li>
+
+          <div class="equipment-card">
+            <h3>Level 3 DC Fast Charger</h3>
+            <p>15 kW – 400 kW DC rapid charging</p>
+            <ul>
+              <li>Output: 15-400 kW</li>
+              <li>100A, 200A rated current</li>
+              <li>CCS, CHAdeMO connectors</li>
+              <li>In-built metering</li>
+              <li>Emergency stop</li>
+              <li>Cloud-based monitoring</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Measurement & Inspection -->
+    <!-- Automation Equipment -->
     <section class="section-padding bg-soft">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Quality Assurance</div>
-          <h2>Measurement & Inspection Tools</h2>
-          <p>Precision measuring equipment for dimensional verification and quality control.</p>
+          <div class="kicker">Automation & Industry 4.0</div>
+          <h2>Industrial Automation Training Equipment</h2>
+          <p>Pneumatic, hydraulic, PLC, and Industry 4.0 training systems for technical education.</p>
         </div>
         
         <div class="grid-3">
-          <div class="card">
-            <h3>Digital Measuring Tools</h3>
-            <ul class="list">
-              <li>Digital calipers (0.01mm accuracy)</li>
-              <li>Micrometers (0.001mm accuracy)</li>
-              <li>Height gauges</li>
-              <li>Pin & bore gauges</li>
-              <li>Thread gauges</li>
+          <div class="equipment-card">
+            <h3>Pneumatic Trainer Kit</h3>
+            <p>Complete pneumatic automation training with Mitsubishi PLC.</p>
+            <ul>
+              <li>Mitsubishi PLC (16 Digital I/O)</li>
+              <li>ISO standard valves</li>
+              <li>Compact movable frame</li>
+              <li>Name tagging for components</li>
+              <li>Interdisciplinary use</li>
+              <li>15+ practicals</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>Optical Measurement</h3>
-            <ul class="list">
-              <li>Profile projectors</li>
-              <li>Microscopes (digital)</li>
-              <li>Surface roughness tester</li>
-              <li>Coordinate measuring</li>
+
+          <div class="equipment-card">
+            <h3>Hydraulic Trainer Kit</h3>
+            <p>Transparent hydraulic system with IoT capabilities.</p>
+            <ul>
+              <li>Transparent valves & hoses</li>
+              <li>Single-phase power pack</li>
+              <li>15+ hands-on practicals</li>
+              <li>IoT-based experiments</li>
+              <li>Glossy extrusion frame</li>
+              <li>Component mounting system</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>3D Scanning</h3>
-            <ul class="list">
-              <li>Structured light scanner</li>
-              <li>Laser scanner</li>
-              <li>Reverse engineering</li>
-              <li>Dimensional inspection</li>
-              <li>As-built verification</li>
+
+          <div class="equipment-card">
+            <h3>PLC Module Kit</h3>
+            <p>Programmable Logic Controller training platform.</p>
+            <ul>
+              <li>20+ educational experiments</li>
+              <li>Real-time hardware simulation</li>
+              <li>Compact table-mount design</li>
+              <li>Customizable programs</li>
+              <li>Two working sides</li>
+              <li>User-friendly interface</li>
+            </ul>
+          </div>
+
+          <div class="equipment-card">
+            <h3>Industry 4.0 Educational Setup</h3>
+            <p>Complete smart manufacturing demonstration system.</p>
+            <ul>
+              <li>Independent stations</li>
+              <li>Color & shape sorting</li>
+              <li>Assembly & inspection stations</li>
+              <li>HMI for system monitoring</li>
+              <li>IoT-based connectivity</li>
+              <li>Flexible programming</li>
+            </ul>
+          </div>
+
+          <div class="equipment-card">
+            <h3>AC EVSE Test Kit</h3>
+            <p>Comprehensive EV charger testing equipment.</p>
+            <ul>
+              <li>Proximity & control pilot testing</li>
+              <li>Charging state verification</li>
+              <li>Protective earth testing</li>
+              <li>Cable current setting</li>
+              <li>CP waveform capture</li>
+              <li>IEC 61851-1 compliant</li>
+            </ul>
+          </div>
+
+          <div class="equipment-card">
+            <h3>Battery Charger & Discharger</h3>
+            <p>Multi-chemistry battery testing system.</p>
+            <ul>
+              <li>Li-Ion, LFP, Lead-Acid support</li>
+              <li>AC (L1/L2) & DC fast modes</li>
+              <li>CC, CV, trickle stages</li>
+              <li>Overcharge/overcurrent protection</li>
+              <li>Thermal management</li>
+              <li>Multiple connector types</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- IT Infrastructure -->
+    <!-- Brake System -->
     <section class="section-padding">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">IT Infrastructure</div>
-          <h2>Computing & Collaboration</h2>
-          <p>High-performance workstations, secure data management, and collaborative project tools.</p>
+          <div class="kicker">Automotive Systems</div>
+          <h2>Additional Training Equipment</h2>
         </div>
         
-        <div class="grid-2" style="gap:32px">
-          <div class="card">
-            <h3>CAD Workstations</h3>
-            <p style="margin-bottom:16px">High-performance engineering workstations with professional-grade graphics and multi-monitor setups.</p>
-            <ul class="list">
-              <li>Intel Xeon / AMD Threadripper CPUs</li>
-              <li>NVIDIA Quadro RTX GPUs</li>
-              <li>64GB+ RAM</li>
-              <li>NVMe SSD storage</li>
-              <li>Dual 4K monitors</li>
+        <div class="grid-2">
+          <div class="equipment-card">
+            <h3>Disc/Drum Brake System on Stand</h3>
+            <p>ABS braking system demonstration using Volkswagen Santana components.</p>
+            <ul>
+              <li>ABS braking simulation</li>
+              <li>ABS pump & sensors</li>
+              <li>Motorized brake disc</li>
+              <li>Emergency braking scenarios</li>
+              <li>Real vehicle components</li>
+              <li>Hands-on diagnostics</li>
             </ul>
           </div>
-          
-          <div class="card">
-            <h3>Data Management</h3>
-            <p style="margin-bottom:16px">Secure file servers, revision control, backup systems, and collaborative PDM platforms.</p>
-            <ul class="list">
-              <li>Redundant NAS storage</li>
-              <li>Daily automated backups</li>
-              <li>PDM/PLM integration</li>
-              <li>Version control systems</li>
-              <li>Secure client portals</li>
+
+          <div class="equipment-card">
+            <h3>Launch Tool Kit Trolley</h3>
+            <p>Professional tool storage for automotive and EV maintenance labs.</p>
+            <ul>
+              <li>Heavy-duty steel body</li>
+              <li>7 sliding drawers</li>
+              <li>Centralized locking system</li>
+              <li>Smooth swivel casters</li>
+              <li>Durable finish</li>
+              <li>Launch brand quality</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section-padding bg-soft">
+    <!-- CTA -->
+    <section class="section-padding bg-gradient">
       <div class="container">
-        <div class="card" style="background:linear-gradient(135deg,#E63946,#FF6B6B);border:none;color:#fff;padding:64px 48px;text-align:center">
-          <h2 style="color:#fff;margin-bottom:16px;font-size:clamp(32px,4vw,42px)">Need Advanced Manufacturing Support?</h2>
-          <p style="color:rgba(255,255,255,0.95);font-size:18px;max-width:700px;margin:0 auto 32px">Our equipment and expertise are ready to support your next project. Let's discuss your requirements.</p>
-          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-            <a href="index.html#contact" class="btn btn-primary" style="background:#fff;color:#E63946">Start a Project</a>
-            <a href="services.html" class="btn btn-secondary" style="background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-color:rgba(255,255,255,0.3);color:#fff">View Services</a>
-          </div>
+        <div class="cta-content">
+          <h2>Setup Your Academic Lab Today</h2>
+          <p>Contact us for custom lab configurations, bulk orders, and educational institution pricing.</p>
+          <a href="index.html#contact" class="btn btn-primary">Request Equipment Catalog</a>
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
           <h3>PSP TechnoCADD</h3>
-          <p style="margin-top:12px;line-height:1.8">Precision-driven engineering design, R&D support, and advanced 3D printing solutions. ISO 9001:2015 certified.</p>
+          <p style="margin-top:12px;line-height:1.8">Tech Labs. Crafting Tomorrow's Innovations Today. ISO 9001:2015 certified provider of academic lab setups, EV training systems, and advanced engineering solutions.</p>
           <div style="margin-top:16px">
-            <span class="badge" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#fff">ISO 9001:2015</span>
+            <span class="badge">ISO 9001:2015</span>
+            <span class="badge">CE Certified</span>
           </div>
         </div>
         <div class="footer-section">
@@ -434,16 +514,17 @@
         <div class="footer-section">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html">CAD Design</a></li>
-            <li><a href="services.html">3D Printing</a></li>
-            <li><a href="services.html">Tooling & Fixtures</a></li>
-            <li><a href="services.html">Engineering Consulting</a></li>
+            <li><a href="services.html#cad-design">CAD Design</a></li>
+            <li><a href="services.html#3d-printing">3D Printing</a></li>
+            <li><a href="services.html#academic-labs">Academic Labs</a></li>
+            <li><a href="services.html#tooling">Tooling & Fixtures</a></li>
+            <li><a href="services.html#consulting">R&D & Consulting</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Contact</h4>
-          <p>Chhatrapati Sambhajinager<br>Maharashtra 431003, India</p>
-          <p style="margin-top:12px"><strong>Phone:</strong> +91 75885 37452</p>
+          <p>Chikalthana MIDC<br>Chhatrapati Sambhajinagar 431006<br>Maharashtra, India</p>
+          <p style="margin-top:12px"><strong>Phone:</strong> +91 70300 10555</p>
           <p><strong>Email:</strong> contact@technocaddapl.com</p>
         </div>
       </div>
