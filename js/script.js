@@ -188,3 +188,94 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('%c PSP TechnoCADD ', 'background: #E63946; color: white; font-size: 20px; padding: 10px;');
   console.log('%c Engineering Excellence, Delivered ', 'background: #1D3557; color: white; font-size: 14px; padding: 5px;');
 });
+// ===================================
+// DOWNLOAD MULTIPLE BROCHURES
+// ===================================
+function downloadAllBrochures() {
+  // Array of brochure files
+  const brochures = [
+    {
+      url: 'assets/PSP-TechnoCADD-Main-Brochure.pdf',
+      filename: 'PSP-TechnoCADD-Company-Profile.pdf'
+    },
+    {
+      url: 'assets/PSP-3D-Printing-Brochure.pdf',
+      filename: 'PSP-TechnoCADD-3D-Printing-Services.pdf'
+    },
+    {
+      url: 'assets/PSP-EV-Training-Systems-Brochure.pdf',
+      filename: 'PSP-TechnoCADD-EV-Training-Equipment.pdf'
+    }
+  ];
+
+  // Download each brochure with a slight delay to prevent browser blocking
+  brochures.forEach((brochure, index) => {
+    setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = brochure.url;
+      link.download = brochure.filename;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, index * 500); // 500ms delay between each download
+  });
+
+  // Show success message
+  showDownloadNotification();
+}
+
+// Show download notification
+function showDownloadNotification() {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.innerHTML = `
+    <div style="position: fixed; top: 100px; right: 20px; z-index: 10000; background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(29, 53, 87, 0.2); border-left: 4px solid #E63946; animation: slideIn 0.3s ease-out;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #E63946 0%, #ff6b6b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">✓</div>
+        <div>
+          <div style="font-weight: 700; color: #1D3557; font-size: 16px; margin-bottom: 4px;">Download Started!</div>
+          <div style="color: #6B7280; font-size: 14px;">3 brochures are downloading...</div>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Remove notification after 4 seconds
+  setTimeout(() => {
+    notification.style.opacity = '0';
+    notification.style.transition = 'opacity 0.3s ease-out';
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 300);
+  }, 4000);
+}
+
+// Add animation styles
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes slideIn {
+    from {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// Attach to all download brochure buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const downloadButtons = document.querySelectorAll('.download-brochures');
+  downloadButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      downloadAllBrochures();
+    });
+  });
+});
