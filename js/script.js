@@ -1,6 +1,29 @@
-// PSP TechnoCADD - Enhanced Interactive JavaScript
+// Force video autoplay - Chrome/Safari fix
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.getElementById('heroVideo');
+  
+  if (video) {
+    // Force muted and play
+    video.muted = true;
+    video.setAttribute('muted', '');
+    
+    // Try to play
+    const playPromise = video.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        console.log('Video playing successfully');
+      }).catch(error => {
+        console.log('Autoplay prevented, trying manual trigger:', error);
+        // Fallback: play on any user interaction
+        document.body.addEventListener('click', function() {
+          video.play();
+        }, { once: true });
+      });
+    }
+  }
+});
 
-// DOM Elements
 const navbar = document.getElementById('navbar');
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navMenu = document.getElementById('navMenu');
