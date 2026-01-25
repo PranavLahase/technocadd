@@ -150,16 +150,22 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // ===================================
-  // SMOOTH SCROLL FOR ANCHOR LINKS
+  // SMOOTH SCROLL FOR ANCHOR LINKS (FIXED)
   // ===================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      if (href && href !== '#') {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Only process valid anchors (not empty or just '#')
+      if (href && href.length > 1 && href !== '#') {
+        try {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        } catch (error) {
+          console.error('Invalid selector:', href);
         }
       }
     });
@@ -188,13 +194,45 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // ===================================
-  // DOWNLOAD MULTIPLE BROCHURES (GOOGLE DRIVE)
+  // DOWNLOAD BROCHURES
   // ===================================
+  console.log('🔍 Looking for download buttons...');
   const downloadButtons = document.querySelectorAll('.download-brochures');
-  downloadButtons.forEach(button => {
+  console.log('✅ Found buttons:', downloadButtons.length);
+  
+  downloadButtons.forEach((button, index) => {
+    console.log(`Button ${index + 1}:`, button);
+    
     button.addEventListener('click', function(e) {
       e.preventDefault();
-      downloadAllBrochures();
+      console.log('🚀 Download button clicked!');
+      
+      // Google Drive direct download links
+      const brochures = [
+        {
+          url: 'https://drive.google.com/uc?export=download&id=11T_5IOTzFRYlujtBrgdKcdRMB34exzEY',
+          name: 'Company Profile'
+        },
+        {
+          url: 'https://drive.google.com/uc?export=download&id=145n7WKwmRRKNXp5foOs00abnjSjssUKw',
+          name: '3D Printing Services'
+        },
+        {
+          url: 'https://drive.google.com/uc?export=download&id=1CRFcbYU4yBQCMrxoykqgom5t3DLViaJW',
+          name: 'EV Training Equipment'
+        }
+      ];
+      
+      // Show notification
+      showDownloadNotification();
+      
+      // Open each link with delay
+      brochures.forEach((brochure, idx) => {
+        setTimeout(() => {
+          console.log(`📥 Opening: ${brochure.name}`);
+          window.open(brochure.url, '_blank');
+        }, idx * 1000);
+      });
     });
   });
   
@@ -205,45 +243,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ===================================
-// DOWNLOAD ALL BROCHURES FUNCTION
+// DOWNLOAD NOTIFICATION
 // ===================================
-function downloadAllBrochures() {
-  // Google Drive direct download links
-  const brochures = [
-    {
-      url: 'https://drive.google.com/uc?export=download&id=11T_5IOTzFRYlujtBrgdKcdRMB34exzEY',
-      filename: 'PSP-TechnoCADD-Company-Profile.pdf'
-    },
-    {
-      url: 'https://drive.google.com/uc?export=download&id=145n7WKwmRRKNXp5foOs00abnjSjssUKw',
-      filename: 'PSP-TechnoCADD-3D-Printing-Services.pdf'
-    },
-    {
-      url: 'https://drive.google.com/uc?export=download&id=1CRFcbYU4yBQCMrxoykqgom5t3DLViaJW',
-      filename: 'PSP-TechnoCADD-EV-Training-Equipment.pdf'
-    }
-  ];
-
-  // Download each brochure with delay to prevent browser blocking
-  brochures.forEach((brochure, index) => {
-    setTimeout(() => {
-      const link = document.createElement('a');
-      link.href = brochure.url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }, index * 800); // 800ms delay between each download
-  });
-
-  // Show success notification
-  showDownloadNotification();
-}
-
-
-// Show download notification
 function showDownloadNotification() {
   const notification = document.createElement('div');
   notification.innerHTML = `
@@ -252,7 +253,7 @@ function showDownloadNotification() {
         <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #E63946 0%, #ff6b6b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">✓</div>
         <div>
           <div style="font-weight: 700; color: #1D3557; font-size: 16px; margin-bottom: 4px;">Download Started!</div>
-          <div style="color: #6B7280; font-size: 14px;">3 brochures are downloading...</div>
+          <div style="color: #6B7280; font-size: 14px;">Opening 3 brochures in new tabs...</div>
         </div>
       </div>
     </div>
@@ -264,13 +265,15 @@ function showDownloadNotification() {
     notification.style.opacity = '0';
     notification.style.transition = 'opacity 0.3s ease-out';
     setTimeout(() => {
-      document.body.removeChild(notification);
+      if (notification.parentNode) {
+        document.body.removeChild(notification);
+      }
     }, 300);
   }, 4000);
 }
 
 
-// Add slideIn animation CSS
+// Add slideIn animation
 const animationStyle = document.createElement('style');
 animationStyle.textContent = `
   @keyframes slideIn {
