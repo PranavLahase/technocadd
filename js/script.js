@@ -154,10 +154,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // ===================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const href = this.getAttribute('href');
+      if (href && href !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   });
@@ -184,50 +187,64 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+  // ===================================
+  // DOWNLOAD MULTIPLE BROCHURES (GOOGLE DRIVE)
+  // ===================================
+  const downloadButtons = document.querySelectorAll('.download-brochures');
+  downloadButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      downloadAllBrochures();
+    });
+  });
+  
   // Console branding
   console.log('%c PSP TechnoCADD ', 'background: #E63946; color: white; font-size: 20px; padding: 10px;');
   console.log('%c Engineering Excellence, Delivered ', 'background: #1D3557; color: white; font-size: 14px; padding: 5px;');
 });
+
+
 // ===================================
-// DOWNLOAD MULTIPLE BROCHURES
+// DOWNLOAD ALL BROCHURES FUNCTION
 // ===================================
 function downloadAllBrochures() {
-  // Array of brochure files
+  // Google Drive direct download links
   const brochures = [
     {
-      url: 'assets/PSP-TechnoCADD-Main-Brochure.pdf',
+      url: 'https://drive.google.com/uc?export=download&id=11T_5IOTzFRYlujtBrgdKcdRMB34exzEY',
       filename: 'PSP-TechnoCADD-Company-Profile.pdf'
     },
     {
-      url: 'assets/PSP-3D-Printing-Brochure.pdf',
+      url: 'https://drive.google.com/uc?export=download&id=145n7WKwmRRKNXp5foOs00abnjSjssUKw',
       filename: 'PSP-TechnoCADD-3D-Printing-Services.pdf'
     },
     {
-      url: 'assets/PSP-EV-Training-Systems-Brochure.pdf',
+      url: 'https://drive.google.com/uc?export=download&id=1CRFcbYU4yBQCMrxoykqgom5t3DLViaJW',
       filename: 'PSP-TechnoCADD-EV-Training-Equipment.pdf'
     }
   ];
 
-  // Download each brochure with a slight delay to prevent browser blocking
+  // Download each brochure with delay to prevent browser blocking
   brochures.forEach((brochure, index) => {
     setTimeout(() => {
       const link = document.createElement('a');
       link.href = brochure.url;
-      link.download = brochure.filename;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
       link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    }, index * 500); // 500ms delay between each download
+    }, index * 800); // 800ms delay between each download
   });
 
-  // Show success message
+  // Show success notification
   showDownloadNotification();
 }
 
+
 // Show download notification
 function showDownloadNotification() {
-  // Create notification element
   const notification = document.createElement('div');
   notification.innerHTML = `
     <div style="position: fixed; top: 100px; right: 20px; z-index: 10000; background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(29, 53, 87, 0.2); border-left: 4px solid #E63946; animation: slideIn 0.3s ease-out;">
@@ -243,7 +260,6 @@ function showDownloadNotification() {
   
   document.body.appendChild(notification);
   
-  // Remove notification after 4 seconds
   setTimeout(() => {
     notification.style.opacity = '0';
     notification.style.transition = 'opacity 0.3s ease-out';
@@ -253,9 +269,10 @@ function showDownloadNotification() {
   }, 4000);
 }
 
-// Add animation styles
-const style = document.createElement('style');
-style.textContent = `
+
+// Add slideIn animation CSS
+const animationStyle = document.createElement('style');
+animationStyle.textContent = `
   @keyframes slideIn {
     from {
       transform: translateX(400px);
@@ -267,15 +284,4 @@ style.textContent = `
     }
   }
 `;
-document.head.appendChild(style);
-
-// Attach to all download brochure buttons
-document.addEventListener('DOMContentLoaded', function() {
-  const downloadButtons = document.querySelectorAll('.download-brochures');
-  downloadButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      downloadAllBrochures();
-    });
-  });
-});
+document.head.appendChild(animationStyle);
