@@ -150,32 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // ===================================
-  // SMOOTH SCROLL FOR ANCHOR LINKS (FIXED)
-  // ===================================
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    
-    // Skip empty anchors or just '#'
-    if (!href || href === '#' || href.length <= 1) {
-      return; // Do nothing
-    }
-    
-    // Try to find target safely
-    try {
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    } catch (error) {
-      // Ignore invalid selectors
-      console.warn('Invalid anchor:', href);
-    }
-  });
-});
-  
-  // ===================================
   // BUTTON RIPPLE EFFECT
   // ===================================
   document.querySelectorAll('.btn').forEach(button => {
@@ -197,98 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // ===================================
-  // DOWNLOAD BROCHURES
-  // ===================================
-  console.log('🔍 Looking for download buttons...');
-  const downloadButtons = document.querySelectorAll('.download-brochures');
-  console.log('✅ Found buttons:', downloadButtons.length);
-  
-  downloadButtons.forEach((button, index) => {
-    console.log(`Button ${index + 1}:`, button);
-    
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      console.log('🚀 Download button clicked!');
-      
-      // Google Drive direct download links
-      const brochures = [
-        {
-          url: 'https://drive.google.com/uc?export=download&id=11T_5IOTzFRYlujtBrgdKcdRMB34exzEY',
-          name: 'Company Profile'
-        },
-        {
-          url: 'https://drive.google.com/uc?export=download&id=145n7WKwmRRKNXp5foOs00abnjSjssUKw',
-          name: '3D Printing Services'
-        },
-        {
-          url: 'https://drive.google.com/uc?export=download&id=1CRFcbYU4yBQCMrxoykqgom5t3DLViaJW',
-          name: 'EV Training Equipment'
-        }
-      ];
-      
-      // Show notification
-      showDownloadNotification();
-      
-      // Open each link with delay
-      brochures.forEach((brochure, idx) => {
-        setTimeout(() => {
-          console.log(`📥 Opening: ${brochure.name}`);
-          window.open(brochure.url, '_blank');
-        }, idx * 1000);
-      });
-    });
-  });
-  
   // Console branding
   console.log('%c PSP TechnoCADD ', 'background: #E63946; color: white; font-size: 20px; padding: 10px;');
   console.log('%c Engineering Excellence, Delivered ', 'background: #1D3557; color: white; font-size: 14px; padding: 5px;');
 });
-
-
-// ===================================
-// DOWNLOAD NOTIFICATION
-// ===================================
-function showDownloadNotification() {
-  const notification = document.createElement('div');
-  notification.innerHTML = `
-    <div style="position: fixed; top: 100px; right: 20px; z-index: 10000; background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(29, 53, 87, 0.2); border-left: 4px solid #E63946; animation: slideIn 0.3s ease-out;">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #E63946 0%, #ff6b6b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">✓</div>
-        <div>
-          <div style="font-weight: 700; color: #1D3557; font-size: 16px; margin-bottom: 4px;">Download Started!</div>
-          <div style="color: #6B7280; font-size: 14px;">Opening 3 brochures in new tabs...</div>
-        </div>
-      </div>
-    </div>
-  `;
-  
-  document.body.appendChild(notification);
-  
-  setTimeout(() => {
-    notification.style.opacity = '0';
-    notification.style.transition = 'opacity 0.3s ease-out';
-    setTimeout(() => {
-      if (notification.parentNode) {
-        document.body.removeChild(notification);
-      }
-    }, 300);
-  }, 4000);
-}
-
-
-// Add slideIn animation
-const animationStyle = document.createElement('style');
-animationStyle.textContent = `
-  @keyframes slideIn {
-    from {
-      transform: translateX(400px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-`;
-document.head.appendChild(animationStyle);
