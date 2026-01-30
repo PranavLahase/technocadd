@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // ===================================
-  // CONTACT FORM
+  // CONTACT FORM HANDLER (GOOGLE SHEETS)
   // ===================================
   const contactForm = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
@@ -115,36 +115,68 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
+      // Get form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+      };
       
+      // Get submit button
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
       
       try {
-        const response = await fetch('/api/contact', {
+        // Send to Google Apps Script
+        const response = await fetch('https://script.google.com/macros/s/AKfycbx3PexorUuMFSTFeCOY5TNCkRKGom8aNGJwQPkjnoaZKFgBRRcMnXtSLTpZ5-CMmZ26/exec', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
         });
         
-        const result = await response.json();
+        // Show success message
+        formMessage.textContent = '✓ Thank you! We\'ll get back to you within 24-48 hours.';
+        formMessage.className = 'form-message success';
+        formMessage.style.display = 'block';
+        formMessage.style.padding = '16px';
+        formMessage.style.marginTop = '20px';
+        formMessage.style.borderRadius = '8px';
+        formMessage.style.backgroundColor = '#d4edda';
+        formMessage.style.color = '#155724';
+        formMessage.style.border = '1px solid #c3e6cb';
+        formMessage.style.fontWeight = '500';
         
-        if (response.ok) {
-          formMessage.textContent = 'Thank you! We\'ll get back to you within 24-48 hours.';
-          formMessage.className = 'form-message success';
-          contactForm.reset();
-        } else {
-          throw new Error(result.error || 'Something went wrong');
-        }
+        // Reset form
+        contactForm.reset();
+        
       } catch (error) {
-        formMessage.textContent = 'Failed to send message. Please email us directly at contact@technocaddapl.com';
+        // Show error message
+        formMessage.textContent = '✗ Something went wrong. Please email us directly at contact@technocaddapl.com';
         formMessage.className = 'form-message error';
+        formMessage.style.display = 'block';
+        formMessage.style.padding = '16px';
+        formMessage.style.marginTop = '20px';
+        formMessage.style.borderRadius = '8px';
+        formMessage.style.backgroundColor = '#f8d7da';
+        formMessage.style.color = '#721c24';
+        formMessage.style.border = '1px solid #f5c6cb';
+        formMessage.style.fontWeight = '500';
       } finally {
+        // Reset button
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+          formMessage.style.display = 'none';
+        }, 5000);
       }
     });
   }
