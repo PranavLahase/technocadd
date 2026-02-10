@@ -89,6 +89,42 @@
       color: var(--blue);
       font-family: var(--font-heading);
     }
+    
+    /* Service cards with images - no modal functionality */
+    .services-overview-card {
+      text-decoration: none;
+      display: block;
+    }
+    
+    .services-overview-card .card-image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .services-overview-card .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .services-overview-card:hover .card-image img {
+      transform: scale(1.1);
+    }
+    
+    .services-overview-card .card-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(29, 53, 87, 0.6), transparent);
+    }
   </style>
 </head>
 
@@ -115,19 +151,18 @@
         
         <!-- Navigation Menu -->
         <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="equipment.html">Equipment</a></li>
             <li><a href="team.html">Team</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="careers.html">Careers</a></li>
-            <li><a href="#contact" class="btn-contact">Contact</a></li>
+            <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
         </ul>
     </div>
 </nav>
-
 
   <!-- Page Header -->
   <header class="page-header" style="background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); padding: 140px 0 80px; text-align: center; color: white;">
@@ -143,7 +178,12 @@
     <section class="section-padding">
       <div class="container">
         <div class="grid-3">
-          <a href="#cad-design" class="card" style="text-decoration: none;">
+          
+          <!-- CAD Design Card -->
+          <a href="#cad-design" class="card services-overview-card">
+            <div class="card-image">
+              <img src="assets/cad-design.jpg" alt="CAD Design Engineering">
+            </div>
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="3"/>
@@ -155,43 +195,11 @@
             <span class="card-link">View Details →</span>
           </a>
 
-          <a href="#3d-printing" class="card" style="text-decoration: none;">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" stroke="currentColor" stroke-width="3"/>
-                <circle cx="32" cy="32" r="8" fill="currentColor"/>
-              </svg>
+          <!-- Sheet Metal Card -->
+          <a href="#sheet-metal" class="card services-overview-card">
+            <div class="card-image">
+              <img src="assets/sheet-metal.jpg" alt="Sheet Metal Design">
             </div>
-            <h3>Advanced 3D Printing</h3>
-            <p>FDM, SLA, SLS polymer, and metal additive manufacturing.</p>
-            <span class="card-link">View Details →</span>
-          </a>
-
-          <a href="#academic-labs" class="card" style="text-decoration: none;">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
-                <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="3"/>
-              </svg>
-            </div>
-            <h3>Academic Lab Development</h3>
-            <p>EV training systems, robotics labs, Industry 4.0, automation equipment.</p>
-            <span class="card-link">View Details →</span>
-          </a>
-
-          <a href="#tooling" class="card" style="text-decoration: none;">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <rect x="12" y="20" width="40" height="32" rx="2" stroke="currentColor" stroke-width="3"/>
-                <line x1="32" y1="28" x2="32" y2="44" stroke="currentColor" stroke-width="3"/>
-              </svg>
-            </div>
-            <h3>Tooling & Fixtures</h3>
-            <p>Custom jigs, fixtures, injection molds, production tooling.</p>
-            <span class="card-link">View Details →</span>
-          </a>
-
-          <a href="#sheet-metal" class="card" style="text-decoration: none;">
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <rect x="12" y="24" width="40" height="28" rx="2" stroke="currentColor" stroke-width="3"/>
@@ -203,7 +211,59 @@
             <span class="card-link">View Details →</span>
           </a>
 
-          <a href="#consulting" class="card" style="text-decoration: none;">
+          <!-- Academic Lab Card -->
+          <a href="#academic-labs" class="card services-overview-card">
+            <div class="card-image">
+              <img src="assets/academic-lab.jpg" alt="Academic Lab Development">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+                <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="3"/>
+              </svg>
+            </div>
+            <h3>Academic Lab Development</h3>
+            <p>EV training systems, robotics labs, Industry 4.0, automation equipment.</p>
+            <span class="card-link">View Details →</span>
+          </a>
+
+          <!-- 3D Printing Card -->
+          <a href="#3d-printing" class="card services-overview-card">
+            <div class="card-image">
+              <img src="assets/3d-printing.jpg" alt="Advanced 3D Printing">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" stroke="currentColor" stroke-width="3"/>
+                <circle cx="32" cy="32" r="8" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Advanced 3D Printing</h3>
+            <p>FDM, SLA, SLS polymer, and metal additive manufacturing.</p>
+            <span class="card-link">View Details →</span>
+          </a>
+
+          <!-- Tooling Card -->
+          <a href="#tooling" class="card services-overview-card">
+            <div class="card-image">
+              <img src="assets/tooling.jpg" alt="Tooling & Fixtures">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="20" width="40" height="32" rx="2" stroke="currentColor" stroke-width="3"/>
+                <line x1="32" y1="28" x2="32" y2="44" stroke="currentColor" stroke-width="3"/>
+              </svg>
+            </div>
+            <h3>Tooling & Fixtures</h3>
+            <p>Custom jigs, fixtures, injection molds, production tooling.</p>
+            <span class="card-link">View Details →</span>
+          </a>
+
+          <!-- R&D Consulting Card -->
+          <a href="#consulting" class="card services-overview-card">
+            <div class="card-image">
+              <img src="assets/consulting.jpg" alt="R&D Engineering Consulting">
+            </div>
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
@@ -214,6 +274,7 @@
             <p>FEA, CFD, thermal analysis, design validation, technical consulting.</p>
             <span class="card-link">View Details →</span>
           </a>
+          
         </div>
       </div>
     </section>
