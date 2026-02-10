@@ -49,6 +49,7 @@
     </div>
 </nav>
 
+
   <!-- Hero Section with Video -->
   <header class="home-hero">
     <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-video">
@@ -98,6 +99,7 @@
     </div>
   </header>
 
+
   <main>
 <!-- Core Capabilities -->
 <section class="section-padding" id="capabilities">
@@ -110,9 +112,9 @@
 
         <div class="grid-3">
             <!-- CAD Design Card -->
-            <div class="card" data-modal="cad-modal">
+            <div class="card service-card" data-modal="cad-modal">
                 <div class="card-image">
-                    <img src="images/cad-design.jpg" alt="CAD Design Engineering">
+                    <img src="assets/cad-design.jpg" alt="CAD Design Engineering">
                 </div>
                 <div class="icon-wrapper">
                     <svg class="icon" viewBox="0 0 64 64" fill="none">
@@ -122,13 +124,12 @@
                 </div>
                 <h3>CAD Design & Engineering</h3>
                 <p>Parametric 3D modeling, manufacturing drawings, GD&T documentation, and DFM optimization using SolidWorks, CATIA, NX, and more.</p>
-                <a href="#" class="card-link">Learn more →</a>
             </div>
 
             <!-- Sheet Metal Card -->
-            <div class="card" data-modal="sheet-metal-modal">
+            <div class="card service-card" data-modal="sheet-metal-modal">
                 <div class="card-image">
-                    <img src="images/sheet-metal.jpg" alt="Sheet Metal Design">
+                    <img src="assets/sheet-metal.jpg" alt="Sheet Metal Design">
                 </div>
                 <div class="icon-wrapper">
                     <svg class="icon" viewBox="0 0 64 64" fill="none">
@@ -139,30 +140,27 @@
                 </div>
                 <h3>Sheet Metal Design</h3>
                 <p>Fabrication-ready enclosures, brackets, and structural components optimized for laser cutting, bending, and welding processes.</p>
-                <a href="#" class="card-link">Learn more →</a>
             </div>
 
             <!-- Academic Lab Card -->
-            <div class="card" data-modal="academic-modal">
+            <div class="card service-card" data-modal="academic-modal">
                 <div class="card-image">
-                    <img src="images/academic-lab.jpg" alt="Academic Lab Development">
+                    <img src="assets/academic-lab.jpg" alt="Academic Lab Development">
                 </div>
                 <div class="icon-wrapper">
                     <svg class="icon" viewBox="0 0 64 64" fill="none">
                         <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
-                        <path d="M20 16 L20 8 L44 8 L44 16" stroke="currentColor" stroke-width="3"/>
                         <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="3"/>
                     </svg>
                 </div>
                 <h3>Academic Lab Development</h3>
                 <p>Complete EV training systems, robotics labs, Industry 4.0 setups, automation kits, and hands-on educational equipment for universities and technical institutions.</p>
-                <a href="#" class="card-link">Learn more →</a>
             </div>
 
             <!-- 3D Printing Card -->
-            <div class="card" data-modal="3d-printing-modal">
+            <div class="card service-card" data-modal="printing-modal">
                 <div class="card-image">
-                    <img src="images/3d-printing.jpg" alt="Advanced 3D Printing">
+                    <img src="assets/3d-printing.jpg" alt="Advanced 3D Printing">
                 </div>
                 <div class="icon-wrapper">
                     <svg class="icon" viewBox="0 0 64 64" fill="none">
@@ -172,30 +170,27 @@
                 </div>
                 <h3>Advanced 3D Printing</h3>
                 <p>Multi-technology additive manufacturing: FDM, SLA, SLS (polymer) and metal AM for functional prototypes, tooling, and production parts.</p>
-                <a href="#" class="card-link">Learn more →</a>
             </div>
 
             <!-- Tooling Card -->
-            <div class="card" data-modal="tooling-modal">
+            <div class="card service-card" data-modal="tooling-modal">
                 <div class="card-image">
-                    <img src="images/tooling.jpg" alt="Tooling & Fixtures">
+                    <img src="assets/tooling.jpg" alt="Tooling & Fixtures">
                 </div>
                 <div class="icon-wrapper">
                     <svg class="icon" viewBox="0 0 64 64" fill="none">
                         <rect x="12" y="20" width="40" height="32" rx="2" stroke="currentColor" stroke-width="3"/>
-                        <path d="M20 20 L20 12 L44 12 L44 20" stroke="currentColor" stroke-width="3"/>
                         <line x1="32" y1="28" x2="32" y2="44" stroke="currentColor" stroke-width="3"/>
                     </svg>
                 </div>
                 <h3>Tooling & Fixtures</h3>
                 <p>Custom jigs, fixtures, injection molds, and production tooling design with conformal cooling and DfAM optimization.</p>
-                <a href="#" class="card-link">Learn more →</a>
             </div>
 
             <!-- R&D Consulting Card -->
-            <div class="card" data-modal="consulting-modal">
+            <div class="card service-card" data-modal="consulting-modal">
                 <div class="card-image">
-                    <img src="images/consulting.jpg" alt="R&D Engineering Consulting">
+                    <img src="assets/consulting.jpg" alt="R&D Engineering Consulting">
                 </div>
                 <div class="icon-wrapper">
                     <svg class="icon" viewBox="0 0 64 64" fill="none">
@@ -205,13 +200,14 @@
                 </div>
                 <h3>R&D & Engineering Consulting</h3>
                 <p>FEA, CFD, thermal analysis, design validation, troubleshooting, and technical consulting for complex engineering challenges.</p>
-                <a href="#" class="card-link">Learn more →</a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Service Modals -->
+
+<!-- CAD Design Modal -->
 <div id="cad-modal" class="service-modal">
     <div class="modal-overlay"></div>
     <div class="modal-content">
@@ -226,7 +222,7 @@
             <h2>CAD Design & Engineering</h2>
         </div>
         <div class="modal-body">
-            <img src="images/cad-design-full.jpg" alt="CAD Design Services" class="modal-image">
+            <img src="assets/cad-design-full.jpg" alt="CAD Design Services" class="modal-image">
             <p class="modal-intro">Professional 3D CAD modeling, detailed manufacturing drawings, and design optimization services using industry-leading software platforms including SolidWorks, CATIA, NX, AutoCAD, Creo, and Fusion 360.</p>
             
             <h3>What We Deliver</h3>
@@ -250,6 +246,7 @@
     </div>
 </div>
 
+<!-- Sheet Metal Modal -->
 <div id="sheet-metal-modal" class="service-modal">
     <div class="modal-overlay"></div>
     <div class="modal-content">
@@ -264,7 +261,7 @@
             <h2>Sheet Metal Design</h2>
         </div>
         <div class="modal-body">
-            <img src="images/sheet-metal-full.jpg" alt="Sheet Metal Design" class="modal-image">
+            <img src="assets/sheet-metal-full.jpg" alt="Sheet Metal Design" class="modal-image">
             <p class="modal-intro">Fabrication-ready sheet metal designs optimized for laser cutting, CNC punching, bending, and welding. We specialize in enclosures, brackets, chassis, and structural components.</p>
             
             <h3>Our Expertise</h3>
@@ -284,6 +281,145 @@
     </div>
 </div>
 
+<!-- Academic Lab Modal -->
+<div id="academic-modal" class="service-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <div class="icon-wrapper">
+                <svg class="icon" viewBox="0 0 64 64" fill="none">
+                    <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="3"/>
+                </svg>
+            </div>
+            <h2>Academic Lab Development</h2>
+        </div>
+        <div class="modal-body">
+            <img src="assets/academic-lab-full.jpg" alt="Academic Lab Development" class="modal-image">
+            <p class="modal-intro">Complete turnkey solutions for educational institutions including EV training systems, robotics labs, Industry 4.0 setups, automation equipment, and hands-on learning platforms.</p>
+            
+            <h3>EV Training Systems</h3>
+            <div class="feature-list">
+                <div class="feature-item-modal">
+                    <h4>Battery Management System (BMS) Trainer</h4>
+                    <p>Original BYD E5 battery pack, charge/discharge management, insulation detection, fault simulation, safety interlocks.</p>
+                </div>
+                <div class="feature-item-modal">
+                    <h4>EV Chargers (Level 1, 2, 3)</h4>
+                    <p>3.3kW - 400kW charging systems, CCS/CHAdeMO/Type 2 connectors, overcurrent/overvoltage protection.</p>
+                </div>
+            </div>
+            
+            <a href="services.html#academic-labs" class="btn btn-primary">View Full Details</a>
+        </div>
+    </div>
+</div>
+
+<!-- 3D Printing Modal -->
+<div id="printing-modal" class="service-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <div class="icon-wrapper">
+                <svg class="icon" viewBox="0 0 64 64" fill="none">
+                    <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                    <circle cx="32" cy="32" r="8" fill="currentColor"/>
+                </svg>
+            </div>
+            <h2>Advanced 3D Printing</h2>
+        </div>
+        <div class="modal-body">
+            <img src="assets/3d-printing-full.jpg" alt="3D Printing Services" class="modal-image">
+            <p class="modal-intro">Multi-technology 3D printing services for rapid prototyping, functional testing, tooling, and low-volume production using FDM, SLA, SLS polymer, and metal additive manufacturing.</p>
+            
+            <h3>Technologies & Materials</h3>
+            <div class="feature-list">
+                <div class="feature-item-modal">
+                    <h4>FDM (Fused Deposition Modeling)</h4>
+                    <p>PLA, ABS, PETG, Nylon, TPU, carbon fiber composites. Ideal for functional prototypes and fixtures.</p>
+                </div>
+                <div class="feature-item-modal">
+                    <h4>Metal 3D Printing</h4>
+                    <p>Aluminum, stainless steel, titanium, Inconel for aerospace, automotive, and medical applications.</p>
+                </div>
+            </div>
+            
+            <a href="services.html#3d-printing" class="btn btn-primary">View Full Details</a>
+        </div>
+    </div>
+</div>
+
+<!-- Tooling Modal -->
+<div id="tooling-modal" class="service-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <div class="icon-wrapper">
+                <svg class="icon" viewBox="0 0 64 64" fill="none">
+                    <rect x="12" y="20" width="40" height="32" rx="2" stroke="currentColor" stroke-width="3"/>
+                    <line x1="32" y1="28" x2="32" y2="44" stroke="currentColor" stroke-width="3"/>
+                </svg>
+            </div>
+            <h2>Tooling & Fixtures</h2>
+        </div>
+        <div class="modal-body">
+            <img src="assets/tooling-full.jpg" alt="Tooling & Fixtures" class="modal-image">
+            <p class="modal-intro">Custom jigs, fixtures, inspection gauges, injection molds, and production tooling designed for manufacturing efficiency, quality control, and assembly automation.</p>
+            
+            <h3>Services</h3>
+            <div class="feature-list">
+                <div class="feature-item-modal">
+                    <h4>Jigs & Fixtures</h4>
+                    <p>Welding fixtures, assembly jigs, machining fixtures, inspection gauges, and go/no-go gauges for quality control.</p>
+                </div>
+                <div class="feature-item-modal">
+                    <h4>Injection Mold Design</h4>
+                    <p>2-plate, 3-plate, hot runner molds, conformal cooling channels, DfAM optimization, and mold flow analysis.</p>
+                </div>
+            </div>
+            
+            <a href="services.html#tooling" class="btn btn-primary">View Full Details</a>
+        </div>
+    </div>
+</div>
+
+<!-- R&D Consulting Modal -->
+<div id="consulting-modal" class="service-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <div class="icon-wrapper">
+                <svg class="icon" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
+                    <path d="M32 12 L32 32 L44 38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h2>R&D & Engineering Consulting</h2>
+        </div>
+        <div class="modal-body">
+            <img src="assets/consulting-full.jpg" alt="R&D Engineering Consulting" class="modal-image">
+            <p class="modal-intro">Technical consulting, FEA/CFD analysis, design validation, troubleshooting, and R&D support for complex engineering challenges across automotive, aerospace, medical, and industrial sectors.</p>
+            
+            <h3>Capabilities</h3>
+            <div class="feature-list">
+                <div class="feature-item-modal">
+                    <h4>Finite Element Analysis (FEA)</h4>
+                    <p>Structural analysis, stress/strain, modal analysis, fatigue life prediction, buckling, and crash simulation.</p>
+                </div>
+                <div class="feature-item-modal">
+                    <h4>Computational Fluid Dynamics (CFD)</h4>
+                    <p>Thermal management, airflow analysis, heat transfer, cooling system optimization, and HVAC simulation.</p>
+                </div>
+            </div>
+            
+            <a href="services.html#consulting" class="btn btn-primary">View Full Details</a>
+        </div>
+    </div>
+</div>
 
     <!-- Industries -->
     <section class="section-padding bg-soft">
@@ -366,6 +502,7 @@
       </div>
     </section>
 
+
     <!-- Why Choose Us -->
     <section class="section-padding">
       <div class="container">
@@ -432,6 +569,7 @@
       </div>
     </section>
 
+
     <!-- CTA Section -->
     <section class="section-padding bg-gradient">
       <div class="container">
@@ -452,6 +590,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- Contact Section -->
     <section class="section-padding" id="contact">
@@ -544,6 +683,7 @@
     </section>
   </main>
 
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -590,6 +730,7 @@
       </div>
     </div>
   </footer>
+
 
   <script src="js/script.js"></script>
 </body>
