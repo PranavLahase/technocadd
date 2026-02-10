@@ -74,11 +74,41 @@
       font-weight: bold;
       margin-right: 8px;
     }
+
+    /* Equipment Images */
+    .equipment-image {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+      position: relative;
+    }
+
+    .equipment-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .equipment-card:hover .equipment-image img {
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 768px) {
+      .equipment-image {
+        height: 200px;
+      }
+    }
   </style>
 </head>
 
+<body>
   
-  <!-- Navigation -->
+ <!-- Navigation -->
 <nav class="navbar" id="navbar">
     <div class="container nav-container">
         <!-- LOGO SECTION -->
@@ -99,19 +129,18 @@
         
         <!-- Navigation Menu -->
         <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="equipment.html" class="active">Equipment</a></li>
             <li><a href="team.html">Team</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="careers.html">Careers</a></li>
-            <li><a href="#contact" class="btn-contact">Contact</a></li>
+            <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
         </ul>
     </div>
 </nav>
-
 
   <!-- Page Header -->
   <header class="page-header" style="background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); padding: 140px 0 80px; text-align: center; color: white;">
@@ -135,6 +164,9 @@
         <div class="grid-3">
           <!-- Power Electronics Trainer -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/power-electronics.jpg" alt="Power Electronic Training System">
+            </div>
             <span class="model">AL-E957B</span>
             <h3>Power Electronic Training System</h3>
             <p>A comprehensive hands-on platform for power electronics training with real-time simulation capabilities.</p>
@@ -151,6 +183,9 @@
 
           <!-- EV AC System -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/ac-trainer.jpg" alt="EV Car Air Conditioning System Trainer">
+            </div>
             <span class="model">EV-XL30</span>
             <h3>EV Car Air Conditioning System Trainer</h3>
             <p>Real BYD E5 air conditioning module with fault simulation and diagnostic capabilities.</p>
@@ -166,6 +201,9 @@
 
           <!-- EV Control System -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/control-system.jpg" alt="EV Car Control System Trainer">
+            </div>
             <span class="model">EV-XL31</span>
             <h3>EV Car Control System Trainer</h3>
             <p>Electric power steering system training with original BYD E5 components.</p>
@@ -181,6 +219,9 @@
 
           <!-- EV Electrical System -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/electrical-system.jpg" alt="EV Car Electrical System Trainer">
+            </div>
             <span class="model">EV-XL32</span>
             <h3>EV Car Electrical System Trainer</h3>
             <p>Complete body electrical system with lighting, wipers, horn, and power windows.</p>
@@ -196,6 +237,9 @@
 
           <!-- BMS Trainer -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/bms-trainer-xl28.jpg" alt="EV Car Battery Management System Trainer">
+            </div>
             <span class="model">EV-XL28</span>
             <h3>EV Car Battery Management System Trainer</h3>
             <p>Original BYD E5 battery pack with charge/discharge management and diagnostics.</p>
@@ -211,6 +255,9 @@
 
           <!-- BMS Simulation -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/bms-simulation.jpg" alt="EV Car BMS Simulation Trainer">
+            </div>
             <span class="model">EV-XL-D23</span>
             <h3>EV Car BMS Simulation Trainer</h3>
             <p>Lithium iron phosphate battery pack with real-time monitoring and safety features.</p>
@@ -225,6 +272,9 @@
 
           <!-- HVAC Demo Kit -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/hvac-kit.jpg" alt="HVAC Demo Kit">
+            </div>
             <h3>HVAC Demo Kit</h3>
             <p>Complete EV HVAC system simulation with heating and cooling functions.</p>
             <ul>
@@ -238,6 +288,9 @@
 
           <!-- BMS Training Kit -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/bms-trainer.jpg" alt="BMS Training Kit">
+            </div>
             <h3>BMS Training Kit</h3>
             <p>Comprehensive battery management training with multiple chemistry support.</p>
             <ul>
@@ -252,6 +305,9 @@
 
           <!-- Power Steering -->
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/eps-trainer.jpg" alt="EV Car Power Steering System Trainer">
+            </div>
             <h3>EV Car Power Steering System Trainer</h3>
             <p>Hands-on electric power steering (EPS) training with authentic components.</p>
             <ul>
@@ -277,6 +333,9 @@
         
         <div class="grid-2">
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/2wheeler-workbench.jpg" alt="Electric 2-Wheeler Training Workbench">
+            </div>
             <h3>Electric 2-Wheeler Training Workbench</h3>
             <p>Comprehensive two-wheeler EV training platform with real-time monitoring.</p>
             <ul>
@@ -290,6 +349,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/3wheeler-workbench.jpg" alt="Electric 3-Wheeler Training Workbench">
+            </div>
             <h3>Electric 3-Wheeler Training Workbench</h3>
             <p>Diagnostic and maintenance platform for electric three-wheelers.</p>
             <ul>
@@ -316,6 +378,9 @@
         
         <div class="grid-3">
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/level1-charger.jpg" alt="Level 1 AC Charger">
+            </div>
             <h3>Level 1 AC Charger</h3>
             <p>3.3 kW – 10 kW three-phase charging solution</p>
             <ul>
@@ -329,6 +394,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/level2-charger.jpg" alt="Level 2 AC Charger">
+            </div>
             <h3>Level 2 AC Charger</h3>
             <p>7.4 kW – 22 kW fast AC charging</p>
             <ul>
@@ -342,6 +410,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/level3-charger.jpg" alt="Level 3 DC Fast Charger">
+            </div>
             <h3>Level 3 DC Fast Charger</h3>
             <p>15 kW – 400 kW DC rapid charging</p>
             <ul>
@@ -368,6 +439,9 @@
         
         <div class="grid-3">
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/pneumatic-trainer.jpg" alt="Pneumatic Trainer Kit">
+            </div>
             <h3>Pneumatic Trainer Kit</h3>
             <p>Complete pneumatic automation training with Mitsubishi PLC.</p>
             <ul>
@@ -381,6 +455,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/hydraulic-trainer.jpg" alt="Hydraulic Trainer Kit">
+            </div>
             <h3>Hydraulic Trainer Kit</h3>
             <p>Transparent hydraulic system with IoT capabilities.</p>
             <ul>
@@ -394,6 +471,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/plc-module.jpg" alt="PLC Module Kit">
+            </div>
             <h3>PLC Module Kit</h3>
             <p>Programmable Logic Controller training platform.</p>
             <ul>
@@ -407,6 +487,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/industry40-setup.jpg" alt="Industry 4.0 Educational Setup">
+            </div>
             <h3>Industry 4.0 Educational Setup</h3>
             <p>Complete smart manufacturing demonstration system.</p>
             <ul>
@@ -420,6 +503,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/evse-test-kit.jpg" alt="AC EVSE Test Kit">
+            </div>
             <h3>AC EVSE Test Kit</h3>
             <p>Comprehensive EV charger testing equipment.</p>
             <ul>
@@ -433,6 +519,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/battery-charger.jpg" alt="Battery Charger & Discharger">
+            </div>
             <h3>Battery Charger & Discharger</h3>
             <p>Multi-chemistry battery testing system.</p>
             <ul>
@@ -458,6 +547,9 @@
         
         <div class="grid-2">
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/brake-system.jpg" alt="Disc/Drum Brake System on Stand">
+            </div>
             <h3>Disc/Drum Brake System on Stand</h3>
             <p>ABS braking system demonstration using Volkswagen Santana components.</p>
             <ul>
@@ -471,6 +563,9 @@
           </div>
 
           <div class="equipment-card">
+            <div class="equipment-image">
+              <img src="assets/equipment/tool-trolley.jpg" alt="Launch Tool Kit Trolley">
+            </div>
             <h3>Launch Tool Kit Trolley</h3>
             <p>Professional tool storage for automotive and EV maintenance labs.</p>
             <ul>
