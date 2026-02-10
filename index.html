@@ -99,93 +99,191 @@
   </header>
 
   <main>
-    <!-- Core Capabilities -->
-    <section class="section-padding" id="capabilities">
-      <div class="container">
+<!-- Core Capabilities -->
+<section class="section-padding" id="capabilities">
+    <div class="container">
         <div class="section-header">
-          <div class="kicker">What We Do</div>
-          <h2>Core Engineering Capabilities</h2>
-          <p>Professional CAD design, precision sheet metal fabrication, advanced 3D printing, and comprehensive engineering solutions.</p>
+            <div class="kicker">What We Do</div>
+            <h2>Core Engineering Capabilities</h2>
+            <p>Professional CAD design, precision sheet metal fabrication, advanced 3D printing, and comprehensive engineering solutions.</p>
         </div>
-        
+
         <div class="grid-3">
-          <div class="card">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="3"/>
-                <path d="M20 32 L32 44 L44 20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+            <!-- CAD Design Card -->
+            <div class="card" data-modal="cad-modal">
+                <div class="card-image">
+                    <img src="images/cad-design.jpg" alt="CAD Design Engineering">
+                </div>
+                <div class="icon-wrapper">
+                    <svg class="icon" viewBox="0 0 64 64" fill="none">
+                        <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="3"/>
+                        <path d="M20 32 L32 44 L44 20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>CAD Design & Engineering</h3>
+                <p>Parametric 3D modeling, manufacturing drawings, GD&T documentation, and DFM optimization using SolidWorks, CATIA, NX, and more.</p>
+                <a href="#" class="card-link">Learn more →</a>
             </div>
-            <h3>CAD Design & Engineering</h3>
-            <p>Parametric 3D modeling, manufacturing drawings, GD&T documentation, and DFM optimization using SolidWorks, CATIA, NX, and more.</p>
-            <a href="services.html#cad-design" class="card-link">Learn more →</a>
-          </div>
 
-          <div class="card">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <rect x="12" y="24" width="40" height="28" rx="2" stroke="currentColor" stroke-width="3"/>
-                <path d="M16 24 L16 16 C16 14 18 12 20 12 L44 12 C46 12 48 14 48 16 L48 24" stroke="currentColor" stroke-width="3"/>
-                <line x1="24" y1="36" x2="40" y2="36" stroke="currentColor" stroke-width="3"/>
-              </svg>
+            <!-- Sheet Metal Card -->
+            <div class="card" data-modal="sheet-metal-modal">
+                <div class="card-image">
+                    <img src="images/sheet-metal.jpg" alt="Sheet Metal Design">
+                </div>
+                <div class="icon-wrapper">
+                    <svg class="icon" viewBox="0 0 64 64" fill="none">
+                        <rect x="12" y="24" width="40" height="28" rx="2" stroke="currentColor" stroke-width="3"/>
+                        <path d="M16 24 L16 16 C16 14 18 12 20 12 L44 12 C46 12 48 14 48 16 L48 24" stroke="currentColor" stroke-width="3"/>
+                        <line x1="24" y1="36" x2="40" y2="36" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                </div>
+                <h3>Sheet Metal Design</h3>
+                <p>Fabrication-ready enclosures, brackets, and structural components optimized for laser cutting, bending, and welding processes.</p>
+                <a href="#" class="card-link">Learn more →</a>
             </div>
-            <h3>Sheet Metal Design</h3>
-            <p>Fabrication-ready enclosures, brackets, and structural components optimized for laser cutting, bending, and welding processes.</p>
-            <a href="services.html#sheet-metal" class="card-link">Learn more →</a>
-          </div>
 
-          <div class="card">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
-                <path d="M20 16 L20 8 L44 8 L44 16" stroke="currentColor" stroke-width="3"/>
-                <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="3"/>
-              </svg>
+            <!-- Academic Lab Card -->
+            <div class="card" data-modal="academic-modal">
+                <div class="card-image">
+                    <img src="images/academic-lab.jpg" alt="Academic Lab Development">
+                </div>
+                <div class="icon-wrapper">
+                    <svg class="icon" viewBox="0 0 64 64" fill="none">
+                        <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+                        <path d="M20 16 L20 8 L44 8 L44 16" stroke="currentColor" stroke-width="3"/>
+                        <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                </div>
+                <h3>Academic Lab Development</h3>
+                <p>Complete EV training systems, robotics labs, Industry 4.0 setups, automation kits, and hands-on educational equipment for universities and technical institutions.</p>
+                <a href="#" class="card-link">Learn more →</a>
             </div>
-            <h3>Academic Lab Development</h3>
-            <p>Complete EV training systems, robotics labs, Industry 4.0 setups, automation kits, and hands-on educational equipment for universities and technical institutions.</p>
-            <a href="services.html#academic-labs" class="card-link">Learn more →</a>
-          </div>
 
-          <div class="card">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-                <circle cx="32" cy="32" r="8" fill="currentColor"/>
-              </svg>
+            <!-- 3D Printing Card -->
+            <div class="card" data-modal="3d-printing-modal">
+                <div class="card-image">
+                    <img src="images/3d-printing.jpg" alt="Advanced 3D Printing">
+                </div>
+                <div class="icon-wrapper">
+                    <svg class="icon" viewBox="0 0 64 64" fill="none">
+                        <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                        <circle cx="32" cy="32" r="8" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3>Advanced 3D Printing</h3>
+                <p>Multi-technology additive manufacturing: FDM, SLA, SLS (polymer) and metal AM for functional prototypes, tooling, and production parts.</p>
+                <a href="#" class="card-link">Learn more →</a>
             </div>
-            <h3>Advanced 3D Printing</h3>
-            <p>Multi-technology additive manufacturing: FDM, SLA, SLS (polymer) and metal AM for functional prototypes, tooling, and production parts.</p>
-            <a href="services.html#3d-printing" class="card-link">Learn more →</a>
-          </div>
 
-          <div class="card">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <rect x="12" y="20" width="40" height="32" rx="2" stroke="currentColor" stroke-width="3"/>
-                <path d="M20 20 L20 12 L44 12 L44 20" stroke="currentColor" stroke-width="3"/>
-                <line x1="32" y1="28" x2="32" y2="44" stroke="currentColor" stroke-width="3"/>
-              </svg>
+            <!-- Tooling Card -->
+            <div class="card" data-modal="tooling-modal">
+                <div class="card-image">
+                    <img src="images/tooling.jpg" alt="Tooling & Fixtures">
+                </div>
+                <div class="icon-wrapper">
+                    <svg class="icon" viewBox="0 0 64 64" fill="none">
+                        <rect x="12" y="20" width="40" height="32" rx="2" stroke="currentColor" stroke-width="3"/>
+                        <path d="M20 20 L20 12 L44 12 L44 20" stroke="currentColor" stroke-width="3"/>
+                        <line x1="32" y1="28" x2="32" y2="44" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                </div>
+                <h3>Tooling & Fixtures</h3>
+                <p>Custom jigs, fixtures, injection molds, and production tooling design with conformal cooling and DfAM optimization.</p>
+                <a href="#" class="card-link">Learn more →</a>
             </div>
-            <h3>Tooling & Fixtures</h3>
-            <p>Custom jigs, fixtures, injection molds, and production tooling design with conformal cooling and DfAM optimization.</p>
-            <a href="services.html#tooling" class="card-link">Learn more →</a>
-          </div>
 
-          <div class="card">
-            <div class="icon-wrapper">
-              <svg class="icon" viewBox="0 0 64 64" fill="none">
-                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
-                <path d="M32 12 L32 32 L44 38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              </svg>
+            <!-- R&D Consulting Card -->
+            <div class="card" data-modal="consulting-modal">
+                <div class="card-image">
+                    <img src="images/consulting.jpg" alt="R&D Engineering Consulting">
+                </div>
+                <div class="icon-wrapper">
+                    <svg class="icon" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
+                        <path d="M32 12 L32 32 L44 38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>R&D & Engineering Consulting</h3>
+                <p>FEA, CFD, thermal analysis, design validation, troubleshooting, and technical consulting for complex engineering challenges.</p>
+                <a href="#" class="card-link">Learn more →</a>
             </div>
-            <h3>R&D & Engineering Consulting</h3>
-            <p>FEA, CFD, thermal analysis, design validation, troubleshooting, and technical consulting for complex engineering challenges.</p>
-            <a href="services.html#consulting" class="card-link">Learn more →</a>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+<!-- Service Modals -->
+<div id="cad-modal" class="service-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <div class="icon-wrapper">
+                <svg class="icon" viewBox="0 0 64 64" fill="none">
+                    <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="3"/>
+                    <path d="M20 32 L32 44 L44 20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h2>CAD Design & Engineering</h2>
+        </div>
+        <div class="modal-body">
+            <img src="images/cad-design-full.jpg" alt="CAD Design Services" class="modal-image">
+            <p class="modal-intro">Professional 3D CAD modeling, detailed manufacturing drawings, and design optimization services using industry-leading software platforms including SolidWorks, CATIA, NX, AutoCAD, Creo, and Fusion 360.</p>
+            
+            <h3>What We Deliver</h3>
+            <div class="feature-list">
+                <div class="feature-item-modal">
+                    <h4>Parametric 3D Modeling</h4>
+                    <p>Design-intent driven models with full feature history, assemblies with motion simulation, and surface modeling for complex geometries.</p>
+                </div>
+                <div class="feature-item-modal">
+                    <h4>Manufacturing Drawings</h4>
+                    <p>ISO/ASME compliant 2D drawings with GD&T annotations, bill of materials (BOM), assembly instructions, and detailed specifications.</p>
+                </div>
+                <div class="feature-item-modal">
+                    <h4>Design for Manufacturing (DFM)</h4>
+                    <p>Optimization for injection molding, CNC machining, sheet metal fabrication, and casting processes to reduce costs.</p>
+                </div>
+            </div>
+            
+            <a href="services.html#cad-design" class="btn btn-primary">View Full Details</a>
+        </div>
+    </div>
+</div>
+
+<div id="sheet-metal-modal" class="service-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+            <div class="icon-wrapper">
+                <svg class="icon" viewBox="0 0 64 64" fill="none">
+                    <rect x="12" y="24" width="40" height="28" rx="2" stroke="currentColor" stroke-width="3"/>
+                    <path d="M16 24 L16 16 C16 14 18 12 20 12 L44 12 C46 12 48 14 48 16 L48 24" stroke="currentColor" stroke-width="3"/>
+                </svg>
+            </div>
+            <h2>Sheet Metal Design</h2>
+        </div>
+        <div class="modal-body">
+            <img src="images/sheet-metal-full.jpg" alt="Sheet Metal Design" class="modal-image">
+            <p class="modal-intro">Fabrication-ready sheet metal designs optimized for laser cutting, CNC punching, bending, and welding. We specialize in enclosures, brackets, chassis, and structural components.</p>
+            
+            <h3>Our Expertise</h3>
+            <div class="feature-list">
+                <div class="feature-item-modal">
+                    <h4>Design Optimization</h4>
+                    <p>Bend relief, k-factor calculation, flat pattern development, minimum bend radius, and material selection.</p>
+                </div>
+                <div class="feature-item-modal">
+                    <h4>Manufacturing Drawings</h4>
+                    <p>Laser cutting nesting layouts, bend sequences, welding symbols, and assembly instructions.</p>
+                </div>
+            </div>
+            
+            <a href="services.html#sheet-metal" class="btn btn-primary">View Full Details</a>
+        </div>
+    </div>
+</div>
+
 
     <!-- Industries -->
     <section class="section-padding bg-soft">
