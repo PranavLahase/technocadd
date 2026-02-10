@@ -1487,49 +1487,111 @@ textarea {
 .portfolio-card:hover .card-image img {
   transform: scale(1.1);
 }
-/* Client Logos Section */
-.client-logo-box {
+/* ============================================
+   ANIMATED LOGO CAROUSEL
+   ============================================ */
+
+.logo-carousel-wrapper {
+  overflow: hidden;
+  padding: 40px 0;
   background: white;
-  padding: 32px;
-  border-radius: 16px;
+  border-radius: 20px;
+  position: relative;
+  margin: 48px 0;
+}
+
+/* Fade effect on edges */
+.logo-carousel-wrapper::before,
+.logo-carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(245, 245, 245, 1), rgba(245, 245, 245, 0));
+}
+
+.logo-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(245, 245, 245, 1), rgba(245, 245, 245, 0));
+}
+
+.logo-carousel {
+  display: flex;
+  gap: 60px;
+  animation: scroll-logos 30s linear infinite;
+  width: max-content;
+}
+
+/* Pause on hover */
+.logo-carousel:hover {
+  animation-play-state: paused;
+}
+
+.logo-slide {
+  flex-shrink: 0;
+  width: 180px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 140px;
-  transition: var(--transition);
-  border: 1px solid rgba(29, 53, 87, 0.08);
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-.client-logo-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(29, 53, 87, 0.1);
-  border-color: var(--red);
+.logo-slide:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(29, 53, 87, 0.15);
 }
 
-.client-logo-box img {
+.logo-slide img {
   max-width: 100%;
-  max-height: 80px;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: var(--transition);
+  filter: grayscale(100%) brightness(0) opacity(0.3);
+  transition: all 0.3s ease;
 }
 
-.client-logo-box:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
+.logo-slide:hover img {
+  filter: grayscale(0%) brightness(1) opacity(1);
+  transform: scale(1.1);
+}
+
+/* Scroll Animation */
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .client-logo-box {
-    padding: 24px;
-    min-height: 100px;
+  .logo-carousel {
+    gap: 40px;
+    animation: scroll-logos 20s linear infinite;
   }
   
-  .client-logo-box img {
-    max-height: 60px;
+  .logo-slide {
+    width: 140px;
+    height: 80px;
+    padding: 15px;
+  }
+  
+  .logo-carousel-wrapper::before,
+  .logo-carousel-wrapper::after {
+    width: 50px;
   }
 }
