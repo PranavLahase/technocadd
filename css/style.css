@@ -1488,7 +1488,7 @@ textarea {
   transform: scale(1.1);
 }
 /* ============================================
-   ANIMATED LOGO CAROUSEL - AUTO-PLAY
+   ANIMATED LOGO CAROUSEL - FULL COLOR
    ============================================ */
 
 .logo-carousel-wrapper {
@@ -1526,23 +1526,25 @@ textarea {
   display: flex;
   gap: 80px;
   width: max-content;
-  animation: scroll-logos 40s linear infinite;
+  animation: scroll-logos 50s linear infinite;
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
-/* Remove pause on hover if you want continuous scroll */
 .logo-carousel:hover {
-  animation-play-state: running; /* Change to 'paused' if you want hover pause */
+  animation-play-state: running; /* Keeps scrolling even on hover */
 }
 
 .logo-slide {
   flex-shrink: 0;
-  width: 200px;
-  height: 120px;
+  width: 220px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 28px;
   background: white;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(29, 53, 87, 0.08);
@@ -1551,7 +1553,7 @@ textarea {
 
 .logo-slide:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(29, 53, 87, 0.15);
+  box-shadow: 0 12px 28px rgba(29, 53, 87, 0.18);
 }
 
 .logo-slide img {
@@ -1560,14 +1562,14 @@ textarea {
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.4);
+  filter: none;           /* ← FULL COLOR ALWAYS */
+  opacity: 1;             /* ← NO FADING */
   transition: all 0.4s ease;
   display: block;
 }
 
 .logo-slide:hover img {
-  filter: grayscale(0%) opacity(1);
-  transform: scale(1.05);
+  transform: scale(1.08);  /* ← Just zoom on hover */
 }
 
 /* SMOOTH INFINITE SCROLL ANIMATION */
@@ -1584,24 +1586,17 @@ textarea {
 @media (max-width: 768px) {
   .logo-carousel {
     gap: 60px;
-    animation: scroll-logos 30s linear infinite;
+    animation: scroll-logos 35s linear infinite;
   }
   
   .logo-slide {
-    width: 160px;
-    height: 100px;
-    padding: 20px;
+    width: 180px;
+    height: 110px;
+    padding: 24px;
   }
   
   .logo-carousel-wrapper::before,
   .logo-carousel-wrapper::after {
     width: 80px;
   }
-}
-
-/* Force hardware acceleration for smooth animation */
-.logo-carousel {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
 }
