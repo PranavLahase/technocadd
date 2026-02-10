@@ -36,19 +36,18 @@
         
         <!-- Navigation Menu -->
         <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
             <li><a href="equipment.html">Equipment</a></li>
             <li><a href="team.html">Team</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="careers.html">Careers</a></li>
-            <li><a href="#contact" class="btn-contact">Contact</a></li>
+            <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
         </ul>
     </div>
 </nav>
-
 
   <!-- Page Header -->
   <header class="page-header" style="background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); padding: 140px 0 80px; text-align: center; color: white;">
@@ -89,7 +88,11 @@
         </div>
         
         <div class="grid-3">
-          <div class="card">
+          <!-- Project 1: EV Training Lab -->
+          <div class="card portfolio-card" data-modal="portfolio-ev-lab">
+            <div class="card-image">
+              <img src="assets/portfolio-ev-lab.jpg" alt="EV Training Lab Setup">
+            </div>
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
@@ -100,7 +103,11 @@
             <p><strong>Client:</strong> Major Engineering University<br><strong>Scope:</strong> Complete EV lab with BMS trainers, power electronics, and charging infrastructure for 50+ students.</p>
           </div>
 
-          <div class="card">
+          <!-- Project 2: Automotive Component -->
+          <div class="card portfolio-card" data-modal="portfolio-automotive">
+            <div class="card-image">
+              <img src="assets/portfolio-automotive.jpg" alt="Automotive Component Design">
+            </div>
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <path d="M8 40 L20 32 L44 32 L56 40 L56 48 L8 48 Z" stroke="currentColor" stroke-width="3"/>
@@ -112,7 +119,11 @@
             <p><strong>Client:</strong> Tier-1 Auto Supplier<br><strong>Scope:</strong> CAD design, FEA validation, and 3D printed prototypes for electric vehicle battery enclosure.</p>
           </div>
 
-          <div class="card">
+          <!-- Project 3: Industry 4.0 -->
+          <div class="card portfolio-card" data-modal="portfolio-industry40">
+            <div class="card-image">
+              <img src="assets/portfolio-industry40.jpg" alt="Industry 4.0 Training Setup">
+            </div>
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
@@ -123,7 +134,11 @@
             <p><strong>Client:</strong> Technical Institute<br><strong>Scope:</strong> Smart manufacturing demonstration system with IoT integration, PLC programming, and automated sorting.</p>
           </div>
 
-          <div class="card">
+          <!-- Project 4: Injection Mold -->
+          <div class="card portfolio-card" data-modal="portfolio-mold">
+            <div class="card-image">
+              <img src="assets/portfolio-injection-mold.jpg" alt="Injection Mold Design">
+            </div>
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" stroke="currentColor" stroke-width="3"/>
@@ -134,7 +149,11 @@
             <p><strong>Client:</strong> Consumer Electronics Manufacturer<br><strong>Scope:</strong> Multi-cavity injection mold with conformal cooling for smartphone enclosure production.</p>
           </div>
 
-          <div class="card">
+          <!-- Project 5: Medical Device -->
+          <div class="card portfolio-card" data-modal="portfolio-medical">
+            <div class="card-image">
+              <img src="assets/portfolio-medical.jpg" alt="Medical Device Prototyping">
+            </div>
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <rect x="16" y="16" width="32" height="32" rx="16" stroke="currentColor" stroke-width="2.5"/>
@@ -146,7 +165,11 @@
             <p><strong>Client:</strong> Healthcare Startup<br><strong>Scope:</strong> SLA 3D printing and biocompatible material selection for surgical instrument prototypes.</p>
           </div>
 
-          <div class="card">
+          <!-- Project 6: Robotics Lab -->
+          <div class="card portfolio-card" data-modal="portfolio-robotics">
+            <div class="card-image">
+              <img src="assets/portfolio-robotics.jpg" alt="Robotics Lab Development">
+            </div>
             <div class="icon-wrapper">
               <svg class="icon" viewBox="0 0 64 64" fill="none">
                 <path d="M16 48 L16 32 L32 16 L48 32 L48 48 Z" stroke="currentColor" stroke-width="2.5"/>
@@ -159,6 +182,277 @@
         </div>
       </div>
     </section>
+
+    <!-- Portfolio Modals -->
+    
+    <!-- EV Lab Modal -->
+    <div id="portfolio-ev-lab" class="service-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+          <div class="icon-wrapper">
+            <svg class="icon" viewBox="0 0 64 64" fill="none">
+              <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+              <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="3"/>
+            </svg>
+          </div>
+          <h2>EV Training Lab Setup</h2>
+        </div>
+        <div class="modal-body">
+          <img src="assets/portfolio-ev-lab-full.jpg" alt="EV Training Lab Setup" class="modal-image">
+          <p class="modal-intro"><strong>Client:</strong> Major Engineering University | <strong>Duration:</strong> 4 months | <strong>Year:</strong> 2025</p>
+          
+          <h3>Project Overview</h3>
+          <p>Designed and installed a comprehensive Electric Vehicle training laboratory for a leading engineering university to provide hands-on experience to 50+ students simultaneously.</p>
+          
+          <h3>Scope of Work</h3>
+          <div class="feature-list">
+            <div class="feature-item-modal">
+              <h4>BMS Training Systems</h4>
+              <p>Original BYD E5 battery management systems with charge/discharge simulation, insulation detection, and fault diagnosis capabilities.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>Power Electronics Lab</h4>
+              <p>50MHz oscilloscopes, variable power supplies, chopper controls, inverter circuits, and protection systems for hands-on experimentation.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>EV Charging Infrastructure</h4>
+              <p>Level 1, 2, and 3 charging stations (3.3kW - 400kW) with CCS/CHAdeMO connectors and safety interlocks.</p>
+            </div>
+          </div>
+          
+          <h3>Results</h3>
+          <p>✓ 50+ students trained per semester<br>✓ Industry-recognized certification program<br>✓ 100% practical-based curriculum<br>✓ Partnership with leading EV manufacturers</p>
+          
+          <a href="index.html#contact" class="btn btn-primary">Start Your Lab Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Automotive Modal -->
+    <div id="portfolio-automotive" class="service-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+          <div class="icon-wrapper">
+            <svg class="icon" viewBox="0 0 64 64" fill="none">
+              <path d="M8 40 L20 32 L44 32 L56 40 L56 48 L8 48 Z" stroke="currentColor" stroke-width="3"/>
+              <circle cx="18" cy="48" r="6" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h2>Automotive Component Design</h2>
+        </div>
+        <div class="modal-body">
+          <img src="assets/portfolio-automotive-full.jpg" alt="Automotive Component Design" class="modal-image">
+          <p class="modal-intro"><strong>Client:</strong> Tier-1 Auto Supplier | <strong>Duration:</strong> 6 weeks | <strong>Year:</strong> 2025</p>
+          
+          <h3>Project Overview</h3>
+          <p>Complete CAD design, FEA validation, and rapid prototyping for an electric vehicle battery enclosure requiring IP67 protection and crash safety compliance.</p>
+          
+          <h3>Deliverables</h3>
+          <div class="feature-list">
+            <div class="feature-item-modal">
+              <h4>3D CAD Modeling</h4>
+              <p>Parametric SolidWorks models with full GD&T annotations, assembly drawings, and bill of materials (BOM).</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>FEA Validation</h4>
+              <p>Structural analysis, crash simulation, thermal management, and vibration testing to meet FMVSS standards.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>Rapid Prototyping</h4>
+              <p>Metal 3D printed prototypes for fit-check, functional testing, and design validation before mass production.</p>
+            </div>
+          </div>
+          
+          <h3>Results</h3>
+          <p>✓ 30% weight reduction vs original design<br>✓ IP67 protection achieved<br>✓ Passed crash safety tests<br>✓ Production tooling ready in 6 weeks</p>
+          
+          <a href="index.html#contact" class="btn btn-primary">Request CAD Services</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industry 4.0 Modal -->
+    <div id="portfolio-industry40" class="service-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+          <div class="icon-wrapper">
+            <svg class="icon" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
+              <circle cx="32" cy="32" r="8" fill="currentColor"/>
+            </svg>
+          </div>
+          <h2>Industry 4.0 Training Setup</h2>
+        </div>
+        <div class="modal-body">
+          <img src="assets/portfolio-industry40-full.jpg" alt="Industry 4.0 Training Setup" class="modal-image">
+          <p class="modal-intro"><strong>Client:</strong> Technical Institute | <strong>Duration:</strong> 3 months | <strong>Year:</strong> 2024</p>
+          
+          <h3>Project Overview</h3>
+          <p>Smart manufacturing demonstration system integrating IoT sensors, PLC programming, automated sorting, and real-time data analytics for Industry 4.0 training.</p>
+          
+          <h3>System Components</h3>
+          <div class="feature-list">
+            <div class="feature-item-modal">
+              <h4>Assembly Station</h4>
+              <p>Automated assembly line with robotic arms, vision systems, and quality inspection sensors.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>Sorting & Inspection</h4>
+              <p>Color and shape-based sorting with AI-powered defect detection and rejection system.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>IoT & Analytics</h4>
+              <p>Real-time monitoring dashboard, predictive maintenance alerts, and production efficiency analytics.</p>
+            </div>
+          </div>
+          
+          <h3>Results</h3>
+          <p>✓ 100+ students trained on Industry 4.0 technologies<br>✓ Real-world smart factory simulation<br>✓ IoT integration with cloud platforms<br>✓ Hands-on PLC and SCADA programming</p>
+          
+          <a href="index.html#contact" class="btn btn-primary">Setup Your Lab</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Injection Mold Modal -->
+    <div id="portfolio-mold" class="service-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+          <div class="icon-wrapper">
+            <svg class="icon" viewBox="0 0 64 64" fill="none">
+              <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" stroke="currentColor" stroke-width="3"/>
+              <circle cx="32" cy="32" r="8" fill="currentColor"/>
+            </svg>
+          </div>
+          <h2>Injection Mold Design</h2>
+        </div>
+        <div class="modal-body">
+          <img src="assets/portfolio-injection-mold-full.jpg" alt="Injection Mold Design" class="modal-image">
+          <p class="modal-intro"><strong>Client:</strong> Consumer Electronics Manufacturer | <strong>Duration:</strong> 8 weeks | <strong>Year:</strong> 2024</p>
+          
+          <h3>Project Overview</h3>
+          <p>Multi-cavity injection mold design with conformal cooling channels for high-volume smartphone enclosure production.</p>
+          
+          <h3>Technical Details</h3>
+          <div class="feature-list">
+            <div class="feature-item-modal">
+              <h4>Mold Design</h4>
+              <p>4-cavity hot runner mold with automatic ejection, side cores, and precision tolerance of ±0.05mm.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>Conformal Cooling</h4>
+              <p>3D printed conformal cooling channels reduce cycle time by 40% and improve part dimensional consistency.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>Mold Flow Analysis</h4>
+              <p>Complete simulation to optimize gate location, cooling efficiency, warpage, and sink mark elimination.</p>
+            </div>
+          </div>
+          
+          <h3>Results</h3>
+          <p>✓ 40% reduction in cycle time<br>✓ 99.8% first-pass yield rate<br>✓ Zero warpage defects<br>✓ 500,000+ parts produced</p>
+          
+          <a href="index.html#contact" class="btn btn-primary">Design Your Tooling</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Medical Device Modal -->
+    <div id="portfolio-medical" class="service-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+          <div class="icon-wrapper">
+            <svg class="icon" viewBox="0 0 64 64" fill="none">
+              <rect x="16" y="16" width="32" height="32" rx="16" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M32 24 L32 40" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h2>Medical Device Prototyping</h2>
+        </div>
+        <div class="modal-body">
+          <img src="assets/portfolio-medical-full.jpg" alt="Medical Device Prototyping" class="modal-image">
+          <p class="modal-intro"><strong>Client:</strong> Healthcare Startup | <strong>Duration:</strong> 4 weeks | <strong>Year:</strong> 2025</p>
+          
+          <h3>Project Overview</h3>
+          <p>High-precision SLA 3D printing and biocompatible material selection for surgical instrument prototypes requiring FDA compliance.</p>
+          
+          <h3>Services Provided</h3>
+          <div class="feature-list">
+            <div class="feature-item-modal">
+              <h4>3D Printing</h4>
+              <p>SLA resin printing with 25-micron resolution for intricate surgical tool features and ergonomic handles.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>Material Selection</h4>
+              <p>Biocompatible, autoclavable resins meeting ISO 10993 and USP Class VI certifications.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>Post-Processing</h4>
+              <p>Medical-grade surface finishing, UV curing, and sterilization validation testing.</p>
+            </div>
+          </div>
+          
+          <h3>Results</h3>
+          <p>✓ FDA submission-ready prototypes<br>✓ Biocompatibility certified<br>✓ 5 design iterations in 4 weeks<br>✓ $50K+ saved vs traditional tooling</p>
+          
+          <a href="index.html#contact" class="btn btn-primary">Get Prototyping Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Robotics Lab Modal -->
+    <div id="portfolio-robotics" class="service-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-header">
+          <div class="icon-wrapper">
+            <svg class="icon" viewBox="0 0 64 64" fill="none">
+              <path d="M16 48 L16 32 L32 16 L48 32 L48 48 Z" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h2>Robotics Lab Development</h2>
+        </div>
+        <div class="modal-body">
+          <img src="assets/portfolio-robotics-full.jpg" alt="Robotics Lab Development" class="modal-image">
+          <p class="modal-intro"><strong>Client:</strong> Polytechnic College | <strong>Duration:</strong> 5 months | <strong>Year:</strong> 2024</p>
+          
+          <h3>Project Overview</h3>
+          <p>Turnkey robotics laboratory with industrial robots, pneumatic/hydraulic systems, and PLC programming stations for comprehensive automation training.</p>
+          
+          <h3>Lab Equipment</h3>
+          <div class="feature-list">
+            <div class="feature-item-modal">
+              <h4>Industrial Robots</h4>
+              <p>6-axis articulated robots with teach pendants, gripper systems, and vision-guided pick-and-place applications.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>Pneumatic & Hydraulic Trainers</h4>
+              <p>ISO standard valves, transparent components, compact movable frames for 15+ hands-on experiments.</p>
+            </div>
+            <div class="feature-item-modal">
+              <h4>PLC Systems</h4>
+              <p>Mitsubishi PLC modules with HMI interfaces, ladder logic programming, and SCADA integration.</p>
+            </div>
+          </div>
+          
+          <h3>Results</h3>
+          <p>✓ 80+ students trained annually<br>✓ Industry-recognized certifications<br>✓ Collaboration with automation companies<br>✓ Placement rate improved by 40%</p>
+          
+          <a href="index.html#contact" class="btn btn-primary">Build Your Robotics Lab</a>
+        </div>
+      </div>
+    </div>
 
     <!-- Client Testimonials -->
     <section class="section-padding bg-soft">
