@@ -1488,16 +1488,16 @@ textarea {
   transform: scale(1.1);
 }
 /* ============================================
-   ANIMATED LOGO CAROUSEL
+   ANIMATED LOGO CAROUSEL - AUTO-PLAY
    ============================================ */
 
 .logo-carousel-wrapper {
   overflow: hidden;
-  padding: 40px 0;
-  background: white;
-  border-radius: 20px;
+  padding: 60px 0;
+  background: transparent;
   position: relative;
   margin: 48px 0;
+  width: 100%;
 }
 
 /* Fade effect on edges */
@@ -1506,7 +1506,7 @@ textarea {
   content: '';
   position: absolute;
   top: 0;
-  width: 100px;
+  width: 150px;
   height: 100%;
   z-index: 2;
   pointer-events: none;
@@ -1514,42 +1514,44 @@ textarea {
 
 .logo-carousel-wrapper::before {
   left: 0;
-  background: linear-gradient(to right, rgba(245, 245, 245, 1), rgba(245, 245, 245, 0));
+  background: linear-gradient(to right, #F5F5F5 0%, transparent 100%);
 }
 
 .logo-carousel-wrapper::after {
   right: 0;
-  background: linear-gradient(to left, rgba(245, 245, 245, 1), rgba(245, 245, 245, 0));
+  background: linear-gradient(to left, #F5F5F5 0%, transparent 100%);
 }
 
 .logo-carousel {
   display: flex;
-  gap: 60px;
-  animation: scroll-logos 30s linear infinite;
+  gap: 80px;
   width: max-content;
+  animation: scroll-logos 40s linear infinite;
+  will-change: transform;
 }
 
-/* Pause on hover */
+/* Remove pause on hover if you want continuous scroll */
 .logo-carousel:hover {
-  animation-play-state: paused;
+  animation-play-state: running; /* Change to 'paused' if you want hover pause */
 }
 
 .logo-slide {
   flex-shrink: 0;
-  width: 180px;
-  height: 100px;
+  width: 200px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px;
   background: white;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(29, 53, 87, 0.08);
+  transition: all 0.4s ease;
 }
 
 .logo-slide:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(29, 53, 87, 0.15);
+  box-shadow: 0 12px 24px rgba(29, 53, 87, 0.15);
 }
 
 .logo-slide img {
@@ -1558,40 +1560,48 @@ textarea {
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0) opacity(0.3);
-  transition: all 0.3s ease;
+  filter: grayscale(100%) opacity(0.4);
+  transition: all 0.4s ease;
+  display: block;
 }
 
 .logo-slide:hover img {
-  filter: grayscale(0%) brightness(1) opacity(1);
-  transform: scale(1.1);
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
 }
 
-/* Scroll Animation */
+/* SMOOTH INFINITE SCROLL ANIMATION */
 @keyframes scroll-logos {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50%));
   }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .logo-carousel {
-    gap: 40px;
-    animation: scroll-logos 20s linear infinite;
+    gap: 60px;
+    animation: scroll-logos 30s linear infinite;
   }
   
   .logo-slide {
-    width: 140px;
-    height: 80px;
-    padding: 15px;
+    width: 160px;
+    height: 100px;
+    padding: 20px;
   }
   
   .logo-carousel-wrapper::before,
   .logo-carousel-wrapper::after {
-    width: 50px;
+    width: 80px;
   }
+}
+
+/* Force hardware acceleration for smooth animation */
+.logo-carousel {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
