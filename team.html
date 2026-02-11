@@ -50,29 +50,82 @@
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <header class="page-header" style="background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); padding: 140px 0 80px; text-align: center; color: white;">
-    <div class="container">
+  <!-- Page Header WITH TEAM PHOTO BACKGROUND -->
+  <header class="team-header-with-photo">
+    <div class="team-photo-bg"></div>
+    <div class="team-header-overlay"></div>
+    <div class="container" style="position: relative; z-index: 3;">
       <div class="kicker" style="background: rgba(255,255,255,0.2); color: white;">Our Team</div>
       <h1 style="font-size: clamp(36px, 5vw, 56px); color: white; margin: 20px 0;">Meet The Innovators</h1>
-      <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto;">A dedicated team of engineers, designers, and technical experts committed to delivering excellence.</p>
+      <p style="font-size: 18px; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">A dedicated team of engineers, designers, and technical experts committed to delivering excellence.</p>
     </div>
   </header>
 
   <main>
-    
-    <!-- Team Photo Section -->
+
+    <!-- Directors Section -->
     <section class="section-padding">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Together We Innovate</div>
-          <h2>Meet Our Team</h2>
-          <p>The faces behind PSP TechnoCADD's success - a dedicated team of professionals committed to excellence.</p>
+          <div class="kicker">Leadership</div>
+          <h2>Our Directors</h2>
+          <p>Visionary leaders driving PSP TechnoCADD's growth and innovation.</p>
         </div>
         
-        <!-- Full Team Photo -->
-        <div class="team-photo-wrapper">
-          <img src="assets/team/team-photo.jpg" alt="PSP TechnoCADD Team" class="team-photo">
+        <div class="directors-grid">
+          
+          <!-- Director 1: Dr. Pankaj Dhoble -->
+          <div class="director-card">
+            <div class="director-image">
+              <img src="assets/team/director-pankaj.jpg" alt="Dr. Pankaj Dhoble">
+            </div>
+            <div class="director-info">
+              <h3>Dr. Pankaj Dhoble</h3>
+              <p class="director-title">Chief Technology Officer & Director</p>
+              <p class="director-bio">Leading technological innovation and R&D initiatives with extensive expertise in engineering solutions, academic systems, and emerging technologies.</p>
+              <div class="director-details">
+                <div class="detail-item">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span>CTO & Director</span>
+                </div>
+                <div class="detail-item">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                  </svg>
+                  <span>15+ Years Experience</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Director 2: Hemant Shinde -->
+          <div class="director-card">
+            <div class="director-image">
+              <img src="assets/team/director-hemant.jpg" alt="Hemant Shinde">
+            </div>
+            <div class="director-info">
+              <h3>Hemant Shinde</h3>
+              <p class="director-title">Director & Business Development Head</p>
+              <p class="director-bio">Spearheading business growth, strategic partnerships, and client relations with a proven track record in manufacturing and educational sectors.</p>
+              <div class="director-details">
+                <div class="detail-item">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span>Director</span>
+                </div>
+                <div class="detail-item">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                  </svg>
+                  <span>12+ Years Experience</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
