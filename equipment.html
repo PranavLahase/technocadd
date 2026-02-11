@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Equipment & Technology — 3D Printers, CAD Software | PSP TechnoCADD</title>
-  <meta name="description" content="Advanced manufacturing equipment including metal and polymer 3D printers, CAD software (SolidWorks, CATIA, NX), CNC machines, laser cutting, and fabrication tools for precision engineering.">
+  <title>Our Equipment & Technology — EV Training Systems & Lab Equipment | PSP TechnoCADD</title>
+  <meta name="description" content="Industry-grade EV training equipment, battery management systems, power electronics trainers, automation equipment, and Industry 4.0 solutions for technical education and research institutions.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo.png">
@@ -12,104 +12,12 @@
   <link rel="shortcut icon" href="assets/logo.png">
   
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .equipment-card {
-      background: white;
-      border: 1px solid rgba(29, 53, 87, 0.08);
-      border-radius: 20px;
-      padding: 32px;
-      transition: var(--transition);
-      height: 100%;
-    }
-    
-    .equipment-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-xl);
-      border-color: rgba(230, 57, 70, 0.2);
-    }
-    
-    .equipment-card h3 {
-      color: var(--blue);
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
-    
-    .equipment-card .model {
-      display: inline-block;
-      background: rgba(230, 57, 70, 0.1);
-      color: var(--red);
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    
-    .equipment-card p {
-      color: var(--gray);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    
-    .equipment-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0;
-    }
-    
-    .equipment-card ul li {
-      padding: 8px 0;
-      border-bottom: 1px solid var(--light-gray);
-      color: var(--gray);
-      font-size: 15px;
-    }
-    
-    .equipment-card ul li:last-child {
-      border-bottom: none;
-    }
-    
-    .equipment-card ul li:before {
-      content: "✓ ";
-      color: var(--red);
-      font-weight: bold;
-      margin-right: 8px;
-    }
-
-    /* Equipment Images */
-    .equipment-image {
-      width: 100%;
-      height: 240px;
-      overflow: hidden;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-      position: relative;
-    }
-
-    .equipment-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      display: block;
-    }
-
-    .equipment-card:hover .equipment-image img {
-      transform: scale(1.08);
-    }
-
-    @media (max-width: 768px) {
-      .equipment-image {
-        height: 200px;
-      }
-    }
-  </style>
 </head>
 
 <body>
   
- <!-- Navigation -->
-<nav class="navbar" id="navbar">
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
     <div class="container nav-container">
         <!-- LOGO SECTION -->
         <a class="brand" href="index.html">
@@ -140,7 +48,7 @@
             <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
         </ul>
     </div>
-</nav>
+  </nav>
 
   <!-- Page Header -->
   <header class="page-header" style="background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); padding: 140px 0 80px; text-align: center; color: white;">
@@ -152,6 +60,7 @@
   </header>
 
   <main>
+    
     <!-- EV Training Systems -->
     <section class="section-padding">
       <div class="container">
@@ -162,122 +71,163 @@
         </div>
         
         <div class="grid-3">
-          <!-- Power Electronics Trainer -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          
+          <!-- Card 1: Power Electronics Trainer -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/power-electronics.jpg" alt="Power Electronic Training System">
             </div>
-            <span class="model">AL-E957B</span>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+                <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="3"/>
+                <path d="M20 24 L44 24 M20 40 L44 40" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="badge">AL-E957B</div>
             <h3>Power Electronic Training System</h3>
             <p>A comprehensive hands-on platform for power electronics training with real-time simulation capabilities.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>50MHz oscilloscope</li>
               <li>Digital voltmeters & ammeters</li>
               <li>Variable power supplies</li>
               <li>Single & three-phase firing circuits</li>
               <li>Chopper control circuits</li>
               <li>Inverter firing circuits</li>
-              <li>MCB protection & snubber circuits</li>
             </ul>
           </div>
 
-          <!-- EV AC System -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Card 2: EV AC System -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/ac-trainer.jpg" alt="EV Car Air Conditioning System Trainer">
             </div>
-            <span class="model">EV-XL30</span>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
+                <path d="M32 16 L32 48 M16 32 L48 32" stroke="currentColor" stroke-width="3"/>
+                <circle cx="32" cy="32" r="8" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="badge">EV-XL30</div>
             <h3>EV Car Air Conditioning System Trainer</h3>
             <p>Real BYD E5 air conditioning module with fault simulation and diagnostic capabilities.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Real vehicle HVAC system</li>
               <li>Electric compressor operation</li>
               <li>10-inch diagnostic terminal</li>
               <li>Fault simulation module</li>
               <li>BMS integration</li>
-              <li>Interactive learning modules</li>
             </ul>
           </div>
 
-          <!-- EV Control System -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Card 3: EV Control System -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/control-system.jpg" alt="EV Car Control System Trainer">
             </div>
-            <span class="model">EV-XL31</span>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="3"/>
+                <circle cx="32" cy="32" r="12" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 8 L32 20 M32 44 L32 56" stroke="currentColor" stroke-width="3"/>
+              </svg>
+            </div>
+            <div class="badge">EV-XL31</div>
             <h3>EV Car Control System Trainer</h3>
             <p>Electric power steering system training with original BYD E5 components.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>BYD E5 EPS components</li>
               <li>Torque & corner sensors</li>
               <li>EPS motor integration</li>
               <li>Real-time fault simulation</li>
               <li>CAN communication interface</li>
-              <li>Safety interlocks</li>
             </ul>
           </div>
 
-          <!-- EV Electrical System -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Card 4: EV Electrical System -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/electrical-system.jpg" alt="EV Car Electrical System Trainer">
             </div>
-            <span class="model">EV-XL32</span>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <path d="M24 12 L40 32 L32 32 L40 52 L24 32 L32 32 Z" stroke="currentColor" stroke-width="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="badge">EV-XL32</div>
             <h3>EV Car Electrical System Trainer</h3>
             <p>Complete body electrical system with lighting, wipers, horn, and power windows.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Real EV body components</li>
               <li>Lighting system circuits</li>
               <li>Wiper & horn systems</li>
               <li>Power window circuits</li>
               <li>Fault simulation module</li>
-              <li>Interactive circuit analysis</li>
             </ul>
           </div>
 
-          <!-- BMS Trainer -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Card 5: BMS Trainer -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/bms-trainer-xl28.jpg" alt="EV Car Battery Management System Trainer">
             </div>
-            <span class="model">EV-XL28</span>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="16" y="20" width="32" height="24" rx="2" stroke="currentColor" stroke-width="3"/>
+                <rect x="20" y="14" width="4" height="6" fill="currentColor"/>
+                <rect x="40" y="14" width="4" height="6" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="badge">EV-XL28</div>
             <h3>EV Car Battery Management System Trainer</h3>
             <p>Original BYD E5 battery pack with charge/discharge management and diagnostics.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>BYD E5 battery pack</li>
               <li>Charge/discharge management</li>
               <li>Insulation detection</li>
               <li>Fault simulation module</li>
               <li>BMS integration</li>
-              <li>Safety interlocks</li>
             </ul>
           </div>
 
-          <!-- BMS Simulation -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Card 6: BMS Simulation -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/bms-simulation.jpg" alt="EV Car BMS Simulation Trainer">
             </div>
-            <span class="model">EV-XL-D23</span>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="24" width="40" height="16" rx="2" stroke="currentColor" stroke-width="3"/>
+                <path d="M22 24 L22 40 M32 24 L32 40 M42 24 L42 40" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="badge">EV-XL-D23</div>
             <h3>EV Car BMS Simulation Trainer</h3>
             <p>Lithium iron phosphate battery pack with real-time monitoring and safety features.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>LiFePO4 battery pack</li>
               <li>BMS hands-on training</li>
               <li>Safety switches & emergency stop</li>
               <li>Real-time monitoring display</li>
-              <li>Battery parameter analysis</li>
             </ul>
           </div>
 
-          <!-- HVAC Demo Kit -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Card 7: HVAC Demo Kit -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/hvac-kit.jpg" alt="HVAC Demo Kit">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+                <path d="M20 28 L28 28 M36 28 L44 28" stroke="currentColor" stroke-width="3"/>
+                <path d="M20 36 L28 36 M36 36 L44 36" stroke="currentColor" stroke-width="3"/>
+              </svg>
             </div>
             <h3>HVAC Demo Kit</h3>
             <p>Complete EV HVAC system simulation with heating and cooling functions.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>EV HVAC system simulation</li>
               <li>Electric compressor operation</li>
               <li>Heating & cooling functions</li>
@@ -286,31 +236,44 @@
             </ul>
           </div>
 
-          <!-- BMS Training Kit -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Card 8: BMS Training Kit -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/bms-trainer.jpg" alt="BMS Training Kit">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="16" y="12" width="32" height="40" rx="4" stroke="currentColor" stroke-width="3"/>
+                <rect x="24" y="20" width="16" height="8" rx="2" fill="currentColor"/>
+                <path d="M24 34 L40 34 M24 40 L40 40" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
             <h3>BMS Training Kit</h3>
             <p>Comprehensive battery management training with multiple chemistry support.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Li-Ion, LFP, Lead-Acid, NMC support</li>
               <li>3S–16S configurations</li>
               <li>10V–60V, 10A–100A range</li>
               <li>CAN, RS485, UART, I²C communication</li>
-              <li>BatBot software interface</li>
               <li>SOC/SOH monitoring</li>
             </ul>
           </div>
 
-          <!-- Power Steering -->
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Card 9: Power Steering -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/eps-trainer.jpg" alt="EV Car Power Steering System Trainer">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
+                <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 12 L32 22 M32 42 L32 52 M12 32 L22 32 M42 32 L52 32" stroke="currentColor" stroke-width="3"/>
+              </svg>
             </div>
             <h3>EV Car Power Steering System Trainer</h3>
             <p>Hands-on electric power steering (EPS) training with authentic components.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>BYD E5 EPS system</li>
               <li>Torque & angle sensors</li>
               <li>EPS motor integration</li>
@@ -318,6 +281,7 @@
               <li>CAN communication</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -332,37 +296,54 @@
         </div>
         
         <div class="grid-2">
-          <div class="equipment-card">
-            <div class="equipment-image">
+          
+          <!-- 2-Wheeler Workbench -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/2wheeler-workbench.jpg" alt="Electric 2-Wheeler Training Workbench">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <circle cx="20" cy="44" r="12" stroke="currentColor" stroke-width="3"/>
+                <circle cx="44" cy="44" r="12" stroke="currentColor" stroke-width="3"/>
+                <path d="M20 44 L32 20 L44 44" stroke="currentColor" stroke-width="3"/>
+              </svg>
             </div>
             <h3>Electric 2-Wheeler Training Workbench</h3>
             <p>Comprehensive two-wheeler EV training platform with real-time monitoring.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Lithium-ion battery system</li>
               <li>Brushless DC motor</li>
               <li>Smart dashboard integration</li>
               <li>Real-time data monitoring</li>
               <li>Battery performance testing</li>
-              <li>Hands-on maintenance training</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- 3-Wheeler Workbench -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/3wheeler-workbench.jpg" alt="Electric 3-Wheeler Training Workbench">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="20" r="8" stroke="currentColor" stroke-width="3"/>
+                <circle cx="20" cy="48" r="8" stroke="currentColor" stroke-width="3"/>
+                <circle cx="44" cy="48" r="8" stroke="currentColor" stroke-width="3"/>
+                <path d="M32 28 L32 36 M32 36 L20 48 M32 36 L44 48" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
             <h3>Electric 3-Wheeler Training Workbench</h3>
             <p>Diagnostic and maintenance platform for electric three-wheelers.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Real-time data monitoring</li>
               <li>Battery performance testing</li>
               <li>Motor diagnostics</li>
               <li>Controller analysis</li>
-              <li>Modular part replacement</li>
               <li>Fault diagnosis training</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -377,53 +358,76 @@
         </div>
         
         <div class="grid-3">
-          <div class="equipment-card">
-            <div class="equipment-image">
+          
+          <!-- Level 1 AC Charger -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/level1-charger.jpg" alt="Level 1 AC Charger">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="20" y="12" width="24" height="40" rx="4" stroke="currentColor" stroke-width="3"/>
+                <rect x="26" y="20" width="12" height="16" rx="2" fill="currentColor"/>
+                <circle cx="32" cy="44" r="3" fill="currentColor"/>
+              </svg>
             </div>
             <h3>Level 1 AC Charger</h3>
             <p>3.3 kW – 10 kW three-phase charging solution</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Input: Three Phase 415V</li>
               <li>Output: 240V/socket</li>
               <li>3 charging outlets</li>
               <li>Overcurrent/overvoltage protection</li>
-              <li>Emergency stop button</li>
               <li>Mobile app (Android & iOS)</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Level 2 AC Charger -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/level2-charger.jpg" alt="Level 2 AC Charger">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="20" y="12" width="24" height="40" rx="4" stroke="currentColor" stroke-width="3"/>
+                <path d="M28 22 L36 22 M28 28 L36 28 M28 34 L36 34" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="44" r="3" fill="currentColor"/>
+              </svg>
             </div>
             <h3>Level 2 AC Charger</h3>
             <p>7.4 kW – 22 kW fast AC charging</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Output: 7.4kW, 11kW, 22kW</li>
               <li>1 or 2 charging outlets</li>
               <li>15A, 32A rated current</li>
               <li>In-built metering</li>
-              <li>Ground fault protection</li>
               <li>Mobile app integration</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Level 3 DC Fast Charger -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/level3-charger.jpg" alt="Level 3 DC Fast Charger">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="16" y="8" width="32" height="48" rx="4" stroke="currentColor" stroke-width="3"/>
+                <path d="M24 18 L32 32 L28 32 L32 44" stroke="currentColor" stroke-width="3" fill="none"/>
+                <path d="M32 32 L40 18 L36 32 L40 44" stroke="currentColor" stroke-width="3" fill="none"/>
+              </svg>
             </div>
             <h3>Level 3 DC Fast Charger</h3>
             <p>15 kW – 400 kW DC rapid charging</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Output: 15-400 kW</li>
               <li>100A, 200A rated current</li>
               <li>CCS, CHAdeMO connectors</li>
               <li>In-built metering</li>
-              <li>Emergency stop</li>
               <li>Cloud-based monitoring</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -438,106 +442,147 @@
         </div>
         
         <div class="grid-3">
-          <div class="equipment-card">
-            <div class="equipment-image">
+          
+          <!-- Pneumatic Trainer -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/pneumatic-trainer.jpg" alt="Pneumatic Trainer Kit">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
+                <path d="M22 32 L42 32 M32 22 L32 42" stroke="currentColor" stroke-width="3"/>
+                <circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
             <h3>Pneumatic Trainer Kit</h3>
             <p>Complete pneumatic automation training with Mitsubishi PLC.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Mitsubishi PLC (16 Digital I/O)</li>
               <li>ISO standard valves</li>
               <li>Compact movable frame</li>
-              <li>Name tagging for components</li>
-              <li>Interdisciplinary use</li>
               <li>15+ practicals</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Hydraulic Trainer -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/hydraulic-trainer.jpg" alt="Hydraulic Trainer Kit">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="16" y="24" width="32" height="24" rx="2" stroke="currentColor" stroke-width="3"/>
+                <path d="M24 20 L24 28 M40 20 L40 28" stroke="currentColor" stroke-width="3"/>
+                <path d="M20 40 L44 40" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
             <h3>Hydraulic Trainer Kit</h3>
             <p>Transparent hydraulic system with IoT capabilities.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Transparent valves & hoses</li>
               <li>Single-phase power pack</li>
               <li>15+ hands-on practicals</li>
               <li>IoT-based experiments</li>
-              <li>Glossy extrusion frame</li>
-              <li>Component mounting system</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- PLC Module -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/plc-module.jpg" alt="PLC Module Kit">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="20" width="40" height="24" rx="2" stroke="currentColor" stroke-width="3"/>
+                <rect x="18" y="26" width="8" height="12" rx="1" fill="currentColor"/>
+                <rect x="28" y="26" width="8" height="12" rx="1" fill="currentColor"/>
+                <rect x="38" y="26" width="8" height="12" rx="1" fill="currentColor"/>
+              </svg>
             </div>
             <h3>PLC Module Kit</h3>
             <p>Programmable Logic Controller training platform.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>20+ educational experiments</li>
               <li>Real-time hardware simulation</li>
               <li>Compact table-mount design</li>
-              <li>Customizable programs</li>
-              <li>Two working sides</li>
               <li>User-friendly interface</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Industry 4.0 Setup -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/industry40-setup.jpg" alt="Industry 4.0 Educational Setup">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+                <circle cx="24" cy="28" r="4" fill="currentColor"/>
+                <circle cx="32" cy="36" r="4" fill="currentColor"/>
+                <circle cx="40" cy="28" r="4" fill="currentColor"/>
+                <path d="M24 28 L32 36 M32 36 L40 28" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
             <h3>Industry 4.0 Educational Setup</h3>
             <p>Complete smart manufacturing demonstration system.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Independent stations</li>
               <li>Color & shape sorting</li>
               <li>Assembly & inspection stations</li>
-              <li>HMI for system monitoring</li>
               <li>IoT-based connectivity</li>
-              <li>Flexible programming</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- AC EVSE Test Kit -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/evse-test-kit.jpg" alt="AC EVSE Test Kit">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="20" y="16" width="24" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+                <path d="M28 24 L36 24 M28 32 L36 32 M28 40 L36 40" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
             <h3>AC EVSE Test Kit</h3>
             <p>Comprehensive EV charger testing equipment.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Proximity & control pilot testing</li>
               <li>Charging state verification</li>
               <li>Protective earth testing</li>
-              <li>Cable current setting</li>
-              <li>CP waveform capture</li>
               <li>IEC 61851-1 compliant</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Battery Charger -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/battery-charger.jpg" alt="Battery Charger & Discharger">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="16" y="24" width="32" height="20" rx="2" stroke="currentColor" stroke-width="3"/>
+                <rect x="22" y="18" width="4" height="6" fill="currentColor"/>
+                <rect x="38" y="18" width="4" height="6" fill="currentColor"/>
+                <path d="M28 32 L32 36 L36 28" stroke="currentColor" stroke-width="3" fill="none"/>
+              </svg>
             </div>
             <h3>Battery Charger & Discharger</h3>
             <p>Multi-chemistry battery testing system.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Li-Ion, LFP, Lead-Acid support</li>
               <li>AC (L1/L2) & DC fast modes</li>
               <li>CC, CV, trickle stages</li>
-              <li>Overcharge/overcurrent protection</li>
               <li>Thermal management</li>
-              <li>Multiple connector types</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Brake System -->
+    <!-- Additional Equipment -->
     <section class="section-padding">
       <div class="container">
         <div class="section-header">
@@ -546,37 +591,54 @@
         </div>
         
         <div class="grid-2">
-          <div class="equipment-card">
-            <div class="equipment-image">
+          
+          <!-- Brake System -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/brake-system.jpg" alt="Disc/Drum Brake System on Stand">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
+                <circle cx="32" cy="32" r="12" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 12 L32 20 M32 44 L32 52" stroke="currentColor" stroke-width="3"/>
+              </svg>
             </div>
             <h3>Disc/Drum Brake System on Stand</h3>
             <p>ABS braking system demonstration using Volkswagen Santana components.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>ABS braking simulation</li>
               <li>ABS pump & sensors</li>
               <li>Motorized brake disc</li>
               <li>Emergency braking scenarios</li>
-              <li>Real vehicle components</li>
               <li>Hands-on diagnostics</li>
             </ul>
           </div>
 
-          <div class="equipment-card">
-            <div class="equipment-image">
+          <!-- Tool Trolley -->
+          <div class="card">
+            <div class="card-image">
               <img src="assets/equipment/tool-trolley.jpg" alt="Launch Tool Kit Trolley">
+            </div>
+            <div class="icon-wrapper">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <rect x="16" y="12" width="32" height="36" rx="2" stroke="currentColor" stroke-width="3"/>
+                <circle cx="22" cy="52" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle cx="42" cy="52" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M20 20 L44 20 M20 28 L44 28 M20 36 L44 36" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
             <h3>Launch Tool Kit Trolley</h3>
             <p>Professional tool storage for automotive and EV maintenance labs.</p>
-            <ul>
+            <ul class="feature-list-compact">
               <li>Heavy-duty steel body</li>
               <li>7 sliding drawers</li>
               <li>Centralized locking system</li>
               <li>Smooth swivel casters</li>
-              <li>Durable finish</li>
               <li>Launch brand quality</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
