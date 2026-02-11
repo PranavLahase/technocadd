@@ -1632,3 +1632,38 @@ textarea {
     height: 200px;
   }
 }
+/* ============================================
+   TEAM PAGE - TEAM PHOTO SECTION
+   ============================================ */
+
+/* Team Photo Wrapper */
+.team-photo-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+.team-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.team-photo-wrapper:hover .team-photo {
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-photo-wrapper {
+    border-radius: var(--radius);
+    max-width: 100%;
+  }
+}

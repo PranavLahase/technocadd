@@ -17,7 +17,7 @@
 <body>
   
   <!-- Navigation -->
-<nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
     <div class="container nav-container">
         <!-- LOGO SECTION -->
         <a class="brand" href="index.html">
@@ -37,18 +37,18 @@
         
         <!-- Navigation Menu -->
         <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="equipment.html">Equipment</a></li>
-            <li><a href="team.html">Team</a></li>
+            <li><a href="team.html" class="active">Team</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="careers.html">Careers</a></li>
-            <li><a href="#contact" class="btn-contact">Contact</a></li>
+            <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
         </ul>
     </div>
-</nav>
+  </nav>
 
   <!-- Page Header -->
   <header class="page-header" style="background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); padding: 140px 0 80px; text-align: center; color: white;">
@@ -60,8 +60,25 @@
   </header>
 
   <main>
-    <!-- Team Introduction -->
+    
+    <!-- Team Photo Section -->
     <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Together We Innovate</div>
+          <h2>Meet Our Team</h2>
+          <p>The faces behind PSP TechnoCADD's success - a dedicated team of professionals committed to excellence.</p>
+        </div>
+        
+        <!-- Full Team Photo -->
+        <div class="team-photo-wrapper">
+          <img src="assets/team/team-photo.jpg" alt="PSP TechnoCADD Team" class="team-photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Introduction -->
+    <section class="section-padding bg-soft">
       <div class="container">
         <div style="max-width: 900px; margin: 0 auto; text-align: center;">
           <h2 style="font-size: 42px; color: var(--blue); margin-bottom: 24px;">Building Tomorrow's Technology Today</h2>
@@ -71,7 +88,7 @@
     </section>
 
     <!-- Departments -->
-    <section class="section-padding bg-soft">
+    <section class="section-padding">
       <div class="container">
         <div class="section-header">
           <h2>Our Departments</h2>
@@ -149,7 +166,7 @@
     </section>
 
     <!-- Team Values -->
-    <section class="section-padding">
+    <section class="section-padding bg-soft">
       <div class="container">
         <div class="section-header">
           <h2>What Drives Us</h2>
