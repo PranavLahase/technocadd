@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-        // ===================================
+    // ===================================
     // CAREERS FORM HANDLER WITH RESUME UPLOAD
     // ===================================
     const careersForm = document.getElementById('careersForm');
@@ -276,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             try {
                 // Convert file to base64
+                console.log('Converting resume to base64...');
                 const base64Resume = await fileToBase64(resumeFile);
 
                 const formData = {
@@ -293,8 +294,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
                 };
 
-                // Send to Google Apps Script
-                const response = await fetch('https://script.google.com/macros/s/AKfycbz28exE8oEm6RSfKXCwyB72Xdya11SbWegko0VLAi5BCWu2WK6t316JuNdcyRb7iUwyzA/exec', {
+                console.log('Sending application to Google Apps Script...');
+
+                // ✅ UPDATED URL - Send to NEW Google Apps Script
+                const response = await fetch('https://script.google.com/macros/s/AKfycbyQKTETg6UxPZzqTsFR7ZRDvwlcr9n35MiNzKcgbgoQq8Ht3tiJ4oJuGnjFwM2PahPcCg/exec', {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -303,12 +306,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: JSON.stringify(formData)
                 });
 
+                console.log('Application submitted successfully!');
                 showFormMessage(careersMessage, 'success', '✓ Application submitted successfully! We\'ll review your profile and get back to you within 5-7 business days.');
                 careersForm.reset();
 
             } catch (error) {
                 console.error('Error:', error);
-                showFormMessage(careersMessage, 'error', '✗ Something went wrong. Please email your resume to hr@technocaddapl.com');
+                showFormMessage(careersMessage, 'error', '✗ Something went wrong. Please email your resume to contact@technocaddapl.com');
             } finally {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
@@ -320,16 +324,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (resumeInput) {
             resumeInput.addEventListener('change', function() {
                 const fileName = this.files[0]?.name;
+                const fileSize = this.files[0]?.size;
                 const fileLabel = document.querySelector('.file-label');
                 if (fileLabel && fileName) {
-                    fileLabel.textContent = `✓ Selected: ${fileName}`;
+                    const sizeMB = (fileSize / (1024 * 1024)).toFixed(2);
+                    fileLabel.innerHTML = `✓ Selected: <strong>${fileName}</strong> (${sizeMB} MB)`;
                     fileLabel.style.color = '#155724';
                     fileLabel.style.fontWeight = '600';
                 }
             });
         }
     }
-
 
     // ===================================
     // SERVICE MODAL FUNCTIONALITY
