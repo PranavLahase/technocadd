@@ -1949,83 +1949,88 @@ textarea {
     padding: 32px 24px;
   }
 }
-/* ===============================
-   HOMEPAGE SCOOTER ANIMATION
-================================ */
+/* ===== Premium Simple Energy Module ===== */
 
-.floating-scooter-home {
+.simple-module {
     position: fixed;
-    bottom: 40px;
+    bottom: 60px;
     left: -200px;
     z-index: 9999;
-    animation: scooterMove 18s linear infinite;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: moveScooter 20s linear infinite;
 }
 
-.floating-scooter-home img {
-    width: 130px;
-    position: relative;
-    z-index: 2;
+/* Scooter */
+.simple-scooter img {
+    width: 140px;
     cursor: pointer;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
+}
+
+.simple-scooter img:hover {
+    transform: scale(1.05);
 }
 
 /* Movement */
-@keyframes scooterMove {
+@keyframes moveScooter {
     0% { transform: translateX(0); }
     100% { transform: translateX(120vw); }
 }
 
-/* Wheel simulation */
-.wheel {
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    border: 3px solid #ff0000;
-    border-radius: 50%;
-    animation: wheelSpin 0.7s linear infinite;
-    z-index: 1;
+/* Glass Card */
+.simple-card {
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 16px 20px;
+    border-radius: 16px;
+    color: #fff;
+    min-width: 220px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
-.wheel-back {
-    bottom: 18px;
-    left: 20px;
-}
-
-.wheel-front {
-    bottom: 18px;
-    left: 98px;
-}
-
-@keyframes wheelSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Feature text */
-.scooter-info {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    width: 200px;
-    font-weight: 600;
+.simple-badge {
+    font-weight: 700;
     font-size: 14px;
-    color: #ffffff;
+    letter-spacing: 1px;
+    color: #ff2a2a;
+    margin-bottom: 10px;
 }
 
-.scooter-info span {
-    position: absolute;
-    opacity: 0;
-    animation: infoCycle 18s linear infinite;
+.simple-attribute {
+    font-size: 13px;
+    margin-bottom: 6px;
+    opacity: 0.9;
 }
 
-.scooter-info span:nth-child(1) { animation-delay: 0s; }
-.scooter-info span:nth-child(2) { animation-delay: 4.5s; }
-.scooter-info span:nth-child(3) { animation-delay: 9s; }
-.scooter-info span:nth-child(4) { animation-delay: 13.5s; }
+/* Distributor Frame */
+.distributor-frame {
+    position: fixed;
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111;
+    padding: 24px 32px;
+    border-radius: 18px;
+    color: #fff;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    display: none;
+    max-width: 420px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.15);
+}
 
-@keyframes infoCycle {
-    0% { opacity: 0; transform: translateY(10px); }
-    5% { opacity: 1; transform: translateY(0); }
-    20% { opacity: 1; }
-    25% { opacity: 0; }
-    100% { opacity: 0; }
+.frame-content h3 {
+    color: #ff2a2a;
+    margin-bottom: 10px;
+}
+
+.frame-note {
+    display: block;
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: 0.6;
 }
