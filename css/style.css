@@ -1949,88 +1949,165 @@ textarea {
     padding: 32px 24px;
   }
 }
-/* ===== Premium Simple Energy Module ===== */
+/* ==========================================
+   ULTRA PREMIUM SIMPLE ENERGY MODULE
+========================================== */
 
-.simple-module {
+.ev-wrapper {
     position: fixed;
-    bottom: 60px;
-    left: -200px;
+    bottom: 70px;
+    left: -300px;
     z-index: 9999;
+    opacity: 0;
+    animation: evFadeIn 1.5s ease forwards;
+}
+
+@keyframes evFadeIn {
+    to { opacity: 1; }
+}
+
+.ev-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    animation: moveScooter 20s linear infinite;
+    animation: evMove 22s ease-in-out infinite;
 }
 
-/* Scooter */
-.simple-scooter img {
-    width: 140px;
-    cursor: pointer;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
-    transition: transform 0.3s ease;
-}
-
-.simple-scooter img:hover {
-    transform: scale(1.05);
-}
-
-/* Movement */
-@keyframes moveScooter {
-    0% { transform: translateX(0); }
+@keyframes evMove {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(60vw); }
     100% { transform: translateX(120vw); }
 }
 
-/* Glass Card */
-.simple-card {
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 16px 20px;
-    border-radius: 16px;
+/* Spec Panel */
+.ev-spec-panel {
+    background: linear-gradient(145deg, rgba(20,20,20,0.95), rgba(30,30,30,0.85));
+    backdrop-filter: blur(14px);
+    padding: 20px 22px;
+    border-radius: 20px;
     color: #fff;
-    min-width: 220px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    width: 280px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 25px;
+    position: relative;
 }
 
-.simple-badge {
+.ev-spec-panel::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    background: rgba(20,20,20,0.95);
+    transform: rotate(45deg);
+}
+
+.ev-brand {
+    color: #ff2a2a;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 1px;
-    color: #ff2a2a;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.simple-attribute {
+.ev-spec-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ev-spec-panel li {
     font-size: 13px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     opacity: 0.9;
 }
 
-/* Distributor Frame */
-.distributor-frame {
-    position: fixed;
-    bottom: 160px;
+.ev-badge {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* Scooter */
+.ev-scooter {
+    position: relative;
+    cursor: pointer;
+    animation: suspension 3s ease-in-out infinite;
+}
+
+@keyframes suspension {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+.ev-scooter img {
+    width: 150px;
+    filter: drop-shadow(0 18px 30px rgba(0,0,0,0.4));
+}
+
+/* Shadow */
+.ev-shadow {
+    position: absolute;
+    bottom: 5px;
     left: 50%;
+    width: 90px;
+    height: 15px;
+    background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, transparent 70%);
     transform: translateX(-50%);
-    background: #111;
-    padding: 24px 32px;
-    border-radius: 18px;
-    color: #fff;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+/* Overlay */
+.ev-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
     display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.ev-overlay-card {
+    background: #111;
+    padding: 30px;
+    border-radius: 20px;
     max-width: 420px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.frame-content h3 {
+.ev-overlay-card h3 {
     color: #ff2a2a;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.frame-note {
+.ev-overlay-card span {
     display: block;
-    margin-top: 12px;
+    margin-top: 15px;
     font-size: 12px;
     opacity: 0.6;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+
+    .ev-wrapper {
+        bottom: 30px;
+    }
+
+    .ev-spec-panel {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .ev-scooter img {
+        width: 95px;
+    }
 }

@@ -479,8 +479,8 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
-const scooter = document.getElementById("simpleScooter");
-const distributorFrame = document.getElementById("distributorFrame");
+const scooter = document.getElementById("evScooter");
+const overlay = document.getElementById("evOverlay");
 
 let clickTimeout;
 
@@ -490,21 +490,18 @@ scooter.addEventListener("click", function () {
         clearTimeout(clickTimeout);
         clickTimeout = null;
 
-        // Double click → redirect
         window.open(
-          "https://www.google.com/maps/search/?api=1&query=Jyotirmay+Complex+Shop+No+2+3+Beside+Athithi+Hotel+Croma+Seven+Hills+Chh+Sambhajinagar+431003+Maharashtra+India",
-          "_blank"
+            "https://www.google.com/maps/search/?api=1&query=Jyotirmay+Complex+Shop+No+2+3+Beside+Athithi+Hotel+Croma+Seven+Hills+Chh+Sambhajinagar+431003+Maharashtra+India",
+            "_blank"
         );
     } else {
-
         clickTimeout = setTimeout(() => {
-            distributorFrame.style.display = "block";
-
-            setTimeout(() => {
-                distributorFrame.style.display = "none";
-            }, 4000);
-
+            overlay.style.display = "flex";
             clickTimeout = null;
         }, 250);
     }
+});
+
+overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
 });
