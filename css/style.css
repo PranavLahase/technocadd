@@ -1953,7 +1953,7 @@ textarea {
 
 .simple-launch {
     position: fixed;
-    bottom: 60px;
+    bottom: 25px;
     left: -250px;
     z-index: 9999;
     animation: launchMove 18s ease-in-out infinite;
