@@ -472,50 +472,45 @@ function showFormMessage(messageElement, type, text) {
     }, 5000);
 }
 
-/* Compact EV module interaction: single click = small toast, double click = map */
-(function () {
-  const scooter = document.getElementById('evScooter');
-  const toast = document.getElementById('evToast');
+// ===== Simple Energy Compact Module =====
 
-  // fallback if elements missing
+document.addEventListener("DOMContentLoaded", function () {
+
+  const scooter = document.getElementById("evScooter");
+  const toast = document.getElementById("evToast");
+
   if (!scooter) return;
 
   let clickTimer = null;
 
-  scooter.addEventListener('click', (e) => {
-    // detect double click by timing
+  scooter.addEventListener("click", function () {
+
     if (clickTimer) {
       clearTimeout(clickTimer);
       clickTimer = null;
 
-      // double-click: open google maps
-      const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Jyotirmay+Complex+Shop+No+2+3+Beside+Athithi+Hotel+Croma+Seven+Hills+Chh+Sambhajinagar+431003+Maharashtra+India";
-      window.open(mapsUrl, '_blank');
+      // Double click → open showroom
+      window.open(
+        "https://maps.app.goo.gl/WKXe5VwzVgxF9Gkg8",
+        "_blank"
+      );
       return;
     }
 
-    // single click: show tiny framed toast for 3 seconds
-    clickTimer = setTimeout(() => {
+    clickTimer = setTimeout(function () {
       clickTimer = null;
+
       if (!toast) return;
-      toast.style.display = 'flex';
-      toast.style.opacity = '0';
-      toast.animate([{opacity:0},{opacity:1}], {duration:180, fill:'forwards'});
-      // auto-hide
-      setTimeout(() => {
-        if (!toast) return;
-        toast.animate([{opacity:1},{opacity:0}], {duration:220, fill:'forwards'});
-        setTimeout(()=> toast.style.display = 'none', 240);
+
+      toast.style.display = "flex";
+      toast.style.opacity = "1";
+
+      setTimeout(function () {
+        toast.style.display = "none";
       }, 3000);
-    }, 240);
+
+    }, 250);
+
   });
 
-  // keyboard accessibility (Enter for click, Space for same)
-  scooter.addEventListener('keydown', (ev) => {
-    if (ev.key === 'Enter' || ev.key === ' ') {
-      ev.preventDefault();
-      scooter.click();
-    }
-  });
-
-})();
+});
