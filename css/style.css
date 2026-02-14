@@ -1949,3 +1949,83 @@ textarea {
     padding: 32px 24px;
   }
 }
+/* ===============================
+   HOMEPAGE SCOOTER ANIMATION
+================================ */
+
+.floating-scooter-home {
+    position: fixed;
+    bottom: 40px;
+    left: -200px;
+    z-index: 9999;
+    animation: scooterMove 18s linear infinite;
+}
+
+.floating-scooter-home img {
+    width: 130px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Movement */
+@keyframes scooterMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(120vw); }
+}
+
+/* Wheel simulation */
+.wheel {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: 3px solid #ff0000;
+    border-radius: 50%;
+    animation: wheelSpin 0.7s linear infinite;
+    z-index: 1;
+}
+
+.wheel-back {
+    bottom: 18px;
+    left: 20px;
+}
+
+.wheel-front {
+    bottom: 18px;
+    left: 98px;
+}
+
+@keyframes wheelSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Feature text */
+.scooter-info {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 200px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.scooter-info span {
+    position: absolute;
+    opacity: 0;
+    animation: infoCycle 18s linear infinite;
+}
+
+.scooter-info span:nth-child(1) { animation-delay: 0s; }
+.scooter-info span:nth-child(2) { animation-delay: 4.5s; }
+.scooter-info span:nth-child(3) { animation-delay: 9s; }
+.scooter-info span:nth-child(4) { animation-delay: 13.5s; }
+
+@keyframes infoCycle {
+    0% { opacity: 0; transform: translateY(10px); }
+    5% { opacity: 1; transform: translateY(0); }
+    20% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
+}
