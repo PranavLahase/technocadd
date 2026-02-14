@@ -6,12 +6,193 @@
   <title>Our Team — Expert Engineers & Designers | PSP TechnoCADD</title>
   <meta name="description" content="Meet our team of expert mechanical engineers, CAD designers, and manufacturing specialists. Certified professionals with expertise in SolidWorks, CATIA, sheet metal design, and 3D printing.">
   
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="shortcut icon" href="assets/logo.png">
   
   <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Team Member Modal Styles */
+    .team-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      overflow-y: auto;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .team-modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .team-modal-content {
+      background: white;
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUp 0.3s ease;
+    }
+    
+    .team-modal-header {
+      background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%);
+      padding: 40px;
+      border-radius: 20px 20px 0 0;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    
+    .team-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      font-size: 28px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .team-modal-close:hover {
+      background: rgba(255,255,255,0.3);
+      transform: rotate(90deg);
+    }
+    
+    .team-modal-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .team-modal-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .team-modal-body {
+      padding: 40px;
+    }
+    
+    .team-modal h3 {
+      font-size: 32px;
+      color: white;
+      margin-bottom: 8px;
+    }
+    
+    .team-modal-role {
+      color: #E63946;
+      font-weight: 600;
+      font-size: 18px;
+      background: white;
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+    
+    .team-modal-exp {
+      color: rgba(255,255,255,0.9);
+      font-size: 16px;
+    }
+    
+    .team-section {
+      margin-bottom: 30px;
+    }
+    
+    .team-section h4 {
+      color: #1D3557;
+      font-size: 20px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #E63946;
+    }
+    
+    .team-section p, .team-section ul {
+      color: #6B7280;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    
+    .team-section ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    
+    .team-section li {
+      margin-bottom: 8px;
+    }
+    
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+    
+    .whatsapp-btn:hover {
+      background: #20BA5A;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    }
+    
+    .team-card-clickable {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .team-card-clickable:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(29, 53, 87, 0.15);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @media (max-width: 768px) {
+      .team-modal-content {
+        margin: 20px;
+      }
+      
+      .team-modal-header, .team-modal-body {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -19,7 +200,6 @@
  <!-- Navigation -->
 <nav class="navbar" id="navbar">
     <div class="container nav-container">
-        <!-- LOGO SECTION -->
         <a class="brand" href="index.html">
             <img src="assets/logo.png" alt="PSP TechnoCADD Logo" class="brand-logo">
             <div class="brand-text-only">
@@ -28,14 +208,12 @@
             </div>
         </a>
         
-        <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
         
-        <!-- Navigation Menu -->
         <ul class="nav-menu" id="navMenu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -50,7 +228,7 @@
     </div>
 </nav>
 
-  <!-- Page Header WITH TEAM PHOTO BACKGROUND -->
+  <!-- Page Header -->
   <header class="team-header-with-photo">
     <div class="team-photo-bg"></div>
     <div class="team-header-overlay"></div>
@@ -100,7 +278,7 @@
             </div>
           </div>
 
-          <!-- Director 2: Hemant Shinde - UPDATED TO HR DIRECTOR -->
+          <!-- Director 2: Hemant Shinde -->
           <div class="director-card">
             <div class="director-image">
               <img src="assets/team/director-hemant.jpg" alt="Hemant Shinde">
@@ -130,55 +308,37 @@
       </div>
     </section>
 
-    <!-- Senior Team Section - NEW -->
+    <!-- Senior Team Section - REORDERED -->
     <section class="section-padding bg-soft">
       <div class="container">
         <div class="section-header">
           <div class="kicker">Senior Leadership</div>
           <h2>Senior Team Members</h2>
-          <p>Experienced professionals leading our technical and operational excellence.</p>
+          <p>Experienced professionals leading our technical and operational excellence. Click to view full profile.</p>
         </div>
         
         <div class="grid-3">
           
-          <!-- Team Member 1: Momin M. Adnan -->
-          <div class="card" style="text-align: center; padding: 40px 30px;">
-            <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin: 0 auto 24px; border: 4px solid var(--red);">
-              <img src="assets/team/momin-adnan.jpg" alt="Momin M. Adnan" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <h3 style="color: var(--blue); margin-bottom: 8px;">Mr. Momin M. Adnan</h3>
-            <p style="color: var(--red); font-weight: 600; margin-bottom: 16px;">Sr. Design Engineer</p>
-            <p style="color: var(--gray); font-size: 15px; line-height: 1.8; margin-bottom: 20px;">
-              Specialized in advanced CAD design, product development, and 3D modeling with expertise in SolidWorks and CATIA for automotive and industrial applications.
-            </p>
-            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--gray); font-size: 14px;">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
-              </svg>
-              <span>5+ Years Experience</span>
-            </div>
-          </div>
-
-          <!-- Team Member 2: Sumit S. Salve -->
-          <div class="card" style="text-align: center; padding: 40px 30px;">
+          <!-- Team Member 1: Sumit S. Salve - FIRST -->
+          <div class="card team-card-clickable" onclick="openTeamModal('sumit')" style="text-align: center; padding: 40px 30px;">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin: 0 auto 24px; border: 4px solid var(--red);">
               <img src="assets/team/sumit-salve.jpg" alt="Sumit S. Salve" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 style="color: var(--blue); margin-bottom: 8px;">Mr. Sumit S. Salve</h3>
             <p style="color: var(--red); font-weight: 600; margin-bottom: 16px;">Sr. Electrical Engineer</p>
             <p style="color: var(--gray); font-size: 15px; line-height: 1.8; margin-bottom: 20px;">
-              Expert in electrical system design, EV charging infrastructure, power electronics, and automation solutions for academic and industrial projects.
+              Expert in electrical testing, industrial power systems, control panels, and EV charging infrastructure with comprehensive experience in commissioning and diagnostics.
             </p>
             <div style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--gray); font-size: 14px;">
               <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                 <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
               </svg>
-              <span>5+ Years Experience</span>
+              <span>7+ Years Experience</span>
             </div>
           </div>
 
-          <!-- Team Member 3: Rizwan Sayed -->
-          <div class="card" style="text-align: center; padding: 40px 30px;">
+          <!-- Team Member 2: Rizwan Sayed - SECOND -->
+          <div class="card team-card-clickable" onclick="openTeamModal('rizwan')" style="text-align: center; padding: 40px 30px;">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin: 0 auto 24px; border: 4px solid var(--red);">
               <img src="assets/team/rizwan-sayed.jpg" alt="Rizwan Sayed" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -195,9 +355,184 @@
             </div>
           </div>
 
+          <!-- Team Member 3: Momin M. Adnan - THIRD -->
+          <div class="card team-card-clickable" onclick="openTeamModal('adnan')" style="text-align: center; padding: 40px 30px;">
+            <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin: 0 auto 24px; border: 4px solid var(--red);">
+              <img src="assets/team/momin-adnan.jpg" alt="Momin M. Adnan" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="color: var(--blue); margin-bottom: 8px;">Mr. Momin M. Adnan</h3>
+            <p style="color: var(--red); font-weight: 600; margin-bottom: 16px;">Sr. Design Engineer</p>
+            <p style="color: var(--gray); font-size: 15px; line-height: 1.8; margin-bottom: 20px;">
+              Specialized in advanced CAD design, SPM development, and EV component design with expertise in SolidWorks, additive manufacturing, and production management.
+            </p>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--gray); font-size: 14px;">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+              </svg>
+              <span>5+ Years Experience</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- Team Modals -->
+    
+    <!-- Sumit S. Salve Modal -->
+    <div id="sumitModal" class="team-modal">
+      <div class="team-modal-content">
+        <div class="team-modal-header">
+          <button class="team-modal-close" onclick="closeTeamModal('sumit')">&times;</button>
+          <div class="team-modal-photo">
+            <img src="assets/team/sumit-salve.jpg" alt="Sumit S. Salve">
+          </div>
+          <h3>Mr. Sumit S. Salve</h3>
+          <div class="team-modal-role">Sr. Electrical Engineer</div>
+          <p class="team-modal-exp">7+ Years Experience</p>
+        </div>
+        <div class="team-modal-body">
+          <div class="team-section">
+            <h4>Professional Summary</h4>
+            <p>Electrical Engineer with 7+ years of experience in electrical testing, industrial power systems, control panels, motors, and power electronics. Skilled in high-voltage systems, energy storage platforms, motor drives, and ECU diagnostics. Experienced in commissioning, maintenance, troubleshooting, and structured testing with documentation per international standards. Seeking a role that supports growth in advanced electrical technologies.</p>
+          </div>
+          
+          <div class="team-section">
+            <h4>Core Competencies</h4>
+            <ul>
+              <li>Electrical Testing & Diagnostics</li>
+              <li>Industrial Power Systems Design</li>
+              <li>Control Panel Engineering</li>
+              <li>Motor Drives & Power Electronics</li>
+              <li>High-Voltage Systems</li>
+              <li>Energy Storage Platforms</li>
+              <li>ECU Diagnostics & Integration</li>
+              <li>EV Charging Infrastructure</li>
+              <li>Commissioning & Maintenance</li>
+              <li>International Standards Compliance</li>
+            </ul>
+          </div>
+          
+          <div style="text-align: center; padding: 20px 0; border-top: 1px solid #e5e7eb;">
+            <a href="https://wa.me/919607237556?text=Hello%20Sumit,%20I%20found%20your%20profile%20on%20PSP%20TechnoCADD%20website." class="whatsapp-btn" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Contact on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rizwan Sayed Modal -->
+    <div id="rizwanModal" class="team-modal">
+      <div class="team-modal-content">
+        <div class="team-modal-header">
+          <button class="team-modal-close" onclick="closeTeamModal('rizwan')">&times;</button>
+          <div class="team-modal-photo">
+            <img src="assets/team/rizwan-sayed.jpg" alt="Rizwan Sayed">
+          </div>
+          <h3>Mr. Rizwan Sayed</h3>
+          <div class="team-modal-role">Maintenance Manager</div>
+          <p class="team-modal-exp">5+ Years Experience</p>
+        </div>
+        <div class="team-modal-body">
+          <div class="team-section">
+            <h4>Professional Summary</h4>
+            <p>Experienced Maintenance Manager with 5+ years of expertise in leading preventive maintenance programs, equipment optimization, and facility management. Ensures maximum uptime and ISO compliance across manufacturing operations with a focus on continuous improvement and operational excellence.</p>
+          </div>
+          
+          <div class="team-section">
+            <h4>Core Competencies</h4>
+            <ul>
+              <li>Preventive & Predictive Maintenance</li>
+              <li>Equipment Optimization</li>
+              <li>Facility Management</li>
+              <li>ISO Compliance & Quality Standards</li>
+              <li>Maintenance Planning & Scheduling</li>
+              <li>Troubleshooting & Root Cause Analysis</li>
+              <li>Team Leadership & Training</li>
+              <li>Spare Parts Management</li>
+              <li>Safety Standards Implementation</li>
+              <li>Cost Reduction Initiatives</li>
+            </ul>
+          </div>
+          
+          <div style="text-align: center; padding: 20px 0; border-top: 1px solid #e5e7eb;">
+            <a href="https://wa.me/919766425506?text=Hello%20Rizwan,%20I%20found%20your%20profile%20on%20PSP%20TechnoCADD%20website." class="whatsapp-btn" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Contact on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Momin M. Adnan Modal -->
+    <div id="adnanModal" class="team-modal">
+      <div class="team-modal-content">
+        <div class="team-modal-header">
+          <button class="team-modal-close" onclick="closeTeamModal('adnan')">&times;</button>
+          <div class="team-modal-photo">
+            <img src="assets/team/momin-adnan.jpg" alt="Momin M. Adnan">
+          </div>
+          <h3>Mr. Momin M. Adnan</h3>
+          <div class="team-modal-role">Sr. Design Engineer (R&D)</div>
+          <p class="team-modal-exp">5+ Years Experience</p>
+        </div>
+        <div class="team-modal-body">
+          <div class="team-section">
+            <h4>Professional Summary</h4>
+            <p>Bachelor's Degree in Mechanical Engineering (2023) with certifications in Product Design and Electric Vehicle Technology. Currently working as Senior Design Engineer (R&D) at PSP TechnoCADD with strong experience in design and development of Special Purpose Machines (SPMs), production fixtures, and EV components. Demonstrates hands-on expertise in CAD-based mechanical design, additive manufacturing, vacuum forming, and EV systems integration with a proven background in assembly line production management and cross-functional coordination.</p>
+          </div>
+          
+          <div class="team-section">
+            <h4>Current Role: SR. DESIGN ENGINEER (Oct 2024 - Present)</h4>
+            <ul>
+              <li>Designed and developed SPMs, production fixtures, and EV components (chassis, enclosures, mounting systems) in compliance with Škoda Auto quality and dimensional standards</li>
+              <li>Led fixture design, modification, trials, troubleshooting, and preventive maintenance</li>
+              <li>Applied 3D Printing for rapid prototyping of fixtures, gauges, brackets, and EV parts, significantly reducing development lead time and cost</li>
+              <li>Designed vacuum-formed components and tooling, selecting appropriate thermoplastics</li>
+              <li>Integrated mechanical designs with electrical and EV systems (BMS, chargers, powertrains)</li>
+              <li>Established and managed EV laboratories, delivering hands-on technical training</li>
+              <li>Managed procurement of mechanical and electrical equipment</li>
+            </ul>
+          </div>
+          
+          <div class="team-section">
+            <h4>Previous Experience: DESIGN ENGINEER (Mar 2023 - July 2024)</h4>
+            <ul>
+              <li>Designed SPMs, jigs, and fixtures to enhance manufacturing accuracy</li>
+              <li>Created 3D models and 2D drawings with GD&T using SolidWorks and AutoCAD</li>
+              <li>Delivered cost-effective designs through material optimization</li>
+              <li>Managed procurement and vendor evaluation</li>
+            </ul>
+          </div>
+          
+          <div class="team-section">
+            <h4>Previous Experience: ASSEMBLY LINE ENGINEER - Bajaj Auto Ltd. (Nov 2020 - Nov 2022)</h4>
+            <ul>
+              <li>Managed production activities including Production Planning Control and troubleshooting</li>
+              <li>Handled production line with 50+ employees with full safety and quality adherence</li>
+              <li>Monitored daily process audit, torque audit, and poka-yoke audit</li>
+              <li>Reduced field complaints through quality assurance standards</li>
+            </ul>
+          </div>
+          
+          <div style="text-align: center; padding: 20px 0; border-top: 1px solid #e5e7eb;">
+            <a href="https://wa.me/919096545509?text=Hello%20Adnan,%20I%20found%20your%20profile%20on%20PSP%20TechnoCADD%20website." class="whatsapp-btn" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Contact on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Team Introduction -->
     <section class="section-padding">
@@ -390,5 +725,37 @@
   </footer>
 
   <script src="js/script.js"></script>
+  
+  <script>
+    function openTeamModal(member) {
+      document.getElementById(member + 'Modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeTeamModal(member) {
+      document.getElementById(member + 'Modal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal when clicking outside
+    document.querySelectorAll('.team-modal').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+    
+    // Close modal with ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.team-modal').forEach(modal => {
+          modal.classList.remove('active');
+        });
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
 </body>
 </html>
