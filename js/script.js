@@ -472,36 +472,50 @@ function showFormMessage(messageElement, type, text) {
     }, 5000);
 }
 
-// Scroll to top function
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-const scooter = document.getElementById("evScooter");
-const overlay = document.getElementById("evOverlay");
+/* Compact EV module interaction: single click = small toast, double click = map */
+(function () {
+  const scooter = document.getElementById('evScooter');
+  const toast = document.getElementById('evToast');
 
-let clickTimeout;
+  // fallback if elements missing
+  if (!scooter) return;
 
-scooter.addEventListener("click", function () {
+  let clickTimer = null;
 
-    if (clickTimeout) {
-        clearTimeout(clickTimeout);
-        clickTimeout = null;
+  scooter.addEventListener('click', (e) => {
+    // detect double click by timing
+    if (clickTimer) {
+      clearTimeout(clickTimer);
+      clickTimer = null;
 
-        window.open(
-            "https://www.google.com/maps/search/?api=1&query=Jyotirmay+Complex+Shop+No+2+3+Beside+Athithi+Hotel+Croma+Seven+Hills+Chh+Sambhajinagar+431003+Maharashtra+India",
-            "_blank"
-        );
-    } else {
-        clickTimeout = setTimeout(() => {
-            overlay.style.display = "flex";
-            clickTimeout = null;
-        }, 250);
+      // double-click: open google maps
+      const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Jyotirmay+Complex+Shop+No+2+3+Beside+Athithi+Hotel+Croma+Seven+Hills+Chh+Sambhajinagar+431003+Maharashtra+India";
+      window.open(mapsUrl, '_blank');
+      return;
     }
-});
 
-overlay.addEventListener("click", () => {
-    overlay.style.display = "none";
-});
+    // single click: show tiny framed toast for 3 seconds
+    clickTimer = setTimeout(() => {
+      clickTimer = null;
+      if (!toast) return;
+      toast.style.display = 'flex';
+      toast.style.opacity = '0';
+      toast.animate([{opacity:0},{opacity:1}], {duration:180, fill:'forwards'});
+      // auto-hide
+      setTimeout(() => {
+        if (!toast) return;
+        toast.animate([{opacity:1},{opacity:0}], {duration:220, fill:'forwards'});
+        setTimeout(()=> toast.style.display = 'none', 240);
+      }, 3000);
+    }, 240);
+  });
+
+  // keyboard accessibility (Enter for click, Space for same)
+  scooter.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Enter' || ev.key === ' ') {
+      ev.preventDefault();
+      scooter.click();
+    }
+  });
+
+})();

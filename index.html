@@ -15,43 +15,39 @@
 
 <body>
 
-<!-- ===== Ultra Premium Simple Energy Module ===== -->
-<div class="ev-wrapper">
+<!-- ===== Compact Simple Energy EV Module (replace previous EV module) ===== -->
+<div class="ev-compact-wrapper" id="evCompactWrapper">
 
-  <div class="ev-container" id="evContainer">
+  <div class="ev-compact" id="evCompact">
+    <div class="ev-spec-card" id="evSpecPanel" aria-hidden="false">
+      <div class="ev-brand">Simple Energy</div>
+      <div class="ev-authorized">Authorized Distributor · Chhatrapati Sambhajinagar</div>
 
-      <div class="ev-spec-panel">
-          <div class="ev-brand">Simple Energy</div>
-          <ul>
-              <li>120 KM Certified Range</li>
-              <li>Fast Charging Technology</li>
-              <li>Smart Digital Dashboard</li>
-              <li>Zero Emission Performance</li>
-          </ul>
-          <div class="ev-badge">
-              Authorized Distributor · Chhatrapati Sambhajinagar
-          </div>
+      <div class="ev-features" aria-hidden="false">
+        <div class="feature-track" id="featureTrack">
+          <span>120 KM Certified Range</span>
+          <span>Fast Charging Technology</span>
+          <span>Smart Digital Dashboard</span>
+          <span>Zero Emission Performance</span>
+        </div>
       </div>
-
-      <div class="ev-scooter" id="evScooter">
-          <div class="ev-shadow"></div>
-          <img src="images/scooter.png" alt="Simple Energy Scooter">
-      </div>
-
+    </div>
+    <div class="ev-scooter" id="evScooter" role="button" tabindex="0" aria-label="Simple Energy scooter — click for details, double click for showroom">
+      <img src="images/scooter.png" alt="Simple Energy Scooter">
+      <div class="ev-shadow"></div>
+    </div>
   </div>
 
 </div>
 
-<!-- Distributor Overlay -->
-<div class="ev-overlay" id="evOverlay">
-    <div class="ev-overlay-card">
-        <h3>Official Authorized Distributor</h3>
-        <p>
-            PSP TechnoCADD is the officially authorized distributor of
-            Simple Energy EV scooters in Chhatrapati Sambhajinagar.
-        </p>
-        <span>Double-click the scooter to view showroom location.</span>
-    </div>
+<!-- Tiny framed toast shown on single click (auto hide) -->
+<div class="ev-toast" id="evToast" role="status" aria-live="polite">
+  <div class="toast-inner">
+    <strong>Simple Energy</strong>
+    <div class="toast-sub">Authorized Distributor · Chhatrapati Sambhajinagar</div>
+  </div>
+  <!-- Optional brochure link: update the URL if your brochure is stored elsewhere -->
+  <a class="toast-brochure" href="assets/Gen-2-SimpleOne-Brochure.pdf" target="_blank" rel="noreferrer">View Brochure</a>
 </div>
 
   
