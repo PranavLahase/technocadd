@@ -472,45 +472,42 @@ function showFormMessage(messageElement, type, text) {
     }, 5000);
 }
 
-// ===== Simple Energy Compact Module =====
-
 document.addEventListener("DOMContentLoaded", function () {
 
-  const scooter = document.getElementById("evScooter");
-  const toast = document.getElementById("evToast");
+    const scooter = document.getElementById("launchScooter");
+    const overlay = document.getElementById("simpleOverlay");
+    const closeBtn = document.getElementById("overlayClose");
+    const backBtn = document.getElementById("backBtn");
 
-  if (!scooter) return;
+    let clickTimer = null;
 
-  let clickTimer = null;
+    scooter.addEventListener("click", function () {
 
-  scooter.addEventListener("click", function () {
+        if (clickTimer) {
+            clearTimeout(clickTimer);
+            clickTimer = null;
 
-    if (clickTimer) {
-      clearTimeout(clickTimer);
-      clickTimer = null;
+            // Double click → Maps
+            window.open(
+                "https://maps.app.goo.gl/WKXe5VwzVgxF9Gkg8",
+                "_blank"
+            );
+        } else {
 
-      // Double click → open showroom
-      window.open(
-        "https://maps.app.goo.gl/WKXe5VwzVgxF9Gkg8",
-        "_blank"
-      );
-      return;
-    }
+            clickTimer = setTimeout(() => {
+                overlay.style.display = "block";
+                clickTimer = null;
+            }, 250);
+        }
 
-    clickTimer = setTimeout(function () {
-      clickTimer = null;
+    });
 
-      if (!toast) return;
+    closeBtn.addEventListener("click", () => {
+        overlay.style.display = "none";
+    });
 
-      toast.style.display = "flex";
-      toast.style.opacity = "1";
-
-      setTimeout(function () {
-        toast.style.display = "none";
-      }, 3000);
-
-    }, 250);
-
-  });
+    backBtn.addEventListener("click", () => {
+        overlay.style.display = "none";
+    });
 
 });

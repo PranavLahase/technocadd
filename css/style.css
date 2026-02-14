@@ -1949,206 +1949,117 @@ textarea {
     padding: 32px 24px;
   }
 }
-/* ==============================
-   Compact Simple Energy Module
-   Small, premium, mobile-first
-================================= */
+/* ===== Moving Scooter ===== */
 
-.ev-compact-wrapper {
-  position: fixed;
-  bottom: 48px;
-  left: -240px; /* animation will move it into view */
-  z-index: 9999;
-  pointer-events: none; /* let inner elements manage pointer-events */
-  animation: evCompactEntrance 1s ease forwards;
+.simple-launch {
+    position: fixed;
+    bottom: 60px;
+    left: -250px;
+    z-index: 9999;
+    animation: launchMove 18s ease-in-out infinite;
 }
 
-@keyframes evCompactEntrance {
-  from { opacity: 0; transform: translateY(8px);}
-  to   { opacity: 1; transform: translateY(0);}
+@keyframes launchMove {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(60vw); }
+    100% { transform: translateX(120vw); }
 }
 
-.ev-compact {
-  display: flex;
-  align-items: flex-end;
-  gap: 14px;
-  pointer-events: auto;
-  animation: evCompactMove 20s cubic-bezier(.25,.1,.25,1) infinite;
+.launch-scooter img {
+    width: 140px;
+    cursor: pointer;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.4));
 }
 
-/* smooth left -> right cinematic path (slows mid-way) */
-@keyframes evCompactMove {
-  0%   { transform: translateX(0); }
-  45%  { transform: translateX(55vw); } /* middle pause area */
-  55%  { transform: translateX(65vw); } /* small ease zone */
-  100% { transform: translateX(120vw); }
+/* ===== Overlay Page ===== */
+
+.simple-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0d0d0d;
+    color: #fff;
+    display: none;
+    overflow-y: auto;
+    z-index: 10000;
 }
 
-/* -------------------
-   SPEC CARD (small)
-   ------------------- */
-.ev-spec-card {
-  width: 220px;
-  background: rgba(12,12,12,0.55); /* translucent so page remains visible */
-  backdrop-filter: blur(8px) saturate(130%);
-  color: #ffffff;
-  border-radius: 14px;
-  padding: 12px 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.06);
-  font-family: inherit;
-  font-size: 13px;
-  line-height: 1.2;
-  position: relative;
-  overflow: hidden;
+.overlay-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-/* small triangular pointer to scooter */
-.ev-spec-card::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 20px;
-  width: 16px;
-  height: 16px;
-  background: rgba(12,12,12,0.55);
-  transform: rotate(45deg);
-  border-left: 1px solid rgba(255,255,255,0.03);
-  border-bottom: 1px solid rgba(255,255,255,0.03);
-  filter: blur(0.2px);
+.overlay-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
 }
 
-/* brand + authorized text */
-.ev-brand {
-  color: #ff2a2a;
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 6px;
-  letter-spacing: 0.6px;
+.overlay-header h1 {
+    color: #ff2a2a;
+    font-size: 42px;
 }
 
-.ev-authorized {
-  font-size: 12px;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 10px;
-  opacity: 0.95;
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
 }
 
-/* features scrolling area (left -> right) */
-.ev-features {
-  width: 100%;
-  height: 22px;
-  overflow: hidden;
-  position: relative;
+.model-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
 }
 
-/* track: inline flex so spans align horizontally */
-.feature-track {
-  display: inline-flex;
-  gap: 36px;
-  white-space: nowrap;
-  transform: translateX(-100%); /* start off-left */
-  animation: featureScroll 10s linear infinite;
+.model-card:hover {
+    transform: translateY(-8px);
 }
 
-/* adjust speeds per need; left -> right motion */
-@keyframes featureScroll {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+.model-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
 }
 
-/* individual feature style */
-.feature-track span {
-  color: rgba(255,255,255,0.95);
-  font-size: 13px;
-  display: inline-block;
-  padding-right: 4px;
+.model-card h3 {
+    margin: 15px 0;
+    color: #ff2a2a;
 }
 
-/* -------------------
-   SCOOTER IMAGE + SHADOW
-   ------------------- */
-.ev-scooter {
-  position: relative;
-  width: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  cursor: pointer;
-  user-select: none;
+.model-card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
 }
 
-.ev-scooter img {
-  width: 150px;
-  display: block;
-  filter: drop-shadow(0 12px 22px rgba(0,0,0,0.45));
-  transition: transform .22s ease, filter .22s ease;
+.overlay-actions {
+    margin-top: 60px;
+    text-align: center;
 }
 
-/* hover subtle pulse */
-.ev-scooter:hover img {
-  transform: translateY(-4px) scale(1.03);
-  filter: drop-shadow(0 18px 28px rgba(0,0,0,0.5));
+.visit-btn, .back-btn {
+    padding: 12px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
 }
 
-/* soft elliptical ground shadow */
-.ev-shadow {
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 16px;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.0) 70%);
-  filter: blur(6px);
-  pointer-events: none;
+.visit-btn {
+    background: #ff2a2a;
+    color: #fff;
 }
 
-/* -------------------
-   Tiny toast (single click)
-   ------------------- */
-.ev-toast {
-  position: fixed;
-  bottom: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  align-items: center;
-  gap: 14px;
-  background: rgba(17,17,17,0.92);
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
-  z-index: 10001;
-  font-size: 13px;
-  max-width: calc(100% - 48px);
-}
-
-.ev-toast .toast-inner strong {
-  color: #ff2a2a;
-  display: block;
-  font-size: 14px;
-}
-
-.toast-brochure {
-  color: #fff;
-  text-decoration: none;
-  font-size: 12px;
-  padding: 6px 8px;
-  border-radius: 8px;
-  background: rgba(255,42,42,0.12);
-  border: 1px solid rgba(255,42,42,0.12);
-}
-
-/* responsive: smaller and less obtrusive on mobile */
-@media (max-width: 768px) {
-  .ev-spec-card { width: 170px; padding: 10px 12px; }
-  .ev-brand { font-size: 13px; }
-  .ev-authorized { font-size: 11px; margin-bottom: 8px; }
-  .feature-track { gap: 20px; animation-duration: 8s; }
-  .ev-scooter { width: 100px; }
-  .ev-scooter img { width: 100px; }
-  .ev-toast { bottom: 120px; font-size: 12px; padding: 8px 10px; }
+.back-btn {
+    background: #444;
+    color: #fff;
 }
