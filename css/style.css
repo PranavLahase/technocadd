@@ -1956,13 +1956,13 @@ textarea {
     bottom: 25px;
     left: -250px;
     z-index: 9999;
-    animation: launchMove 18s ease-in-out infinite;
+    animation: launchMove 12s ease-out forwards;
 }
+
 
 @keyframes launchMove {
     0% { transform: translateX(0); }
-    50% { transform: translateX(60vw); }
-    100% { transform: translateX(120vw); }
+    100% { transform: translateX(65vw); }
 }
 
 .launch-scooter img {
