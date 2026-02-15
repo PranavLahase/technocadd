@@ -2063,3 +2063,41 @@ textarea {
     background: #444;
     color: #fff;
 }
+/* ===== Click Hint Bubble ===== */
+
+.launch-scooter {
+    position: relative;
+}
+
+.click-hint {
+    position: absolute;
+    bottom: 120px; /* controls height above scooter */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff2a2a;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    animation: hintPulse 1.5s infinite ease-in-out;
+}
+
+/* Arrow pointing downward */
+.click-hint::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #ff2a2a transparent transparent transparent;
+}
+
+/* Subtle pulse animation */
+@keyframes hintPulse {
+    0%,100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.08); }
+}
