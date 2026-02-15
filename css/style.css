@@ -1954,19 +1954,14 @@ textarea {
 .simple-launch {
     position: fixed;
     bottom: 25px;
-    left: -160px; /* slightly off-screen start */
+    left: -150px;
     z-index: 9999;
-    animation: launchMove 10s ease-out forwards;
+    animation: launchMove 9s ease-out forwards;
 }
 
-
 @keyframes launchMove {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(100vw - 180px));
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(100vw); }
 }
 
 .launch-scooter img {
